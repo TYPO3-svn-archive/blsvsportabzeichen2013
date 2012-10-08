@@ -1,0 +1,40 @@
+id;name;locked;bold;color;fgColor;border;align;valign;left;right;bottom;numFormat;size;textRotation;pattern;textWrap
+01 title;title;1;1;black;42;1;merge;vcenter;;;;;;;1;
+01 title;title2;1;1;black;15;1;merge;vcenter;;;;;;;;
+01 title;title3;;;black;15;;center;vcenter;1;1;;;;;;1
+01 title;;;;;;;;;;;;;;;;
+02 def;data_locked;1;1;15;15;;center;;1;1;1;;;;;
+02 def;locked;1;;16;16;;;;;;;;1;;;
+02 def;rot_locked;1;;black;15;;center;vcenter;;;;;;270;;
+02 def;;;;;;;;;;;;;;;;
+05 unit;datum_locked;1;1;black;15;;center;;1;1;1;DD.MM.YY;;;;
+05 unit;integer;;;black;white;;center;;1;1;1;[red][<=0]0|0;;;;
+05 unit;integer_locked;1;1;black;white;;center;;1;1;1;0;;;;
+05 unit;meter_locked;1;1;black;15;;center;;1;1;1;0.00 [$m];;;;
+05 unit;minuten_locked;1;1;black;15;;center;;1;1;1;[h]:mm;;;;
+05 unit;sekunden_locked;1;1;black;15;;center;;1;1;1;0.0 [$s];;;;
+05 unit;;;;;;;;;;;;;;;;
+10 bronze;bronze_data_locked;1;1;white;60;1;center;;1;1;1;
+10 bronze;bronze_datum_locked;1;;white;60;1;center;;1;1;1;DD.MM.YY
+10 bronze;bronze_integer_locked;1;;white;60;1;center;;1;1;1;
+10 bronze;bronze_meter_locked;1;;white;60;1;center;;1;1;1;0.00 [$m]
+10 bronze;bronze_minuten_locked;1;;white;60;1;center;;1;1;1;[h]:mm
+10 bronze;bronze_sekunden_locked;1;;white;60;1;center;;1;1;1;0.0 [$s]
+10 bronze;bronze_title;1;1;white;60;1;merge;vcenter;;;;
+10 bronze;;;;;;;;;;;;
+20 silver;silver_data_locked;1;1;black;22;1;center;;1;1;1;
+20 silver;silver_datum_locked;1;;black;22;1;center;;1;1;1;DD.MM.YY
+20 silver;silver_integer_locked;1;;black;22;1;center;;1;1;1;
+20 silver;silver_meter_locked;1;;black;22;1;center;;1;1;1;0.00 [$m]
+20 silver;silver_minuten_locked;1;;black;22;1;center;;1;1;1;[h]:mm
+20 silver;silver_sekunden_locked;1;;black;22;1;center;;1;1;1;0.0 [$s]
+20 silver;silver_title;1;1;black;22;1;merge;vcenter;;;;
+20 silver;;;;;;;;;;;;
+30 gold;gold_data_locked;1;1;black;51;1;center;;1;1;1;
+30 gold;gold_datum_locked;1;;black;51;1;center;;1;1;1;DD.MM.YY
+30 gold;gold_integer_locked;1;;black;51;1;center;;1;1;1;
+30 gold;gold_meter_locked;1;;black;51;1;center;;1;1;1;0.00 [$m]
+30 gold;gold_minuten_locked;1;;yellow;blue;1;center;;1;1;1;[h]:mm
+30 gold;gold_sekunden_locked;1;;black;51;1;center;;1;1;1;0.0 [$s]
+30 gold;gold_title;1;1;black;51;1;merge;vcenter;;;;
+30 gold;;;;;;;;;;;;

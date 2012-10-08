@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_blsvsa2013_domain_model_leistungstabelle'] = array(
 	'ctrl' => $TCA['tx_blsvsa2013_domain_model_leistungstabelle']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, leistungbronze, leistungsilber, leistunggold, sportart, altersgruppe',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, sportart, altersgruppe, leistungbronze, leistungsilber, leistunggold',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, leistungbronze, leistungsilber, leistunggold, sportart, altersgruppe,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1,sportart, altersgruppe, leistungbronze, leistungsilber, leistunggold, --div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -93,13 +93,48 @@ $TCA['tx_blsvsa2013_domain_model_leistungstabelle'] = array(
 				),
 			),
 		),
+		'sportart' => array(
+					'exclude' => 0,
+					'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.sportart',
+					'config' => array(
+							'type' => 'select',
+							'foreign_table' => 'tx_blsvsa2013_domain_model_sportarten',
+							'foreign_table_where' => 'ORDER BY tx_blsvsa2013_domain_model_sportarten.uid',
+							'minitems' => 1,
+							'maxitems' => 1,
+							'appearance' => array(
+									'collapseAll' => 0,
+									'levelLinksPosition' => 'top',
+									'showSynchronizationLink' => 1,
+									'showPossibleLocalizationRecords' => 1,
+									'showAllLocalizationLink' => 1
+							),
+					),
+			),
+			'altersgruppe' => array(
+					'exclude' => 0,
+					'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.altersgruppe',
+					'config' => array(
+							'type' => 'select',
+							'foreign_table' => 'tx_blsvsa2013_domain_model_altersgruppen',
+							'minitems' => 1,
+							'maxitems' => 1,
+							'appearance' => array(
+									'collapseAll' => 0,
+									'levelLinksPosition' => 'top',
+									'showSynchronizationLink' => 1,
+									'showPossibleLocalizationRecords' => 1,
+									'showAllLocalizationLink' => 1
+							),
+					),
+			),
 		'leistungbronze' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.leistungbronze',
 			'config' => array(
 				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
+				'size' => 5,
+				'eval' => 'trim'
 			),
 		),
 		'leistungsilber' => array(
@@ -107,8 +142,8 @@ $TCA['tx_blsvsa2013_domain_model_leistungstabelle'] = array(
 			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.leistungsilber',
 			'config' => array(
 				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
+				'size' => 5,
+				'eval' => 'trim'
 			),
 		),
 		'leistunggold' => array(
@@ -116,44 +151,11 @@ $TCA['tx_blsvsa2013_domain_model_leistungstabelle'] = array(
 			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.leistunggold',
 			'config' => array(
 				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
+				'size' => 5,
+				'eval' => 'trim'
 			),
 		),
-		'sportart' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.sportart',
-			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_blsvsa2013_domain_model_sportarten',
-				'minitems' => 0,
-				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
-			),
-		),
-		'altersgruppe' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle.altersgruppe',
-			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_blsvsa2013_domain_model_altersgruppen',
-				'minitems' => 0,
-				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
-			),
-		),
+	
 	),
 );
 

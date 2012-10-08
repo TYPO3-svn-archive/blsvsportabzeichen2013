@@ -144,6 +144,7 @@ CREATE TABLE tx_blsvsa2013_domain_model_schueler (
 CREATE TABLE fe_users (
 
 	schule int(11) unsigned DEFAULT '0',
+	feuser int(11) unsigned DEFAULT '0',
 
 	tx_extbase_type varchar(255) DEFAULT '' NOT NULL,
 
@@ -157,9 +158,9 @@ CREATE TABLE tx_blsvsa2013_domain_model_leistungstabelle (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	leistungbronze int(11) DEFAULT '0' NOT NULL,
-	leistungsilber int(11) DEFAULT '0' NOT NULL,
-	leistunggold int(11) DEFAULT '0' NOT NULL,
+	leistungbronze varchar(10) DEFAULT '1' NOT NULL,
+	leistungsilber varchar(10) DEFAULT '2' NOT NULL,
+	leistunggold varchar(10) DEFAULT '3' NOT NULL,
 	sportart int(11) unsigned DEFAULT '0',
 	altersgruppe int(11) unsigned DEFAULT '0',
 

@@ -31,5 +31,43 @@
  *
  */
 class Tx_Blsvsa2013_Domain_Repository_SchuelerRepository extends Tx_Extbase_Persistence_Repository {
+
+	/**
+	 * Pruefen, ob der angegebene Schueler bereits in der DB vorhanden ist
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Schueler $schueler Schueler der geprueft werden soll
+	 * @return boolean
+	 */
+	public function inDb(Tx_Blsvsa2013_Domain_Model_Schueler $schueler){
+		$query = $this->createQuery();
+		$query->matching(
+				$query->logicalAnd(
+						$query->equals('name', $schueler->getName(), false),
+						$query->equals('vorname', $schueler->getVorname(), false),
+						$query->equals('geschlecht', $schueler->getGeschlecht()),
+						$query->equals('geburtstag', $schueler->getGeburtstag()),
+						$query->equals('klasse', $schueler->getKlasse(), false)
+				)
+		);
+		$query->setLimit(1);
+		if ($query->execute()->count() > 0){
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Fuegt einen Schueler hinzu, falls noch nicht vorhanden
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Feuser $schueler hinzuzufuegender Schueler
+	 * @return integer
+	 */
+	public function addNew(Tx_Blsvsa2013_Domain_Model_Schueler $schueler){
+		if (!$this->inDb($schueler)){
+			$this->add($schueler);
+			return 1;
+		}
+		return 0;
+	}
 }
 ?>

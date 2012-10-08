@@ -214,47 +214,196 @@ class Tx_Blsvsa2013_Controller_SchuelerController extends Tx_Extbase_MVC_Control
 	 * @return void
 	 */
 	public function importAction($reqdata=null) {
-		$importInfo = array();
-		
 		if(!empty($reqdata['schuelerstring'])){
-			
+
 			require_once($this->importClassFile);
 			$import = t3lib_div::makeInstance($this->importClass, $this->extPath);
-			
-//				$schuelers = $import->getSchuelers($reqdata['schuelerstring'], $importInfo, );
-				
-				$schuelerImp = $import->getSchuelerArray($reqdata['schuelerstring']);
-				$schuelerNeu = $import->getSchuelerNeu($this->schule->getUid(), $schuelerImp['good']);
-				
-				$importInfo = array(
-						'gesamt' => count($schuelerImp['good']),
-						'neu' => count($schuelerNeu),
-						'fehler' => count($schuelerImp['bad']),
-						'fehlerzeilen' => $schuelerImp['bad'],
-				);
-				$messages[0] = 'TestMessage';
-				$schuelers = $import->getSchuelers($this->schule, $schuelerNeu, $this->feuser);
+			$erg = $import->getSchuelerFromString($reqdata['schuelerstring'], $this->schule, $this->feuser, $schuelers, $errors);
 
-			
-
-			
-			foreach ($messages as $message){
-				$this->flashMessageContainer->add($message);
-			}
-
-			
+			$importiert=0;
+			$vorhanden=0;
 			foreach($schuelers as $newSchueler){
-				$this->schuelerRepository->add($newSchueler);
+				$erg2 = $this->schuelerRepository->addNew($newSchueler);
+				if ($erg2==1) {
+					$importiert++;
+				} else {
+					$vorhanden++;
+				}
 			}
-
-			t3lib_utility_Debug::debug($reqdata, 'request');
-			t3lib_utility_Debug::debug($importInfo, 'ImportInfo');
 		}
 		
-		$this->view->assign('importInfo', $importInfo);
-		$this->view->assign('errornumber', 1);
-	
+		$importInfo = array(
+				'erg' => $erg,
+				'importiert' => $importiert,
+				'vorhanden' => $vorhanden,
+				'errors' => $errors
+		);
 		
+		$this->view->assign('importInfo', $importInfo);
+	
+//		t3lib_utility_Debug::debug($reqdata, 'request');
+//		t3lib_utility_Debug::debug($importInfo, 'importInfo');
+	}
+	
+	/**
+	 * action export
+	 *
+	 * @return void
+	 */
+	public function exportAction() {
+		$tplFile = $this->extPath.'Resources/Private/Templates/Schueler/sportabzeichen_neu.xls';
+		$savFile = $this->extPath.'Classes/libs/export_'.date('His').'.xls';
+		
+		
+		
+		$ergebnisArray = $this->getErgebnisArray();
+		require_once $this->extPath.'Classes/libs/class.lib_xls.php';
+		$xls = t3lib_div::makeInstance('lib_xls');
+		$xls->load($tplFile);
+		$xls->fillTemplate($ergebnisArray);
+		$xls->save($savFile);
+exit;		
+		
+		
+
+		
+		
+		
+		
+		
+//		t3lib_utility_Debug::debug('export', 'export');
+		
+
+/*
+$schuelers = $this->schuelerRepository->findAll();
+foreach ($schuelers as $schueler){
+	echo $schueler->getName();
+}
+exit;
+*/		
+		
+		
+		
+		$files = array(
+			'class.tx_lib_export_xls.php',
+			'class.tx_blsvschulwettbewerb_export_xls_ergebnisse.php',
+			'class.tx_lib_download.php',
+		);
+		
+		$libPath = $this->extPath.'Classes/libs/';
+		foreach ($files as $file) {
+			require_once $libPath.$file;
+		}
+
+		$export_class = 'tx_blsvschulwettbewerb_export_xls_ergebnisse';
+		$export = t3lib_div::makeInstance($export_class);
+		
+		
+		$tmp_file = PATH_site . 'fileadmin/_temp_/export_'.$GLOBALS['schule'].'.xls';
+//		$bitmap = 'fileadmin/images/head_ergebnisse.bmp';
+		$bitmap = 'fileadmin/images/sa2013titel.bmp';
+		$ergebnisArray = $this->getErgebnisArray();
+		
+		
+		
+		
+//		echo 'ERg:<pre>';print_r($ergebnisArray);echo '</pre>';exit;
+			
+		$export->createNew($tmp_file, $bitmap, $ergebnisArray);
+
+//		$export->create($daten, $opt);
+		 
+		$opt['ausgabe'] = $export->get_content();
+		
+		$opt['name'] = 'BLSV_SPORTABZEICHEN_'.date('Y').'_'.$GLOBALS['TSFE']->fe_user->user['username'];
+		$opt['ext'] = 'xls';
+//		mysql_close();
+		// Export verschicken
+//		require_once(t3lib_extMgm::extPath('blsv_schulwettbewerb')."lib/class.tx_lib_download.php");
+		$download = t3lib_div::makeInstance('tx_lib_download');
+		$download->send_data($opt['ausgabe'],$opt['name'],$opt['ext']);
+		
+	}
+	
+	
+	function getErgebnisArray(){
+		
+/*		$schueler = array(
+				'0' => array(
+						'anz_teilnahmen' => '0',
+						'uid' => '179',
+						'name' => 'Mustermädchen',
+						'vorname' => 'Martina',
+						'geschlecht' => '2',
+						'klasse' => '10a',
+						'geburtstag' => '03.04.95',
+				),
+				'1' => array(
+						'anz_teilnahmen' => '0',
+						'uid' => '180',
+						'name' => 'Mustermann',
+						'vorname' => 'Martin',
+						'geschlecht' => '1',
+						'klasse' => '10b',
+						'geburtstag' => '01.01.95',
+				),
+		);
+*/
+		
+		$sql="select * from tx_blsvsa2013_domain_model_schueler";
+		$result=mysql_query($sql);
+		if (!$result)die ("DB Fehler beim Lesen ".mysql_error()."<br>".$sql);
+		while( $h = mysql_fetch_array($result) ) {
+			$schueler[] = $h;
+		}
+		
+		$gruppen = array(
+				'1' => array(
+						'0' => array('saname' => 'Weit- sprung',		'mindLeistung' => '350', 'ml1' => '350', 'ml2' => '350', 'ml3' => '350',	'leistung' => '85',		'ergebnisart' => '3',),
+						'1' => array('saname' => 'Hoch- sprung',		'mindLeistung' => '110', 'ml1' => '110', 'ml2' => '110', 'ml3' => '110',	'leistung' => '50',		'ergebnisart' => '3',),
+						'2' => array('saname' => 'Bel. Sprunggerät seit. Grätsche/Hocke Geräte-höhe:',		'mindLeistung' => '120', 'ml1' => '120', 'ml2' => '120', 'ml3' => '120',	'leistung' => '130',	'ergebnisart' => '5',),
+				),
+				'2' => array(
+						'0' => array('saname' => '75m Lauf',			'mindLeistung' => '125', 'ml1' => '125', 'ml2' => '125', 'ml3' => '125',	'leistung' => '562',	'ergebnisart' => '2',),
+						'1' => array('saname' => '100m Lauf',			'mindLeistung' => '162', 'ml1' => '162', 'ml2' => '162', 'ml3' => '162',	'leistung' => '570',	'ergebnisart' => '2',),
+						'2' => array('saname' => '300m Inline Skating',	'mindLeistung' => '47', 'ml1' => '47', 'ml2' => '47', 'ml3' => '47',	'leistung' => '346',	'ergebnisart' => '1',),
+				),
+				'3' => array(
+						'0' => array('saname' => 'Kugel 4Kg',			'mindLeistung' => '550', 'ml1' => '550', 'ml2' => '550', 'ml3' => '550',	'leistung' => '146',	'ergebnisart' => '3',),
+						'1' => array('saname' => 'Schlag- ball (80g)',	'mindLeistung' => '3200', 'ml1' => '3200', 'ml2' => '3200', 'ml3' => '3200',	'leistung' => '375',	'ergebnisart' => '3',),
+						'2' => array('saname' => 'Wurf- ball 200 g',	'mindLeistung' => '2500', 'ml1' => '2500', 'ml2' => '2500', 'ml3' => '2500',	'leistung' => '393',	'ergebnisart' => '3',),
+						'3' => array('saname' => 'Schleuder- ball (1kg)',	'mindLeistung' => '2500', 'ml1' => '2500', 'ml2' => '2500', 'ml3' => '2500',	'leistung' => '416',	'ergebnisart' => '3',),
+						'4' => array('saname' => '100m Schwim- men',	'mindLeistung' => '135', 'ml1' => '135', 'ml2' => '135', 'ml3' => '135',	'leistung' => '450',	'ergebnisart' => '1',),
+						'5' => array('saname' => 'Kombi. Reck: Aufschw. Unterschw. Boden Rad- wende',	'mindLeistung' => '1', 'ml1' => '1', 'ml2' => '1', 'ml3' => '1',	'leistung' => '658','ergebnisart' => '4'),
+				),
+				'4' => array(
+						'0' => array('saname' => '800m Lauf',			'mindLeistung' => '270', 'ml1' => '270', 'ml2' => '270', 'ml3' => '270',	'leistung' => '185',	'ergebnisart' => '1',),
+						'1' => array('saname' => '2.000m Lauf',		'mindLeistung' => '740', 'ml1' => '740', 'ml2' => '740', 'ml3' => '740',	'leistung' => '199',	'ergebnisart' => '1',),
+						'2' => array('saname' => '3.000m Lauf',		'mindLeistung' => '1130', 'ml1' => '1130', 'ml2' => '1130', 'ml3' => '1130',	'leistung' => '216',	'ergebnisart' => '1',),
+						'3' => array('saname' => '5.000m Inline Skating',	'mindLeistung' => '990', 'ml1' => '990', 'ml2' => '990', 'ml3' => '990',	'leistung' => '249',	'ergebnisart' => '1',),
+						'4' => array('saname' => '20km Rad- fahren',	'mindLeistung' => '3600', 'ml1' => '3600', 'ml2' => '3600', 'ml3' => '3600',	'leistung' => '712',	'ergebnisart' => '1',),
+						'5' => array('saname' => '600m Schwim- men',	'mindLeistung' => '1140', 'ml1' => '1140', 'ml2' => '1140', 'ml3' => '1140',	'leistung' => '481',	'ergebnisart' => '1',),
+						'6' => array('saname' => '5km Skilang- lauf',	'mindLeistung' => '1800', 'ml1' => '1800', 'ml2' => '1800', 'ml3' => '1800',	'leistung' => '711',	'ergebnisart' => '1',),
+				),
+		);
+		
+		
+		
+		
+		$erg = array(
+			28 => array(
+				'info' => array(
+					'schulname' => 'Testschule',
+					'schulnummer' => '9013',
+					'altersgruppe' => 'weiblich 16/17 (Jahrgänge: 1995-1996)',
+					'altersgruppe_kurz' => 'AG_17w',
+				),
+					
+				'gruppen' => $gruppen,
+				'schueler' => $schueler,
+			), 
+		);
+		return $erg;
 	}
 }
 ?>

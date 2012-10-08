@@ -3,6 +3,9 @@ class ImportText{
 	var $lang = null;
 	var $lang_file = "lib/locallang_import.xml";
 	var $tbl_schueler = 'tx_blsvsa2013_domain_model_schueler';
+	var $errors;
+	var $good = null;
+	var $bad = null;
 	
 	/**
 	 * Konstruktor
@@ -16,6 +19,8 @@ class ImportText{
 	
 		// cObj instanzieren
 		$this->cObj = t3lib_div::makeInstance('tslib_cObj');
+		
+		$this->errors = array();
 	}
 	
 	/**
@@ -50,25 +55,28 @@ class ImportText{
 		$import_func = $this->getImportFunc($sarray[0]);
 	
 		// Zeilen interpretieren
-		$count = 0;
-		$good = array();
-		$bad = array();
+		$this->good = array();
+		$this->bad = array();
 		foreach($sarray as $szeile) {
 			if (!empty($szeile)) {
 				$count++;
 				$sdaten = array();
 				if ($this->$import_func($szeile, $sdaten) == true) {
-					$hash = $this->getSchuelerHash($sdaten);
-					$good[$hash] = $sdaten;
+					$this->good[] = $sdaten;
 				} else {
-					$bad[] = $sdaten;
+					$this->bad[] = $sdaten;
 				}
 			}
 		}
 	
-		// Funktionsergebnis zusammenfassen und Rueckgabe
-		$ret = compact('good', 'bad', 'count');
-		return $ret;
+		if (!empty($this->bad)){
+			$res = -1;	// -1: Fehler
+		} else if (!empty($this->good)){
+			$res = 1;	// 1: kein Fehler
+		} else {
+			$res = 0;	// 0: keine Daten
+		}
+		return $res;
 	}
 	
 	/**
@@ -144,19 +152,19 @@ class ImportText{
 		$count = count($sdaten0);
 		if ($count!=6)	{
 			if ($count>6) {
-				$fehler[] = $this->lang->getLL('err_too_many_fields');
+				$fehler[] = 'err_too_many_fields';
 			} else {
-				$fehler[] = $this->lang->getLL('err_too_less_fields');
+				$fehler[] = 'err_too_less_fields';
 			}
 		} else {
 			$sdaten = array(
-					'vorname' => trim($this->getSchuelerFeldText($sdaten0[0], $fehler, $this->lang->getLL('field_firstname'))),
-					'name' => trim($this->getSchuelerFeldText($sdaten0[1], $fehler, $this->lang->getLL('field_lastname'))),
+					'vorname' => trim($this->getSchuelerFeldText($sdaten0[0], $fehler, 'field_firstname')),
+					'name' => trim($this->getSchuelerFeldText($sdaten0[1], $fehler, 'field_lastname')),
 					'geburtstag' => trim($this->getSchuelerFeldDatum($sdaten0[2], $fehler)),
 					'geschlecht' => trim($this->getSchuelerFeldGeschlecht($sdaten0[3], $fehler)),
-					'klasse' => trim($this->getSchuelerFeldText($sdaten0[4], $fehler, $this->lang->getLL('field_class'))),
+					'klasse' => trim($this->getSchuelerFeldText($sdaten0[4], $fehler, 'field_class')),
 					'punktegesamt' => 4,
-					'anz_teilnahmen' => trim($this->getSchuelerFeldText($sdaten0[5], $fehler, $this->lang->getLL('field_anz_teilnahmen')))
+					'anz_teilnahmen' => trim($this->getSchuelerFeldText($sdaten0[5], $fehler, 'field_anz_teilnahmen'))
 			);
 		}
 			
@@ -184,23 +192,23 @@ class ImportText{
 		$count = count($sdaten0);
 		if ($count!=9)	{
 			if ($count>9) {
-				$fehler[] = $this->lang->getLL('err_too_many_fields');
+				$fehler[] = 'err_too_many_fields';
 			} else {
-				$fehler[] = $this->lang->getLL('err_too_less_fields');
+				$fehler[] = 'err_too_less_fields';
 			}
 		} else {
 			$nachname = array(
 					trim($sdaten0[3]), // Zusatz davor
-					trim($this->getSchuelerFeldText($sdaten0[1], $fehler, $this->lang->getLL('field_lastname'))), // Name
+					trim($this->getSchuelerFeldText($sdaten0[1], $fehler, 'field_lastname')), // Name
 					trim($sdaten0[4]) // Zusatz dahinter
 			);
 	
 			$sdaten = array(
-					'vorname' => trim($this->getSchuelerFeldText($sdaten0[2], $fehler, $this->lang->getLL('field_firstname'))),
+					'vorname' => trim($this->getSchuelerFeldText($sdaten0[2], $fehler, 'field_firstname')),
 					'name' => implode(' ', $nachname),
 					'geburtstag' => trim($this->getSchuelerFeldDatum($sdaten0[5], $fehler)),
 					'geschlecht' => trim($this->getSchuelerFeldGeschlecht($sdaten0[6], $fehler)),
-					'klasse' => trim($this->getSchuelerFeldText($sdaten0[7], $fehler, $this->lang->getLL('field_class'))),
+					'klasse' => trim($this->getSchuelerFeldText($sdaten0[7], $fehler, 'field_class')),
 			);
 		}
 			
@@ -225,7 +233,7 @@ class ImportText{
 	function getSchuelerFeldText($text, &$fehler='', $feld='') {
 		$erg = '';
 		if (empty($text)) {
-			$fehler[] = str_replace('###FELD###', $feld, $this->lang->getLL('err_empty_field'));
+			$fehler[] = 'err_empty_'. (!empty($feld)?$feld:'field');
 		} else {
 			$erg = $text;
 		}
@@ -241,7 +249,7 @@ class ImportText{
 	 */
 	function getSchuelerFeldDatum($datum, &$fehler='') {
 		$erg_datum = '';
-		$fehler_datum = str_replace('###DATUM###', htmlentities($datum), $this->lang->getLL('err_read_field_date'));
+		$fehler_datum = 'err_read_field_date';
 	
 	
 		// Jahreszahl zu Datum ergaenzen
@@ -296,84 +304,43 @@ class ImportText{
 		} else if (in_array($geschlecht, $maennlich)) {
 			$erg_geschlecht = 1;
 		} else {
-			$fehler[] = str_replace('###GESCHLECHT###', htmlentities($geschlecht), $this->lang->getLL('err_read_field_gender'));
+			$fehler[] = 'err_read_field_gender';
 		}
 		return $erg_geschlecht;
 	}
 
 	
-	
-	
 	/**
-	 * Neue Schueler einer Schule ermitteln
-	 *
-	 * @param array $schulnummer Schulnummer
-	 * @param array $schuelerImp Schueler aus Import
-	 * @return array Array mit den neuen Schuelern
+	 * Schueler aus String in SchuelerObjekt umwandeln
+	 * 
+	 * @param array $schuelerstring String mit Schuelern
+	 * @param object $schule Schul Objekt
+	 * @param object $feuser Fe_user Objekt
+	 * @param arrray $schuelers Array mit Schueler Objekten
+	 * @param array $errors Array mit Fehlern
+	 * @return integer
 	 */
-	function getSchuelerNeu($schulnummer, $schuelerImp) {
-		$schuelerHashArr = $this->getSchuelerHashArr($schulnummer);
-		
-		$schuelerNeu = array();
-		if (!empty($schuelerImp)) {
-			foreach ($schuelerImp as $schueler) {
-				$hash = $this->getSchuelerHash($schueler);
+	function getSchuelerFromString($schuelerstring, $schule, $feuser, &$schuelers, &$errors){
+		$res = $this->getSchuelerArray($schuelerstring);
 				
-				if (!in_array($hash, $schuelerHashArr)) {
-					$schuelerNeu[] = $schueler;
-				}
-			}
-		}
-		return $schuelerNeu;
+		$schuelers = $this->getSchuelers($this->good, $schule, $feuser);
+		$errors = $this->bad;
+		return $res;
 	}
 	
-	/**
-	 * Hash fuer eine Schuelerzeile erzeugen
-	 *
-	 * @param array $schueler Schueler-Array
-	 * @return string SchuelerHash
-	 */
-	function getSchuelerHash($schueler) {
-		$zeile = array($schueler['name'], $schueler['vorname'], $schueler['geschlecht'], $schueler['geburtstag'], $schueler['klasse']);
-		$hash = strtolower(implode(',',$zeile));
-		return $hash;
-	}
-	
-	/**
-	 * returns array with schueler hashes from schule
-	 *
-	 * @param object $object object mit Hashfunktion
-	 * @param string $hashfunc Hashfunktion
-	 * @param integer $schulnummer Schulnummer
-	 * @return array
-	 */
-	public function getSchuelerHashArr($schulnummer){
-		$schueler_arr = array();
-	
-		$query = "SELECT * FROM {$this->tbl_schueler} WHERE schule={$schulnummer}";
-		$res = $GLOBALS['TYPO3_DB']->sql_query($query);
-		if (!$res) { die(mysql_error()); }
-	
-		while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
-			$schueler_arr[] = $this->getSchuelerHash($row);
-		}
-		$GLOBALS['TYPO3_DB']->sql_free_result($res);
-		return $schueler_arr;
-	}
-
 	/**
 	 * Schuelerobjekt aus Array erzeugen
 	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Schule $schule Schule
 	 * @param array $schuelerArr Array mit Schueler
+	 * @param Tx_Blsvsa2013_Domain_Model_Schule $schule Schule
 	 * @param Tx_Blsvsa2013_Domain_Model_Feuser $feuser aktueller Bearbeiter
 	 * @return array
 	 */
-	function getSchuelers($schule, $schuelerArr, $feuser) {
+	function getSchuelers($schuelerArr, $schule, $feuser) {
 
 		$schuelers = array();
 		foreach($schuelerArr as $key=>$schueler){
-t3lib_utility_Debug::debug($schueler, 'schueler');
+//t3lib_utility_Debug::debug($schueler, 'schueler');
 			if(!empty($schueler)) {
 				$newSchueler = t3lib_div::makeInstance('Tx_Blsvsa2013_Domain_Model_Schueler');
 				$newSchueler->setFeuser($feuser);

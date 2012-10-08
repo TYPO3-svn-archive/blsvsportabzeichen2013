@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for classes 'tx_blsvschulwettbewerb_export_'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="col_gid_schule">Schulnummer</label>
+			<label index="col_vorname">Vorname</label>
+			<label index="col_name">Nachname</label>
+			<label index="col_geburtstag">Geb.Datum</label>
+			<label index="col_geschlecht">Geschlecht</label>
+			<label index="col_klasse">Klasse</label>
+			<label index="col_abzeichen">Abzeichen</label>
+			<label index="col_sag1">SAG1</label>
+			<label index="col_sag2">SAG2</label>
+			<label index="col_sag3">SAG3</label>
+			<label index="col_sag4">SAG4</label>
+			<label index="col_sag5">SAG5</label>
+			<label index="col_ges">Gesamt</label>
+			<label index="geschlecht_1">m</label>
+			<label index="geschlecht_2">w</label>
+
+			<label index="qry_teilnehmer_schule_bezirk">Bezirk</label>
+			<label index="qry_teilnehmer_schule_kreis">Kreis</label>
+			<label index="qry_teilnehmer_schule_nummer">Schulnummer</label>
+			<label index="qry_teilnehmer_schule_name">Schule</label>
+			<label index="qry_teilnehmer_klasse_name">Klasse</label>
+			<label index="qry_teilnehmer_schueler_anzahl">Teilnehmer</label>
+			<label index="qry_teilnehmer_schule_id">-</label>
+			<label index="qry_teilnehmer_klasse_id">-</label>
+		</languageKey>
+	</data>
+</T3locallang>

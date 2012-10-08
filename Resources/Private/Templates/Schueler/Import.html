@@ -2,31 +2,34 @@
 
 <f:section name="main">
 
-
-<script language="JavaScript" type="text/javascript">
-<f:if condition="{importInfo.fehler} > 0">
-	<f:then>
-		alert('Fehlerhafte Zeilen {importInfo.fehler}.\nEs wurden {importInfo.neu} von {importInfo.gesamt} Zeilen importiert');
-	</f:then>
-	<f:else>
-		<f:if condition="{importInfo.neu} > 0">
-			<f:then>
-				alert('Es wurden {importInfo.neu} von {importInfo.gesamt} Zeilen importiert');
-			</f:then>
-			<f:else>
-			<f:if condition="{importInfo.gesamt} > 0">
-				<f:then>
-					alert('Es wurden keine (von insgesamt {importInfo.gesamt}) Zeilen importiert');
-				</f:then>
-			</f:if>
-		</f:else>
-		</f:if>
-	</f:else>
-</f:if>
-</script>
-
-
 <h1>Import Schueler</h1>
+
+
+
+
+<f:if condition="{importInfo.erg}>-1">
+	Es wurden {importInfo.importiert} Schueler importiert. {importInfo.vorhanden} Schueler wurden ignoriert, da schon vorhanden.<br /><br />
+</f:if>
+
+
+<f:if condition="{importInfo.erg}==-1">
+	<b>Beim Import traten Fehler auf.</b><br />
+	Es wurden {importInfo.importiert} Schueler importiert. {importInfo.vorhanden} Schueler wurden ignoriert, da schon vorhanden.<br /><br />
+
+	<b>Fehler:</b><br />
+	<f:for each="{importInfo.errors}" as="line">
+		<b>{line.zeile}</b><br />
+		<f:for each="{line.fehler}" as="fehler">
+			<f:translate key="tx_blsvsa2013_lib_import.error_{fehler}">{fehler}</f:translate>
+			<br />
+		</f:for>
+	</f:for>
+</f:if>
+
+
+
+
+
 
 <f:form action="import" name="reqdata">
 	<f:form.textarea cols="20" rows="5" property="schuelerstring" /><br />
@@ -34,12 +37,5 @@
 </f:form>
 
 
-
-
-Fehler:
-<f:translate key="tx_blsvsa2013_domain_model_schueler" />
-<f:translate key="tx_blsvsa2013_lib_import.error{errornumber}" />
-<f:translate key="test">test_</f:translate>
-hallo
 </f:section>
 

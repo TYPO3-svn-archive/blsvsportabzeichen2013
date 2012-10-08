@@ -21,13 +21,13 @@ $EM_CONF[$_EXTKEY] = array (
 	'priority' => '',
 	'module' => '',
 	'state' => 'alpha',
-	'internal' => 'berti: schulen fertig',
+	'internal' => 'Martin: export - addFormats',
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '0.2.2',
+	'version' => '0.2.6',
 	'constraints' => 
 	array (
 		'depends' => 

@@ -106,18 +106,32 @@ $TCA['tx_blsvsa2013_domain_model_sportarten'] = array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.sportartgruppe',
 			'config' => array(
-				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
+				'type' => 'select',
+				'items' => array (
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.sportartgruppe.1', '1'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.sportartgruppe.2', '2'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.sportartgruppe.3', '3'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.sportartgruppe.4', '4'),
+					),
+				'size' => 1,
+				'eval' => '1'
 			),
 		),
 		'ergebnisart' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.ergebnisart',
 			'config' => array(
-				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
+				'type' => 'select',
+					'items' => array (
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.ergebnisart.1', '1'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.ergebnisart.2', '2'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.ergebnisart.5', '5'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.ergebnisart.3', '3'),
+							array('LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_sportarten.ergebnisart.4', '4'),
+												
+					),
+				'size' => 1,
+				'maxitems' => 1,
 			),
 		),
 		'reihenfolge' => array(

@@ -19,32 +19,17 @@
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.strasse">
 				<source>Strasse</source>
 			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phstrasse">
-				<source>Name der Strasse</source>
-			</trans-unit>			
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.plz">
 				<source>Postleitzahl</source>
 			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phplz">
-				<source>PLZ</source>
-			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.ort">
-				<source>Ort</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phort">
 				<source>Ort</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.telefon">
 				<source>Telefonnummer</source>
 			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phtelefon">
-				<source>Telefon</source>
-			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.email">
 				<source>E-Mail-Adresse</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phemail">
-				<source>ihrname@domain.de</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bezirk">
 				<source>Bezirk</source>
@@ -55,82 +40,32 @@
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.blsvkreis">
 				<source>BLSV-Kreis</source>
 			</trans-unit>
-			
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bankverbindung">
-				<source>Bankverbindung</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bankverbindunghilfe">
-				<source>Geben Sie hier die Bankverbindung der Schule ein, auf die das gewonnene Geld überwiesen werden soll</source>
-			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bankempfaenger">
 				<source>Bankempfänger</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phbankempfaenger">
-				<source>Name des Bankempfängers</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.kto">
 				<source>Kontonummer</source>
 			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phkto">
-				<source>KTO</source>
-			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.blz">
 				<source>Bankleitzahl</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phblz">
-				<source>BLZ</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.verwendungszweck">
 				<source>Verwendungszweck</source>
 			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phverwendungszweck">
-				<source>Verwendungszweck</source>
-			</trans-unit>
-			
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.wettbewerbgrundschulen">
-				<source>Wettbewerb "Mein Sportabzeichen" für Grundschulen</source>
-			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.grundschulen">
-				<source>Teilnahme *</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.grundschulenhilfe">
-				<source>Es muss mindestens ein Wettbewerb zur Teilnahme markiert sein</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulwettbewerbhead">
-				<source>Wettbewerb "Sportabzeichen-Schulwettbewerb"</source>
+				<source>Grundschulen</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulwettbewerb">
-				<source>Teilnahme</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulwettbewerbhilfe">
-				<source>Es muss mindestens ein Wettbewerb zur Teilnahme markiert sein</source>
+				<source>Schulwettbewerb</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzschueler">
-				<source>Gesamtschülerzahl der Schule 3. und 4. Klasse</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzschuelerhilfe">
-				<source>Gesamtzahl der Schüler der 3. und 4. Jahrgangsstufe abzüglich der vom Sportunterricht befreiten Schüler. Stichtag: 1. Juni des laufenden Schuljahres</source>
+				<source>Anzahl Schüler</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigt">
-				<source>Gesamtschülerzahl der Schule ab 5. Klassen</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigthilfe">
-				<source>Gesamtzahl der Schüler ab der 5. Jahrgangsstufe abzüglich der vom Sportunterricht befreiten Schüler. Abiturienten werden bei der Schülerzahl mitgerechnet. Stichtag: 1. Juni des laufenden Schuljahres</source>
+				<source>Anzahl teilnahmeberechtigter Schüler</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzbestanden">
-				<source>Anzahl bestandener Schüler</source>
-			</trans-unit>
-			
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.angabengespeichert">
-				<source>Ihre Angebaben wurden gespeichert!!!!</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_schulen.keinwettbwerbangegeben">
-				<source><![CDATA[
-					Wichtiger Hinweis:
-					Es fehlen die Angaben zu denen mit * markierten Feldern bzw. die Auswahl wenigstens einer Wettbewerbsteilnahme.
- 					Diese Angaben sind erforderlich bevor im Menüpunkt Ergebnisse/Schüler Excel-Formulare geholt werden können.
- 				]]>	
- 				</source>
+				<source>Anzahl bestandene Schüler</source>
 			</trans-unit>
 			<trans-unit id="tx_blsvsa2013_domain_model_schulen.fegroup">
 				<source>fe_group</source>
@@ -266,21 +201,6 @@
 			<trans-unit id="tx_blsvsa2013_domain_model_feuser">
 				<source>Feuser</source>
 			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_feuser.uid">
-				<source>UID</source>
-			</trans-unit>
-			
-			<trans-unit id="tx_blsvsa2013_domain_model_feuser.kuerzel">
-				<source>Schulnr_Kürzel</source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_feuser.name">
-				<source>Name des lehrer </source>
-			</trans-unit>
-			<trans-unit id="tx_blsvsa2013_domain_model_feuser.passwort">
-				<source>Passwort</source>
-			</trans-unit>
-		
-			
 			
 			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle">
 				<source>Leistungstabelle</source>
@@ -337,10 +257,15 @@
 				<source>Fegroups</source>
 			</trans-unit>
 
-
-			<trans-unit id="tx_blsvsa2013_lib_import.test"><source>Test123</source></trans-unit>
-			<trans-unit id="tx_blsvsa2013_lib_import.error1"><source>Fehler 1</source></trans-unit>
-			
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_too_many_fields"><source>Zeile kann nicht gelesen werden: zu viele Felder</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_too_less_fields"><source>Zeile kann nicht gelesen werden: zu wenige Felder</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_empty_field"><source>Feld darf nicht leer sein</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_empty_field_lastname"><source>Nachname darf nicht leer sein</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_empty_field_firstname"><source>Vorname darf nicht leer sein</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_empty_field_class"><source>Klasse darf nicht leer sein</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_empty_field"><source>Feld darf nicht leer sein</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_read_field_date"><source>Datum kann nicht gelesen werden</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error_err_read_field_gender"><source>Geschlecht kann nicht gelesen werden</source></trans-unit>
 		</body>
 	</file>
 </xliff>

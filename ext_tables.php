@@ -132,7 +132,7 @@ t3lib_extMgm::allowTableOnStandardPages('tx_blsvsa2013_domain_model_leistungstab
 $TCA['tx_blsvsa2013_domain_model_leistungstabelle'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_leistungstabelle',
-		'label' => 'leistungbronze',
+		'label' => 'sportart',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',

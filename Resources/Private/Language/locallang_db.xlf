@@ -234,9 +234,38 @@
 			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.sportartgruppe">
 				<source>Sportartgruppe</source>
 			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.sportartgruppe.1">
+				<source>Ausdauer</source>
+			</trans-unit>
+				<trans-unit id="tx_blsvsa2013_domain_model_sportarten.sportartgruppe.2">
+				<source>Kraft</source>
+			</trans-unit>
+				<trans-unit id="tx_blsvsa2013_domain_model_sportarten.sportartgruppe.3">
+				<source>Schnelligkeit</source>
+			</trans-unit>
+				<trans-unit id="tx_blsvsa2013_domain_model_sportarten.sportartgruppe.4">
+				<source>Koordination</source>
+			</trans-unit>		
 			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart">
 				<source>Ergebnisart</source>
 			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart.1">
+				<source>Zeit 1 schneller als  (mm,ss): Minuten:Sekunden</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart.2">
+				<source>Zeit 2 schneller als (ss,zz): Sekunde,Zentel </source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart.3">
+				<source>Länge weiter als (mm,cc): Meter,Zentimeter</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart.4">
+				<source>Punkte/Anzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart.5">
+				<source>Zeit 3 länger als  (mm,ss): Minuten:Sekunden </source>
+			</trans-unit>
+			
+	
 			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.reihenfolge">
 				<source>Reihenfolge</source>
 			</trans-unit>
