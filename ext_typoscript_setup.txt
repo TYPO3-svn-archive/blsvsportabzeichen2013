@@ -1,0 +1,20 @@
+config.tx_extbase{
+    persistence{
+        classes{
+
+            Tx_Extbase_Domain_Model_FrontendUser {
+                subclasses {
+                    Tx_Blsvsa2013_Feuser = Tx_Blsvsa2013_Domain_Model_Feuser
+					
+          		}
+            }
+            Tx_Blsvsa2013_Domain_Model_Feuser {
+                mapping {
+                    tableName = fe_users
+                    recordType = Tx_Blsvsa2013_Feuser
+                }
+            }
+            
+    	}
+    }
+}

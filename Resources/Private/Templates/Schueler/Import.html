@@ -1,0 +1,45 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+
+<script language="JavaScript" type="text/javascript">
+<f:if condition="{importInfo.fehler} > 0">
+	<f:then>
+		alert('Fehlerhafte Zeilen {importInfo.fehler}.\nEs wurden {importInfo.neu} von {importInfo.gesamt} Zeilen importiert');
+	</f:then>
+	<f:else>
+		<f:if condition="{importInfo.neu} > 0">
+			<f:then>
+				alert('Es wurden {importInfo.neu} von {importInfo.gesamt} Zeilen importiert');
+			</f:then>
+			<f:else>
+			<f:if condition="{importInfo.gesamt} > 0">
+				<f:then>
+					alert('Es wurden keine (von insgesamt {importInfo.gesamt}) Zeilen importiert');
+				</f:then>
+			</f:if>
+		</f:else>
+		</f:if>
+	</f:else>
+</f:if>
+</script>
+
+
+<h1>Import Schueler</h1>
+
+<f:form action="import" name="reqdata">
+	<f:form.textarea cols="20" rows="5" property="schuelerstring" /><br />
+	<f:form.submit value="Import" />
+</f:form>
+
+
+
+
+Fehler:
+<f:translate key="tx_blsvsa2013_domain_model_schueler" />
+<f:translate key="tx_blsvsa2013_lib_import.error{errornumber}" />
+<f:translate key="test">test_</f:translate>
+hallo
+</f:section>
+

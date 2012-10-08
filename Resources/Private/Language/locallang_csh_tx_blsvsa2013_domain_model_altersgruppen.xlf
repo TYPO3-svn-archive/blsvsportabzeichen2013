@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-09-32T11:04:32Z" product-name="blsvsa2013">
+		<header/>
+		<body>
+
+			<trans-unit id="bezeichnung.description">
+				<source>Bezeichnung</source>
+			</trans-unit>
+			<trans-unit id="geschlecht.description">
+				<source>Geschlecht</source>
+			</trans-unit>
+			<trans-unit id="altervon.description">
+				<source>Alter von</source>
+			</trans-unit>
+			<trans-unit id="alterbis.description">
+				<source>Alter bis</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

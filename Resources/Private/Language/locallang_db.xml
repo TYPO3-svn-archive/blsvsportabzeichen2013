@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'blsvsa2013'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_blsvsa2013_domain_model_schulen">Schulen</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.schulnummer">Schulnummer</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.name">Name</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.schulart">Schulart</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.strasse">Strasse</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.plz">Plz</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.ort">Ort</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.telefon">Telefon</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.email">Email</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.bezirk">Bezirk</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.kreis">Kreis</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.blsvkreis">Blsvkreis</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.bankempfaenger">Bankempfaenger</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.kto">Kto</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.blz">Blz</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.verwendungszweck">Verwendungszweck</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.grundschulen">Grundschulen</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.schulwettbewerb">Schulwettbewerb</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.anzschueler">Anzschueler</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigt">Anzteilnahmeberechtigt</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.anzbestanden">Anzbestanden</label>
+			<label index="tx_blsvsa2013_domain_model_schulen.feuser">Feuser</label>
+
+			<label index="tx_blsvsa2013_domain_model_schueler">Schueler</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.vorname">Vorname</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.name">Name</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.geschlecht">Geschlecht</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.geburtstag">Geburtstag</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.anzteilnahmen">Anzteilnahmen</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.punktegesamt">Punktegesamt</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.urkundenart">Urkundenart</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.gedruckt">Gedruckt</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.drucktstamp">Drucktstamp</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.klasse">Klasse</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.grundschulwettbewerb">Grundschulwettbewerb</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.schwimmnachweis">Schwimmnachweis</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.gueltigbis">Gueltigbis</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistungstabelle1">Leistungstabelle1</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ablagedatum1">Ablagedatum1</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.pruefer1">Pruefer1</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ergebnis1">Ergebnis1</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.punkte1">Punkte1</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistungstabelle2">Leistungstabelle2</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ablagedatum2">Ablagedatum2</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.pruefer2">Pruefer2</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ergebnis2">Ergebnis2</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.punkte2">Punkte2</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistungstabelle3">Leistungstabelle3</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ablagedatum3">Ablagedatum3</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.pruefer3">Pruefer3</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ergebnis3">Ergebnis3</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.punkte3">Punkte3</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistungstabelle4">Leistungstabelle4</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ablagedatum4">Ablagedatum4</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.pruefer4">Pruefer4</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.ergebnis4">Ergebnis4</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.punkte4">Punkte4</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.schule">Schule</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistung1">Leistung1</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistung2">Leistung2</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistung3">Leistung3</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.leistung4">Leistung4</label>
+			<label index="tx_blsvsa2013_domain_model_schueler.feuser">Feuser</label>
+
+			<label index="tx_blsvsa2013_domain_model_feuser">Feuser</label>
+			<label index="tx_blsvsa2013_domain_model_feuser.schule">Schule</label>
+			<label index="fe_users.tx_extbase_type.Tx_Blsvsa2013_Feuser">Sportabzeichen online 2013 Feuser</label>
+			
+			<label index="tx_blsvsa2013_domain_model_leistungstabelle">Leistungstabelle</label>
+			<label index="tx_blsvsa2013_domain_model_leistungstabelle.leistungbronze">Leistungbronze</label>
+			<label index="tx_blsvsa2013_domain_model_leistungstabelle.leistungsilber">Leistungsilber</label>
+			<label index="tx_blsvsa2013_domain_model_leistungstabelle.leistunggold">Leistunggold</label>
+			<label index="tx_blsvsa2013_domain_model_leistungstabelle.sportart">Sportart</label>
+			<label index="tx_blsvsa2013_domain_model_leistungstabelle.altersgruppe">Altersgruppe</label>
+
+			<label index="tx_blsvsa2013_domain_model_sportarten">Sportarten</label>
+			<label index="tx_blsvsa2013_domain_model_sportarten.name">Name</label>
+			<label index="tx_blsvsa2013_domain_model_sportarten.sportartgruppe">Sportartgruppe</label>
+			<label index="tx_blsvsa2013_domain_model_sportarten.ergebnisart">Ergebnisart</label>
+			<label index="tx_blsvsa2013_domain_model_sportarten.reihenfolge">Reihenfolge</label>
+
+			<label index="tx_blsvsa2013_domain_model_altersgruppen">Altersgruppen</label>
+			<label index="tx_blsvsa2013_domain_model_altersgruppen.bezeichnung">Bezeichnung</label>
+			<label index="tx_blsvsa2013_domain_model_altersgruppen.geschlecht">Geschlecht</label>
+			<label index="tx_blsvsa2013_domain_model_altersgruppen.altervon">Altervon</label>
+			<label index="tx_blsvsa2013_domain_model_altersgruppen.alterbis">Alterbis</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

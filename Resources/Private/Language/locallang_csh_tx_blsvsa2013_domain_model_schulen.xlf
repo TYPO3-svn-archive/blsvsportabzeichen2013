@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-09-32T11:04:32Z" product-name="blsvsa2013">
+		<header/>
+		<body>
+
+			<trans-unit id="schulnummer.description">
+				<source>Schulnummer</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>Schulname</source>
+			</trans-unit>
+			<trans-unit id="schulart.description">
+				<source>Schulart</source>
+			</trans-unit>
+			<trans-unit id="strasse.description">
+				<source>Strasse</source>
+			</trans-unit>
+			<trans-unit id="plz.description">
+				<source>Postleitzahl</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="telefon.description">
+				<source>Telefonnummer</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>E-Mail-Adresse</source>
+			</trans-unit>
+			<trans-unit id="bezirk.description">
+				<source>Bezirk</source>
+			</trans-unit>
+			<trans-unit id="kreis.description">
+				<source>Kreis</source>
+			</trans-unit>
+			<trans-unit id="blsvkreis.description">
+				<source>BLSV-Kreis</source>
+			</trans-unit>
+			<trans-unit id="bankempfaenger.description">
+				<source>Bankempfänger</source>
+			</trans-unit>
+			<trans-unit id="kto.description">
+				<source>Kontonummer</source>
+			</trans-unit>
+			<trans-unit id="blz.description">
+				<source>Bankleitzahl</source>
+			</trans-unit>
+			<trans-unit id="verwendungszweck.description">
+				<source>Verwendungszweck</source>
+			</trans-unit>
+			<trans-unit id="grundschulen.description">
+				<source>Grundschulen</source>
+			</trans-unit>
+			<trans-unit id="schulwettbewerb.description">
+				<source>Schulwettbewerb</source>
+			</trans-unit>
+			<trans-unit id="anzschueler.description">
+				<source>Anzahl Schüler</source>
+			</trans-unit>
+			<trans-unit id="anzteilnahmeberechtigt.description">
+				<source>Anzahl teilnahmeberechtigter Schüler</source>
+			</trans-unit>
+			<trans-unit id="anzbestanden.description">
+				<source>Anzahl bestandene Schüler</source>
+			</trans-unit>
+			<trans-unit id="fegroup.description">
+				<source>fe_group</source>
+			</trans-unit>
+			<trans-unit id="feuser.description">
+				<source>fe_user</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

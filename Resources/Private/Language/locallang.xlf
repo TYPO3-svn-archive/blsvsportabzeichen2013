@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-09-32T11:04:32Z" product-name="blsvsa2013">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen">
+				<source>Schulen</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulnummer">
+				<source>Schulnummer</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.name">
+				<source>Schulname</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulart">
+				<source>Schulart</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.strasse">
+				<source>Strasse</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phstrasse">
+				<source>Name der Strasse</source>
+			</trans-unit>			
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.plz">
+				<source>Postleitzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phplz">
+				<source>PLZ</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.telefon">
+				<source>Telefonnummer</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phtelefon">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.email">
+				<source>E-Mail-Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phemail">
+				<source>ihrname@domain.de</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bezirk">
+				<source>Bezirk</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.kreis">
+				<source>Kreis</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.blsvkreis">
+				<source>BLSV-Kreis</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bankverbindung">
+				<source>Bankverbindung</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bankverbindunghilfe">
+				<source>Geben Sie hier die Bankverbindung der Schule ein, auf die das gewonnene Geld überwiesen werden soll</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.bankempfaenger">
+				<source>Bankempfänger</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phbankempfaenger">
+				<source>Name des Bankempfängers</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.kto">
+				<source>Kontonummer</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phkto">
+				<source>KTO</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.blz">
+				<source>Bankleitzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phblz">
+				<source>BLZ</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.verwendungszweck">
+				<source>Verwendungszweck</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.phverwendungszweck">
+				<source>Verwendungszweck</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.wettbewerbgrundschulen">
+				<source>Wettbewerb "Mein Sportabzeichen" für Grundschulen</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.grundschulen">
+				<source>Teilnahme *</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.grundschulenhilfe">
+				<source>Es muss mindestens ein Wettbewerb zur Teilnahme markiert sein</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulwettbewerbhead">
+				<source>Wettbewerb "Sportabzeichen-Schulwettbewerb"</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulwettbewerb">
+				<source>Teilnahme</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.schulwettbewerbhilfe">
+				<source>Es muss mindestens ein Wettbewerb zur Teilnahme markiert sein</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzschueler">
+				<source>Gesamtschülerzahl der Schule 3. und 4. Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzschuelerhilfe">
+				<source>Gesamtzahl der Schüler der 3. und 4. Jahrgangsstufe abzüglich der vom Sportunterricht befreiten Schüler. Stichtag: 1. Juni des laufenden Schuljahres</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigt">
+				<source>Gesamtschülerzahl der Schule ab 5. Klassen</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigthilfe">
+				<source>Gesamtzahl der Schüler ab der 5. Jahrgangsstufe abzüglich der vom Sportunterricht befreiten Schüler. Abiturienten werden bei der Schülerzahl mitgerechnet. Stichtag: 1. Juni des laufenden Schuljahres</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.anzbestanden">
+				<source>Anzahl bestandener Schüler</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.angabengespeichert">
+				<source>Ihre Angebaben wurden gespeichert!!!!</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.keinwettbwerbangegeben">
+				<source><![CDATA[
+					Wichtiger Hinweis:
+					Es fehlen die Angaben zu denen mit * markierten Feldern bzw. die Auswahl wenigstens einer Wettbewerbsteilnahme.
+ 					Diese Angaben sind erforderlich bevor im Menüpunkt Ergebnisse/Schüler Excel-Formulare geholt werden können.
+ 				]]>	
+ 				</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.fegroup">
+				<source>fe_group</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schulen.feuser">
+				<source>Benutzer</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler">
+				<source>Schueler</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.vorname">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.geschlecht">
+				<source>Geschlecht</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.geburtstag">
+				<source>Geburtstag</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.anzteilnahmen">
+				<source>Anzahl Teilnahmen</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.punktegesamt">
+				<source>Punkte gesamt</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.urkundenart">
+				<source>Urkundenart</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.gedruckt">
+				<source>gedruckt</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.drucktstamp">
+				<source>Drucktimestamp</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.klasse">
+				<source>Klasse</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.grundschulwettbewerb">
+				<source>Grundschulwettbewerb</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.schwimmnachweis">
+				<source>Schwimmnachweis</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.gueltigbis">
+				<source>gültig bis</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistungstabelle1">
+				<source>Leistungstabelle Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ablagedatum1">
+				<source>Ablagedatum Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.pruefer1">
+				<source>Prüfer Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ergebnis1">
+				<source>Ergebnis Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.punkte1">
+				<source>Punkte Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistungstabelle2">
+				<source>Leistungstabelle Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ablagedatum2">
+				<source>Ablagedatum Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.pruefer2">
+				<source>Prüfer Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ergebnis2">
+				<source>Ergebnis Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.punkte2">
+				<source>Punkte Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistungstabelle3">
+				<source>Leistungstabelle Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ablagedatum3">
+				<source>Ablagedatum Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.pruefer3">
+				<source>Prüfer Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ergebnis3">
+				<source>Ergebnis Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.punkte3">
+				<source>Punkte Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistungstabelle4">
+				<source>Leistungstabelle Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ablagedatum4">
+				<source>Ablagedatum Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.pruefer4">
+				<source>Prüfer Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.ergebnis4">
+				<source>Ergebnis Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.punkte4">
+				<source>Punkte Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.schule">
+				<source>Schule</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistung1">
+				<source>Leistung 1</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistung2">
+				<source>Leistung 2</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistung3">
+				<source>Leistung 3</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.leistung4">
+				<source>Leistung 4</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.fegroup">
+				<source>fe_group</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_schueler.feuser">
+				<source>fe_user</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_feuser">
+				<source>Feuser</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_feuser.uid">
+				<source>UID</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_feuser.kuerzel">
+				<source>Schulnr_Kürzel</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_feuser.name">
+				<source>Name des lehrer </source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_feuser.passwort">
+				<source>Passwort</source>
+			</trans-unit>
+		
+			
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle">
+				<source>Leistungstabelle</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle.leistungbronze">
+				<source>Leistung Bronze</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle.leistungsilber">
+				<source>Leistung Silber</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle.leistunggold">
+				<source>Leistung Gold</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle.sportart">
+				<source>Sportart</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_leistungstabelle.altersgruppe">
+				<source>Altersgruppe</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten">
+				<source>Sportarten</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.name">
+				<source>Sportartname</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.sportartgruppe">
+				<source>Sportartgruppe</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.ergebnisart">
+				<source>Ergebnisart</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_sportarten.reihenfolge">
+				<source>Reihenfolge</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_altersgruppen">
+				<source>Altersgruppen</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_altersgruppen.bezeichnung">
+				<source>Bezeichnung</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_altersgruppen.geschlecht">
+				<source>Geschlecht</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_altersgruppen.altervon">
+				<source>Alter von</source>
+			</trans-unit>
+			<trans-unit id="tx_blsvsa2013_domain_model_altersgruppen.alterbis">
+				<source>Alter bis</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_blsvsa2013_domain_model_fegroups">
+				<source>Fegroups</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_blsvsa2013_lib_import.test"><source>Test123</source></trans-unit>
+			<trans-unit id="tx_blsvsa2013_lib_import.error1"><source>Fehler 1</source></trans-unit>
+			
+		</body>
+	</file>
+</xliff>

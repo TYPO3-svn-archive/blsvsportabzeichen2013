@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-09-32T11:04:32Z" product-name="blsvsa2013">
+		<header/>
+		<body>
+
+			<trans-unit id="vorname.description">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="geschlecht.description">
+				<source>Geschlecht</source>
+			</trans-unit>
+			<trans-unit id="geburtstag.description">
+				<source>Geburtstag</source>
+			</trans-unit>
+			<trans-unit id="anzteilnahmen.description">
+				<source>Anzahl Teilnahmen</source>
+			</trans-unit>
+			<trans-unit id="punktegesamt.description">
+				<source>Punkte gesamt</source>
+			</trans-unit>
+			<trans-unit id="urkundenart.description">
+				<source>Urkundenart</source>
+			</trans-unit>
+			<trans-unit id="gedruckt.description">
+				<source>gedruckt</source>
+			</trans-unit>
+			<trans-unit id="drucktstamp.description">
+				<source>Drucktimestamp</source>
+			</trans-unit>
+			<trans-unit id="klasse.description">
+				<source>Klasse</source>
+			</trans-unit>
+			<trans-unit id="grundschulwettbewerb.description">
+				<source>Grundschulwettbewerb</source>
+			</trans-unit>
+			<trans-unit id="schwimmnachweis.description">
+				<source>Schwimmnachweis</source>
+			</trans-unit>
+			<trans-unit id="gueltigbis.description">
+				<source>gültig bis</source>
+			</trans-unit>
+			<trans-unit id="leistungstabelle1.description">
+				<source>Leistungstabelle Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="ablagedatum1.description">
+				<source>Ablagedatum Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="pruefer1.description">
+				<source>Prüfer Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="ergebnis1.description">
+				<source>Ergebnis Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="punkte1.description">
+				<source>Punkte Gruppe 1</source>
+			</trans-unit>
+			<trans-unit id="leistungstabelle2.description">
+				<source>Leistungstabelle Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="ablagedatum2.description">
+				<source>Ablagedatum Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="pruefer2.description">
+				<source>Prüfer Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="ergebnis2.description">
+				<source>Ergebnis Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="punkte2.description">
+				<source>Punkte Gruppe 2</source>
+			</trans-unit>
+			<trans-unit id="leistungstabelle3.description">
+				<source>Leistungstabelle Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="ablagedatum3.description">
+				<source>Ablagedatum Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="pruefer3.description">
+				<source>Prüfer Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="ergebnis3.description">
+				<source>Ergebnis Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="punkte3.description">
+				<source>Punkte Gruppe 3</source>
+			</trans-unit>
+			<trans-unit id="leistungstabelle4.description">
+				<source>Leistungstabelle Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="ablagedatum4.description">
+				<source>Ablagedatum Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="pruefer4.description">
+				<source>Prüfer Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="ergebnis4.description">
+				<source>Ergebnis Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="punkte4.description">
+				<source>Punkte Gruppe 4</source>
+			</trans-unit>
+			<trans-unit id="schule.description">
+				<source>Schule</source>
+			</trans-unit>
+			<trans-unit id="leistung1.description">
+				<source>Leistung 1</source>
+			</trans-unit>
+			<trans-unit id="leistung2.description">
+				<source>Leistung 2</source>
+			</trans-unit>
+			<trans-unit id="leistung3.description">
+				<source>Leistung 3</source>
+			</trans-unit>
+			<trans-unit id="leistung4.description">
+				<source>Leistung 4</source>
+			</trans-unit>
+			<trans-unit id="fegroup.description">
+				<source>fe_group</source>
+			</trans-unit>
+			<trans-unit id="feuser.description">
+				<source>fe_user</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
