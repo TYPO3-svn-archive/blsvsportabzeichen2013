@@ -11,7 +11,7 @@
 ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-	'title' => 'Sportabzeichen online 2013',
+	'title' => 'Sportabzeichen Online 2013',
 	'description' => '',
 	'category' => 'plugin',
 	'author' => 'Berti Golf, Martin Gonschor',
