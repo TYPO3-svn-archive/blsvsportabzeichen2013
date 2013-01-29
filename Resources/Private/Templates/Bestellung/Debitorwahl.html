@@ -1,0 +1,51 @@
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:form action="debitorwahl" name="debitorwahl" controller="Bestellung" object="{debitorwahl}">
+ 	<fieldset>
+    	<legend>Debitorsuche</legend>
+			<f:form.textfield property="debitorsuche" type="text" placeholder="Debitor" /> 
+			<f:form.select property="institutionen" options="{institutionenOptions}" />
+			<f:form.select property="bezirk"  options="{bezirkeOptions}"  />
+	
+			<input type="submit" value="erneut suchen" />
+	</fieldset>
+</f:form>
+<h1>Debitor für Bestellung auswählen</h1>
+<f:flashMessages />
+		
+		<f:render partial="FormErrors" />
+	<fieldset class="neuanlegenrechts">
+		<legend>Debitor neu anlegen</legend>
+		
+		<div>
+			<f:form action="createInDebitor"  name="newSchule" object="{newSchule}">
+				<f:render partial="Schulen/FormFieldsDebitor" arguments="{institutionenOptions:institutionenOptions, bezirkeOptions:bezirkeOptions}" />
+			</f:form>
+		</div>	
+		</fieldset>
+	
+	<fieldset class="auswahllinks" >
+		<legend>Debitor auswählen</legend>
+		<div>
+		<f:for each="{schulen}" as="schule" > 
+				<f:form action="new"  name="schule" object="{schule}">
+				
+				<p>{schule.uid} {schule.name} {schule.ort}  <input type="submit" value="übernehmen" /></p>
+			</f:form>
+		</f:for>	
+		</div>
+	</fieldset> 
+	
+</f:section>

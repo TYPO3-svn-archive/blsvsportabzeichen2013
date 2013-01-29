@@ -1,0 +1,66 @@
+<table class="tx-blsvschulwettbewerb-pi1-table">
+			<f:form.hidden property="schulnummer" />
+			<f:form.hidden property="kreis" />
+			<f:form.hidden property="blsvkreis" />		
+			
+				<tr>
+					<th colspan="2" class="oben" style="text-align:center;"><h1>{schulen.name}</h1></th>
+				</tr>
+				<tr>
+					<th><label for="name"><f:translate key="tx_blsvsa2013_domain_model_schulen.institutionsname" /> <span class="required">*</span></label></th>
+					<td><f:form.textfield placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.pinstitutionsname' />" property="name" /></td>
+				</tr>
+				<tr>
+					<th><label for="name"><f:translate key="tx_blsvsa2013_domain_model_schulen.institution" /> <span class="required">*</span></label></th>
+					<td><f:form.select property="schulart" options="{institutionenOptions}" /></td>
+				</tr>
+				<tr>
+					<th><label for="strasse"><f:translate key="tx_blsvsa2013_domain_model_schulen.strasse" /></label></th>
+					<td><f:form.textfield property="strasse"   placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phstrasse' />"  /></td>
+				</tr>
+				<tr>
+					<th><label for="plz"><f:translate key="tx_blsvsa2013_domain_model_schulen.plz" /></label></th>
+					<td><f:form.textfield property="plz"  class="schmal" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phplz' />" /></td>
+				</tr>
+				<tr> 
+					<th><label for="ort"><f:translate key="tx_blsvsa2013_domain_model_schulen.ort" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phort' />"  property="ort" /></td>
+				</tr>
+				<tr>
+					<th><label for="telefon"><f:translate key="tx_blsvsa2013_domain_model_schulen.telefon" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phtelefon' />"  property="telefon" /></td>
+				</tr>
+				<tr>
+					<th><label for="email"><f:translate key="tx_blsvsa2013_domain_model_schulen.email" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phemail' />"  property="email" /></td>
+				</tr>
+				<tr>
+					<th><label for="bezirk"><f:translate key="tx_blsvsa2013_domain_model_schulen.bezirk" /></label></th>
+					<td><f:form.select property="bezirk"  options="{bezirkeOptions}"  /></td>
+				</tr>
+				<tr>
+					<th><label for="blsvkreis">	<f:translate key="tx_blsvsa2013_domain_model_schulen.blsvkreis" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phblsvkreis' />"  property="blsvkreis" /></td>
+				</tr>
+				<tr>
+				<td colspan="2"><b><f:translate key="tx_blsvsa2013_domain_model_schulen.bankverbindung" /></b> <div class="hilfe" title="<f:translate key='tx_blsvsa2013_domain_model_schulen.bankverbindunghilfe' />" >&nbsp;</div></td>
+				</tr>
+				<tr>
+					<th><label for="bankempfaenger"><f:translate key="tx_blsvsa2013_domain_model_schulen.bankempfaenger" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phbankempfaenger' />"  property="bankempfaenger" /></td>
+				</tr>
+				<tr>
+					<th><label for="kto"><f:translate key="tx_blsvsa2013_domain_model_schulen.kto" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phkto' />"  property="kto" /></td>
+				</tr>
+				<tr>
+					<th><label for="blz"><f:translate key="tx_blsvsa2013_domain_model_schulen.blz" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phblz' />"  property="blz" /></td>
+				</tr>
+			
+				<tr>
+					<th></th>
+					<td><f:form.submit value="Speichern" /> </td>
+				<tr>
+	
+</table>	<br /><br />

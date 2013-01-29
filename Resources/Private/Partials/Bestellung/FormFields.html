@@ -1,0 +1,44 @@
+<f:form.hidden name="institution" value="{schule.uid}" />
+
+
+<div id="debitorstammdaten" ">
+
+	<b> {schule.uid} - {schule.name} ({schule.institutionsartart.institutionsart})</b>  
+	
+	<h2><f:translate key="tx_blsvsa2013_domain_model_bestellung.headRechnungsadresse" /></h2>
+		
+	<label for="anrede"><f:translate key="tx_blsvsa2013_domain_model_bestellung.anrede" /></label><f:form.textfield property="anrede" /><br />
+	<label for="vorname"><f:translate key="tx_blsvsa2013_domain_model_bestellung.vorname" /></label><f:form.textfield property="vorname" /><br />
+	<label for="vorname"><f:translate key="tx_blsvsa2013_domain_model_bestellung.name" /></label><f:form.textfield property="name" /><br />
+	<label for="adresszusatz"><f:translate key="tx_blsvsa2013_domain_model_bestellung.adresszusatz" /></label><f:form.textfield property="adresszusatz" /><br />
+	<label for="strasse"><f:translate key="tx_blsvsa2013_domain_model_bestellung.strasse" /></label><f:form.textfield property="strasse" /><br />
+	<label for="plz"><f:translate key="tx_blsvsa2013_domain_model_bestellung.plz" /></label><f:form.textfield property="plz" /><br />
+	<label for="ort"><f:translate key="tx_blsvsa2013_domain_model_bestellung.ort" /></label><f:form.textfield property="ort" /><br />
+	
+</div>		
+<div id="lieferadresse">	
+<f:form.checkbox  id="abweichnedelieferadresse" property="abweichnedelieferadresse" value="1" /><label for="abweichnedelieferadresse"><f:translate key="tx_blsvsa2013_domain_model_bestellung.abweichnedelieferadresse" /></label>
+	<div id="lafade">
+		<h2><f:translate key="tx_blsvsa2013_domain_model_bestellung.headLieferadresse" /></h2>
+		<label for="lieferinstitution">	<f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferinstitution" /></label><f:form.textfield property="lieferinstitution" /><br />
+		<label for="liefername"><f:translate key="tx_blsvsa2013_domain_model_bestellung.liefername" /></label><f:form.textfield property="liefername" /><br />
+		<label for="liefervorname">	<f:translate key="tx_blsvsa2013_domain_model_bestellung.liefervorname" /></label><f:form.textfield property="liefervorname" /><br />
+		<label for="lieferanrede"><f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferanrede" /></label><f:form.textfield property="lieferanrede" /><br />
+		<label for="lieferstrasse">	<f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferstrasse" /></label><f:form.textfield property="lieferstrasse" /><br />
+		<label for="lieferplz"><f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferplz" /></label><f:form.textfield property="lieferplz" /><br />
+		<label for="lieferort"><f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferort" /></label><f:form.textfield property="lieferort" /><br />
+	</div>	
+</div>	
+
+<script>
+	$('#abweichnedelieferadresse').change(function(){
+		
+		if( $('#abweichnedelieferadresse:checked').val() ) { 			
+			$('#lafade').fadeTo( 'slow', 1); 
+		}
+		else {			
+			$('#lafade').fadeTo( 'slow', 0.1);
+		}		
+	});
+
+</script>

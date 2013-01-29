@@ -1,0 +1,493 @@
+<?php
+
+/***************************************************************
+ *  Copyright notice
+ *
+ *  (c) 2012 Berti Golf <berti.golf@blsv.de>, BLSV
+ *  Martin Gonschor <martin.gonschor@blsv.de>, blsv
+ *  
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
+/**
+ *
+ *
+ * @package blsvsa2013
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
+ */
+class Tx_Blsvsa2013_Controller_BestellungController extends Tx_Extbase_MVC_Controller_ActionController {
+
+	/**
+	 * bestellungRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_BestellungRepository
+	 */
+	protected $bestellungRepository;
+
+	/**
+	 * bestellpostenRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_BestellpostenRepository
+	 */
+	protected $bestellpostenRepository;
+
+	/**
+	 * teilnahmenRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_TeilnamenRepository
+	 */
+	protected $teilnahmenRepository;
+
+	/**
+	 * schuelerRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_SchuelerRepository
+	 */
+	protected $schuelerRepository;
+	
+	/**
+	 * artikelRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_ArtikelRepository
+	 */
+	protected $artikelRepository;
+	
+	/**
+	 * schulenRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_SchulenRepository
+	 */
+	protected $schulenRepository;
+
+	/**
+	 * bezirke
+	 *
+	 * @var array
+	 */
+	protected $bezirke;
+	
+	/**
+	 * Pid Auf der Die Namensuche insatllliert ist
+	 *
+	 * @var integer
+	 */
+	protected $pidNamenssuche = 0;
+
+	/**
+	 * Pid fuer Bestellungen
+	 *
+	 * @var integer
+	 */
+	protected $pidBestellungen = 0;
+
+	/**
+	 * Pid fuer Bestellposten
+	 *
+	 * @var integer
+	 */
+	protected $pidBestellposten = 0;
+	
+	/**
+	 * Pid fuer Teilnahmen
+	 *
+	 * @var integer
+	 */
+	protected $pidTeilnahmen = 0;
+	
+	/**
+	 * feusers
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Model_Feusers
+	 */
+
+	protected $feusers;
+	
+	/**
+	 * feueserRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_FeusersRepository
+	 */
+	protected $feusersRepository;
+	
+	/**
+	 * Initializes the current action
+	 * @return void
+	 */
+	protected function initializeAction() {
+		$this->feusers = $this->feusersRepository->findByUid( $GLOBALS['TSFE']->fe_user->user['uid'] ) ;		
+		$userTSConfig_all = $GLOBALS["TSFE"]->fe_user->getUserTSconf();
+		$this->bezirke =  $userTSConfig_all['tx_blsvsa2013.']['bezirk.'];	 
+		if ( $this->settings[ 'pidbestellungNamenssuche' ] > 0) $this->pidNamenssuche = (int) $this->settings['pidbestellungNamenssuche'];
+		if ( $this->settings[ 'pidBestellungBestellung' ] > 0) $this->pidBestellung = (int) $this->settings['pidBestellungBestellung'];
+		if ( $this->settings[ 'pidBestellungBestellposten' ] > 0) $this->pidBestellposten = (int) $this->settings['pidBestellungBestellposten'];
+		if ( $this->settings[ 'pidBestellungTeilnahmen' ] > 0) $this->pidTeilnahmen = (int) $this->settings['pidBestellungTeilnahmen'];
+	}
+	
+	/**
+	 * injectFeusersRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_FeusersRepository $feusersRepository
+	 * @return void
+	 */
+	public function injectFeusersRepository(Tx_Blsvsa2013_Domain_Repository_FeusersRepository $feusersRepository) {
+		$this->feusersRepository = $feusersRepository;
+	}
+
+	/**
+	 * injectBestellungRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_BestellungRepository $bestellungRepository
+	 * @return void
+	 */
+	public function injectBestellungRepository(Tx_Blsvsa2013_Domain_Repository_BestellungRepository $bestellungRepository) {
+		$this->bestellungRepository = $bestellungRepository;
+	}
+	
+	/**
+	 * injectBestellpostenRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_BestellpostenRepository $bestellpostenRepository
+	 * @return void
+	 */
+	public function injectBestellpostenRepository(Tx_Blsvsa2013_Domain_Repository_BestellpostenRepository $bestellpostenRepository) {
+		$this->bestellpostenRepository = $bestellpostenRepository;
+	}
+
+   /**
+	* injectTeilnahmenRepository
+	*
+	* @param Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository $teilnahmenRepository
+	* @return void
+	*/
+	public function injectTeilnahmenRepository(Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository $teilnahmenRepository) {
+		$this->teilnahmenRepository = $teilnahmenRepository;
+	}
+	
+	/**
+	 * injectSchuelerRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_SchuelerRepository $schuelerRepository
+	 * @return void
+	 */
+	public function injectSchuelerRepository(Tx_Blsvsa2013_Domain_Repository_SchuelerRepository $schuelerRepository) {
+		$this->schuelerRepository = $schuelerRepository;
+	}
+	
+	/**
+	 * injectSchulenRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_SchulenRepository $schulenRepository
+	 * @return void
+	 */
+	public function injectSchulenRepository(Tx_Blsvsa2013_Domain_Repository_SchulenRepository $schulenRepository) {
+		$this->schulenRepository = $schulenRepository;
+	}
+	
+	/**
+	 * injectArtikelRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_ArtikelRepository $schulenRepository
+	 * @return void
+	 */
+	public function injectArtikelRepository(Tx_Blsvsa2013_Domain_Repository_ArtikelRepository $artikelRepository) {
+		$this->artikelRepository = $artikelRepository;
+	}
+
+	/**
+	 * action list
+	 * @param array $filter
+	 * @return void
+	 */
+	public function listAction( array $filter = NULL) {
+		
+		$classloader = new Tx_ExtensionBuilder_Utility_ClassLoader;
+		$bestellungen = $this->bestellungRepository->findAll();
+		$this->view->assign('bestellungen', $bestellungen);
+		
+		if (!$this->bezirke){
+			
+			$this->flashMessageContainer->add( Tx_Extbase_Utility_Localization::translate( 'tx_blsvsa2013_controller_bestellung.keinBezirkZugeordnet' , $this->extensionName )  );
+			$this->redirect('fehler');
+		}
+		
+			$this->view->assign('bezirk', current($this->bezirke ) );		
+	}
+
+	/**
+	 * action show
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung
+	 * @return void
+	 */
+	public function showAction(Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung) {
+		$this->view->assign('bestellung', $bestellung);
+	}
+
+	/**
+	 * action new
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Bestellung $newBestellung
+	 * @param Tx_Blsvsa2013_Domain_Model_Schulen $schule
+	 * @dontvalidate $newBestellung
+	 * @return void
+	 */
+	public function newAction( Tx_Blsvsa2013_Domain_Model_Bestellung $newBestellung = NULL, Tx_Blsvsa2013_Domain_Model_Schulen $schule = NULL) {
+		if ( $newBestellung == NULL ) { // workaround for fluid bug ##5636
+			$newBestellung = t3lib_div::makeInstance('Tx_Blsvsa2013_Domain_Model_Bestellung');
+		}
+
+		$artikels = $this->artikelRepository->findall();
+				
+		$this->view->assign( 'artikels', $artikels );
+		$this->view->assign( 'schule', $schule );
+		$this->view->assign( 'newBestellung', $newBestellung );
+		$this->view->assign( 'pidNamenssuche', $this->pidNamenssuche);
+	}
+	
+	/**
+	 * action debitorwahl
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Schulen $newSchule
+	 * @param array $debitorwahl	
+	 * @dontvalidate $newSchule
+	 * @return void
+	 */
+	public function debitorwahlAction( Tx_Blsvsa2013_Domain_Model_Schulen $newSchule = NULL, $debitorwahl = NULL ) {
+		// t3lib_utility_debug::debug($debitorwahl);
+		
+		if (!$this->bezirke){
+			$this->flashMessageContainer->add( Tx_Extbase_Utility_Localization::translate( 'tx_blsvsa2013_controller_bestellung.keinBezirkZugeordnet', $this->extensionName ) );
+			$this->redirect('Fehler');
+		}
+		
+		If ($debitorwahl == NULL ){
+			$debitorwahl[ 'debitorsuche' ]	=	'';
+			$debitorwahl[ 'institutionen' ]	= 	0;
+			$debitorwahl[ 'bezirk ']		=	current($this->bezirke );
+		}
+		
+		$schulen =	$this->schulenRepository->findDebitor( $debitorwahl );
+		
+
+		if ($newSchule == NULL) { // workaround for fluid bug ##5636
+
+			$newSchule = t3lib_div::makeInstance('Tx_Blsvsa2013_Domain_Model_Schulen');
+
+		}
+		
+		$this->view->assign( 'debitorwahl', $debitorwahl );
+
+		$this->view->assign( 'newSchule', $newSchule );
+		$this->view->assign( 'schulen', $schulen );
+		$this->view->assign( 'bezirk', current( $this->bezirke ) );
+	}	
+	
+	
+	/**
+	 * action create
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Bestellung $newBestellung
+	 * @param array $bestellposten
+	 * @param integer $institution
+	 * @return void
+	 */
+	public function createAction(Tx_Blsvsa2013_Domain_Model_Bestellung $newBestellung, array $bestellposten = NULL, $institution=NULL) {
+		$teilnahmen = $_REQUEST['teilnahmen'];
+		$schule = $this->schulenRepository->findOneByUid((int)$institution);
+		
+//		t3lib_utility_debug::debug($newBestellung, 'Bestellung');
+//		t3lib_utility_debug::debug($teilnahmen, 'Teilnahmen');
+//		t3lib_utility_debug::debug($bestellposten, 'Bestellposten');
+		t3lib_utility_debug::debug($_REQUEST, 'request');
+		
+		// Bestellung anlegen
+		$newBestellung->setSchule($schule);
+		$newBestellung->setInstitution($schule->getName());
+		$newBestellung->setStatus(1); // Bestellung erstellt
+		
+		$newBestellung->setErfassungsdatum(time());
+		$newBestellung->setFeuser($this->feusers);
+		$newBestellung->setPid($this->pidBestellung);
+		
+		$this->bestellungRepository->add($newBestellung);
+
+		// Schueler aktualisieren, Teilnahmen anlegen
+		$vars = explode(',', 'vorname,name,geschlecht,geburtstag,klasse,grundschulwettbewerb,schwimmnachweisgueltigbis,schule,schulnummer');
+		foreach ($teilnahmen as $uid => $teilnahme){
+			// Schueler suchen und Daten aktualisieren
+			$objSchueler = $this->schuelerRepository->findOneByUid($uid);
+//			$objSchueler->setJahrderletztenpruefung((int)$teilnahme['jahrderletztenpruefung']);
+					
+			$newTeilnahmen = t3lib_div::makeInstance('Tx_Blsvsa2013_Domain_Model_Teilnahmen');
+			
+			// Schueler nach Teilnahme kopieren
+			foreach ($vars as $var){
+				$var = ucfirst($var);
+				$getFunc = 'get'.$var;
+				$setFunc = 'set'.$var;
+				$newTeilnahmen->$setFunc($objSchueler->$getFunc());
+			}
+
+			// zusaetzliche Variablen
+			$newTeilnahmen->setSchueler($objSchueler);
+			$newTeilnahmen->setPunktegesamt((int)$teilnahme['punktegesamt']);
+			$newTeilnahmen->setAnzteilnahmen((int)$teilnahme['anzteilnahmen']);
+			$newTeilnahmen->setFeuser($this->feusers);
+
+			$newTeilnahmen->setBestellung($newBestellung);
+			$newTeilnahmen->setPid($this->pidTeilnahmen);
+				
+			// Teilnahme anlegen
+			$this->teilnahmenRepository->add($newTeilnahmen);
+		}
+		
+		// Bestellposten anlegen
+		foreach ($bestellposten as $artikel => $anzahl){
+			if ($anzahl > 0) {
+				$objArtikel = $this->artikelRepository->findOneByArtikelnummer($artikel);
+				
+				$newBestellposten = t3lib_div::makeInstance('Tx_Blsvsa2013_Domain_Model_Bestellposten');
+				$newBestellposten->setArtikel($objArtikel);
+				$newBestellposten->setAnzahl((int)$anzahl);
+
+				$newBestellposten->setBestellung($newBestellung);
+				$newBestellposten->setPid($this->pidBestellposten);
+				
+				$this->bestellpostenRepository->add($newBestellposten);
+			}
+		}
+		
+		
+		$persistenceManager = t3lib_div::makeInstance('Tx_Extbase_Persistence_Manager');
+		$persistenceManager->persistAll();
+		
+echo 'Bestellung erstellt';		
+		exit;
+		
+		
+		
+//		$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate( 'tx_blsvsa2013_controller_bestellung.EingabenGesepichert', $this->extensionName ));
+//		$this->redirect('list');
+	}
+
+	/**
+	 * action edit
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung
+	 * @return void
+	 */
+	public function editAction(Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung) {
+		$artikels = $this->artikelRepository->findall();
+		
+		$schule = $bestellung->getSchule();
+		$bestellpostens = $this->bestellpostenRepository->findByBestellung($bestellung);
+		$teilnahmen = $this->teilnahmenRepository->findByBestellung($bestellung);
+		
+
+		$this->view->assign('artikels', $artikels);
+		
+		$this->view->assign('schule', $schule);
+		$this->view->assign('bestellung', $bestellung);
+		$this->view->assign('teilnahmen', $teilnahmen);
+		$this->view->assign('bestellpostens', $bestellpostens);
+		
+	}
+
+	/**
+	 * action update
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung
+	 * @return void
+	 */
+	public function updateAction(Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung) {
+		$this->bestellungRepository->update($bestellung);
+		$this->flashMessageContainer->add('Your Bestellung was updated.');
+		$this->redirect('list');
+	}
+
+	/**
+	 * action delete
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung
+	 * @return void
+	 */
+	public function deleteAction(Tx_Blsvsa2013_Domain_Model_Bestellung $bestellung) {
+		$this->bestellungRepository->remove($bestellung);
+		$this->flashMessageContainer->add('Your Bestellung was removed.');
+		$this->redirect('list');
+	}
+	
+
+	/**
+	 * action fehler
+	 *
+	 * @return void
+	 */
+	public function fehlerAction() {
+		
+	}
+	
+	/**
+	 * action createInDebitor
+	 * 
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Schulen $newSchulen
+	 */
+	public function createInDebitorAction(Tx_Blsvsa2013_Domain_Model_Schulen $newSchulen=Null) {
+		// t3lib_utility_debug::debug($newSchulen); exit;
+
+		$this->schulenRepository->add($newSchulen);
+		$persistenceManager = t3lib_div::makeInstance('Tx_Extbase_Persistence_Manager');
+
+		$persistenceManager->persistAll();
+
+		$uid = $newSchulen->getUid();
+		
+		if ($uid){
+			$this->flashMessageContainer->add( Tx_Extbase_Utility_Localization::translate( 'tx_blsvsa2013_controller_bestellung.debitorAngelegt' , $this->extensionName )  );
+		}
+		$this->redirect('debitorwahl', Null, Null, array('debitorwahl' => array('debitorsuche'=>$uid)));
+	}
+
+	/**
+	 * action newTeilnahme
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Teilnahmen $newTeilnahmen
+	 * @return void
+	 */
+	public function newTeilnahmeAction( $newTeilnahmen = NULL ) {
+		$this->view->assign('newTeilnahmen', $newTeilnahmen);
+	}
+	
+	/**
+	 * action createTeilnahme
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Teilnahmen $newTeilnahmen
+	 * @dontvalidate $newTeilnahmen
+	 * @return void
+	 */
+	public function createTeilnahmeAction( $newTeilnahmen = NULL) {
+		t3lib_utility_debug::debug($newTeilnahmen);
+		//$this->teilnahmenRepository->add($newTeilnahmen);
+//		$this->flashMessageContainer->add('Your new Teilnahmen was created.');
+//		$this->redirect('new');
+	}
+}
+?>

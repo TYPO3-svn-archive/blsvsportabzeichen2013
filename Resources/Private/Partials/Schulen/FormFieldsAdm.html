@@ -1,0 +1,98 @@
+<table>
+			<f:form.hidden property="schulnummer" />
+			<f:form.hidden property="schulart" />
+			<f:form.hidden property="bezirk" />
+			<f:form.hidden property="kreis" />
+			<f:form.hidden property="blsvkreis" />		
+			<f:form.hidden property="anzbestanden" />	
+			
+				<tr>
+					<th colspan="2" class="oben" style="text-align:center;"><h1>{schulen.name}</h1></th>
+				</tr>
+
+
+				<tr>
+					<th><label for="schulnummer"><f:translate key="tx_blsvsa2013_domain_model_schulen.schulnummer" /></label></th>
+					<td>{schulen.schulnummer}</td>
+				</tr>
+				<tr>
+					<th><label for="name"><f:translate key="tx_blsvsa2013_domain_model_schulen.name" /> <span class="required">*</span></label></th>
+					<td><f:form.textfield placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phname' />" property="name" /></td>
+				</tr>
+				<tr>
+					<th><label for="strasse"><f:translate key="tx_blsvsa2013_domain_model_schulen.strasse" /></label></th>
+					<td><f:form.textfield property="strasse"   placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phstrasse' />"  /></td>
+				</tr>
+				<tr>
+					<th><label for="plz"><f:translate key="tx_blsvsa2013_domain_model_schulen.plz" /></label></th>
+					<td><f:form.textfield property="plz"  class="schmal" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phplz' />" /></td>
+				</tr>
+				<tr> 
+					<th><label for="ort"><f:translate key="tx_blsvsa2013_domain_model_schulen.ort" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phort' />"  property="ort" /></td>
+				</tr>
+				<tr>
+					<th><label for="telefon"><f:translate key="tx_blsvsa2013_domain_model_schulen.telefon" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phtelefon' />"  property="telefon" /></td>
+				</tr>
+				<tr>
+					<th><label for="email"><f:translate key="tx_blsvsa2013_domain_model_schulen.email" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phemail' />"  property="email" /></td>
+				</tr>
+				<tr>
+					<th><label for="bezirk"><f:translate key="tx_blsvsa2013_domain_model_schulen.bezirk" /></label></th>
+					<td><b>{schulen.bezirk}</b></td>
+				</tr>
+				<tr>
+					<th><label for="blsvkreis">	<f:translate key="tx_blsvsa2013_domain_model_schulen.blsvkreis" /></label></th>
+					<td><b>{schulen.blsvkreis}</b></td>
+				</tr>
+				<tr>
+				<td colspan="2"><b><f:translate key="tx_blsvsa2013_domain_model_schulen.bankverbindung" /></b> <div class="hilfe" title="<f:translate key='tx_blsvsa2013_domain_model_schulen.bankverbindunghilfe' />" >&nbsp;</div></td>
+				</tr>
+				<tr>
+					<th><label for="bankempfaenger"><f:translate key="tx_blsvsa2013_domain_model_schulen.bankempfaenger" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phbankempfaenger' />"  property="bankempfaenger" /></td>
+				</tr>
+				<tr>
+					<th><label for="kto"><f:translate key="tx_blsvsa2013_domain_model_schulen.kto" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phkto' />"  property="kto" /></td>
+				</tr>
+				<tr>
+					<th><label for="blz"><f:translate key="tx_blsvsa2013_domain_model_schulen.blz" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phblz' />"  property="blz" /></td>
+				</tr>
+				<tr>
+					<th><label for="verwendungszweck"><f:translate key="tx_blsvsa2013_domain_model_schulen.verwendungszweck" /></label></th>
+					<td><f:form.textfield  placeholder="<f:translate key='tx_blsvsa2013_domain_model_schulen.phverwendungszweck' />"  property="verwendungszweck" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><b><f:translate key="tx_blsvsa2013_domain_model_schulen.wettbewerbgrundschulen" /></b></td>
+				</tr>
+				<tr>
+					<th><label for="grundschulen"><f:translate key="tx_blsvsa2013_domain_model_schulen.grundschulen" /> <div class="hilfe" title="<f:translate key='tx_blsvsa2013_domain_model_schulen.grundschulenhilfe' />">&nbsp;</div></label></th>
+					<td><f:form.checkbox property="grundschulen" value="1" /></td>
+				</tr>
+				<tr>
+					<th><label for="anzschueler"><f:translate key="tx_blsvsa2013_domain_model_schulen.anzschueler" /> <div class="hilfe" title="<f:translate key='tx_blsvsa2013_domain_model_schulen.anzschuelerhilfe' />">&nbsp;</div></label></th>
+					<td><f:form.textfield property="anzschueler" class="schmal" /></td>
+				</tr>
+				
+				
+				<tr>
+					<td colspan="2"><b><f:translate key="tx_blsvsa2013_domain_model_schulen.schulwettbewerbhead" /></b></td>
+				</tr>
+				<tr>
+					<th><label for="schulwettbewerb"><f:translate key="tx_blsvsa2013_domain_model_schulen.schulwettbewerb" /> <div class="hilfe" title="<f:translate key='tx_blsvsa2013_domain_model_schulen.schulwettbewerbhilfe' />">&nbsp;</div></label></th>
+					<td><f:form.checkbox property="schulwettbewerb" value="1" /></td>
+				</tr>
+				<tr>
+					<th><label for="anzteilnahmeberechtigt"><f:translate key="tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigt" /> <div class="hilfe" title="<f:translate key='tx_blsvsa2013_domain_model_schulen.anzteilnahmeberechtigthilfe' />">&nbsp;</div></label></th>
+					<td><f:form.textfield property="anzteilnahmeberechtigt"  class="schmal" /></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><f:form.submit value="Speichern" /> </td>
+				<tr>
+	
+</table>	<br /><br />

@@ -1,5 +1,5 @@
 <?php
-
+ 
 /***************************************************************
  *  Copyright notice
  *
@@ -38,66 +38,29 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	 * Vorname
 	 *
 	 * @var string
-	 * @validate NotEmpty
 	 */
 	protected $vorname;
 
 	/**
-	 * Name
+	 * name
 	 *
 	 * @var string
-	 * @validate NotEmpty
 	 */
 	protected $name;
 
 	/**
-	 * Geschlecht
+	 * geschlecht
 	 *
 	 * @var integer
 	 */
-	protected $geschlecht;
+	protected $geschlecht=1;
 
 	/**
 	 * Geburtstag
 	 *
 	 * @var integer
 	 */
-	protected $geburtstag;
-
-	/**
-	 * Anzahl Teilnahmen
-	 *
-	 * @var integer
-	 */
-	protected $anzteilnahmen;
-
-	/**
-	 * Punkte gesamt
-	 *
-	 * @var integer
-	 */
-	protected $punktegesamt;
-
-	/**
-	 * Urkundenart
-	 *
-	 * @var integer
-	 */
-	protected $urkundenart;
-
-	/**
-	 * gedruckt
-	 *
-	 * @var integer
-	 */
-	protected $gedruckt;
-
-	/**
-	 * Drucktimestamp
-	 *
-	 * @var integer
-	 */
-	protected $drucktstamp;
+	protected $geburtstag=0;
 
 	/**
 	 * Klasse
@@ -109,211 +72,88 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	/**
 	 * Grundschulwettbewerb
 	 *
-	 * @var integer
-	 */
-	protected $grundschulwettbewerb;
-
-	/**
-	 * Schwimmnachweis
-	 *
 	 * @var boolean
 	 */
-	protected $schwimmnachweis = FALSE;
+	protected $grundschulwettbewerb = FALSE;
 
 	/**
-	 * gültig bis
+	 * Straße
+	 *
+	 * @var string
+	 */
+	protected $strasse;
+
+	/**
+	 * PLZ
+	 *
+	 * @var string
+	 */
+	protected $plz;
+
+	/**
+	 * Ort
+	 *
+	 * @var string
+	 */
+	protected $ort;
+
+	/**
+	 * Email
+	 *
+	 * @var string
+	 */
+	protected $email;
+
+	/**
+	 * Telefon
+	 *
+	 * @var string
+	 */
+	protected $telefon;
+
+	/**
+	 * Jahr der letzten Prüfung
 	 *
 	 * @var integer
 	 */
-	protected $gueltigbis;
+	protected $jahrderletztenpruefung=2000;
 
 	/**
-	 * Leistungstabelle Gruppe 1
+	 * Anzahr der bisher beurkundeten Sportabzeichen (kommulatver Aspekt)
 	 *
 	 * @var integer
 	 */
-	protected $leistungstabelle1;
+	protected $anzteilnahmen=1;
 
 	/**
-	 * Ablagedatum Gruppe 1
+	 * schwimmnachweisgueltigbis
 	 *
 	 * @var integer
 	 */
-	protected $ablagedatum1;
+	protected $schwimmnachweisgueltigbis=0;
 
 	/**
-	 * Prüfer Gruppe 1
-	 *
-	 * @var integer
-	 */
-	protected $pruefer1;
-
-	/**
-	 * Ergebnis Gruppe 1
-	 *
-	 * @var integer
-	 */
-	protected $ergebnis1;
-
-	/**
-	 * Punkte Gruppe 1
-	 *
-	 * @var integer
-	 */
-	protected $punkte1;
-
-	/**
-	 * Leistungstabelle Gruppe 2
-	 *
-	 * @var integer
-	 */
-	protected $leistungstabelle2;
-
-	/**
-	 * Ablagedatum Gruppe 2
-	 *
-	 * @var integer
-	 */
-	protected $ablagedatum2;
-
-	/**
-	 * Prüfer Gruppe 2
-	 *
-	 * @var integer
-	 */
-	protected $pruefer2;
-
-	/**
-	 * Ergebnis Gruppe 2
-	 *
-	 * @var integer
-	 */
-	protected $ergebnis2;
-
-	/**
-	 * Punkte Gruppe 2
-	 *
-	 * @var integer
-	 */
-	protected $punkte2;
-
-	/**
-	 * Leistungstabelle Gruppe 3
-	 *
-	 * @var integer
-	 */
-	protected $leistungstabelle3;
-
-	/**
-	 * Ablagedatum Gruppe 3
-	 *
-	 * @var integer
-	 */
-	protected $ablagedatum3;
-
-	/**
-	 * Prüfer Gruppe 3
-	 *
-	 * @var integer
-	 */
-	protected $pruefer3;
-
-	/**
-	 * Ergebnis Gruppe 3
-	 *
-	 * @var integer
-	 */
-	protected $ergebnis3;
-
-	/**
-	 * Punkte Gruppe 3
-	 *
-	 * @var integer
-	 */
-	protected $punkte3;
-
-	/**
-	 * Leistungstabelle Gruppe 4
-	 *
-	 * @var integer
-	 */
-	protected $leistungstabelle4;
-
-	/**
-	 * Ablagedatum Gruppe 4
-	 *
-	 * @var integer
-	 */
-	protected $ablagedatum4;
-
-	/**
-	 * Prüfer Gruppe 4
-	 *
-	 * @var integer
-	 */
-	protected $pruefer4;
-
-	/**
-	 * Ergebnis Gruppe 4
-	 *
-	 * @var integer
-	 */
-	protected $ergebnis4;
-
-	/**
-	 * Punkte Gruppe 4
-	 *
-	 * @var integer
-	 */
-	protected $punkte4;
-
-	/**
-	 * Schule
+	 * schule
 	 *
 	 * @var Tx_Blsvsa2013_Domain_Model_Schulen
 	 */
-	protected $schule;
-
+	protected $schule=null;
+	
 	/**
-	 * Leistung 1
+	 * schulnummer
 	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Leistungstabelle
-	 * @lazy
+	 * @var string
 	 */
-	protected $leistung1;
-
-	/**
-	 * Leistung 2
-	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Leistungstabelle
-	 * @lazy
-	 */
-	protected $leistung2;
-
-	/**
-	 * Leistung 3
-	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Leistungstabelle
-	 * @lazy
-	 */
-	protected $leistung3;
-
-	/**
-	 * Leistung 4
-	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Leistungstabelle
-	 * @lazy
-	 */
-	protected $leistung4;
-
+	protected $schulnummer='0';
+	
 	/**
 	 * fe_user
 	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Feuser
+	 * @var Tx_Blsvsa2013_Domain_Model_Feusers
 	 * @lazy
 	 */
-	protected $feuser;
-
+	protected $feuser=null;
+	
 	/**
 	 * Returns the vorname
 	 *
@@ -355,7 +195,7 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	/**
 	 * Returns the geschlecht
 	 *
-	 * @return integer $geschlecht
+	 * @return inetger $geschlecht
 	 */
 	public function getGeschlecht() {
 		return $this->geschlecht;
@@ -364,10 +204,12 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	/**
 	 * Sets the geschlecht
 	 *
-	 * @param integer $geschlecht
+	 * @param inetger $geschlecht
 	 * @return void
 	 */
 	public function setGeschlecht($geschlecht) {
+			if ( ( $geschlecht < 1 ) or  ($geschlecht > 2) )  throw new \InvalidArgumentException( "Tx_Blsvsa2013_Domain_Model_Schueler->geschlecht should be 1 or 2!", 1349784746 );
+	
 		$this->geschlecht = $geschlecht;
 	}
 
@@ -388,101 +230,6 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	 */
 	public function setGeburtstag($geburtstag) {
 		$this->geburtstag = $geburtstag;
-	}
-
-	/**
-	 * Returns the anzteilnahmen
-	 *
-	 * @return integer $anzteilnahmen
-	 */
-	public function getAnzteilnahmen() {
-		return $this->anzteilnahmen;
-	}
-
-	/**
-	 * Sets the anzteilnahmen
-	 *
-	 * @param integer $anzteilnahmen
-	 * @return void
-	 */
-	public function setAnzteilnahmen($anzteilnahmen) {
-		$this->anzteilnahmen = $anzteilnahmen;
-	}
-
-	/**
-	 * Returns the punktegesamt
-	 *
-	 * @return integer $punktegesamt
-	 */
-	public function getPunktegesamt() {
-		return $this->punktegesamt;
-	}
-
-	/**
-	 * Sets the punktegesamt
-	 *
-	 * @param integer $punktegesamt
-	 * @return void
-	 */
-	public function setPunktegesamt($punktegesamt) {
-		$this->punktegesamt = $punktegesamt;
-	}
-
-	/**
-	 * Returns the urkundenart
-	 *
-	 * @return integer $urkundenart
-	 */
-	public function getUrkundenart() {
-		return $this->urkundenart;
-	}
-
-	/**
-	 * Sets the urkundenart
-	 *
-	 * @param integer $urkundenart
-	 * @return void
-	 */
-	public function setUrkundenart($urkundenart) {
-		$this->urkundenart = $urkundenart;
-	}
-
-	/**
-	 * Returns the gedruckt
-	 *
-	 * @return integer $gedruckt
-	 */
-	public function getGedruckt() {
-		return $this->gedruckt;
-	}
-
-	/**
-	 * Sets the gedruckt
-	 *
-	 * @param integer $gedruckt
-	 * @return void
-	 */
-	public function setGedruckt($gedruckt) {
-		$this->gedruckt = $gedruckt;
-	}
-
-	/**
-	 * Returns the drucktstamp
-	 *
-	 * @return integer $drucktstamp
-	 */
-	public function getDrucktstamp() {
-		return $this->drucktstamp;
-	}
-
-	/**
-	 * Sets the drucktstamp
-	 *
-	 * @param integer $drucktstamp
-	 * @return void
-	 */
-	public function setDrucktstamp($drucktstamp) {
-		$this->drucktstamp = $drucktstamp;
 	}
 
 	/**
@@ -507,7 +254,7 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	/**
 	 * Returns the grundschulwettbewerb
 	 *
-	 * @return integer $grundschulwettbewerb
+	 * @return boolean $grundschulwettbewerb
 	 */
 	public function getGrundschulwettbewerb() {
 		return $this->grundschulwettbewerb;
@@ -516,7 +263,7 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	/**
 	 * Sets the grundschulwettbewerb
 	 *
-	 * @param integer $grundschulwettbewerb
+	 * @param boolean $grundschulwettbewerb
 	 * @return void
 	 */
 	public function setGrundschulwettbewerb($grundschulwettbewerb) {
@@ -524,430 +271,164 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	}
 
 	/**
-	 * Returns the schwimmnachweis
-	 *
-	 * @return boolean $schwimmnachweis
-	 */
-	public function getSchwimmnachweis() {
-		return $this->schwimmnachweis;
-	}
-
-	/**
-	 * Sets the schwimmnachweis
-	 *
-	 * @param boolean $schwimmnachweis
-	 * @return void
-	 */
-	public function setSchwimmnachweis($schwimmnachweis) {
-		$this->schwimmnachweis = $schwimmnachweis;
-	}
-
-	/**
-	 * Returns the boolean state of schwimmnachweis
+	 * Returns the boolean state of grundschulwettbewerb
 	 *
 	 * @return boolean
 	 */
-	public function isSchwimmnachweis() {
-		return $this->getSchwimmnachweis();
+	public function isGrundschulwettbewerb() {
+		return $this->getGrundschulwettbewerb();
 	}
 
 	/**
-	 * Returns the gueltigbis
+	 * Returns the strasse
 	 *
-	 * @return integer $gueltigbis
+	 * @return string $strasse
 	 */
-	public function getGueltigbis() {
-		return $this->gueltigbis;
+	public function getStrasse() {
+		return $this->strasse;
 	}
 
 	/**
-	 * Sets the gueltigbis
+	 * Sets the strasse
 	 *
-	 * @param integer $gueltigbis
+	 * @param string $strasse
 	 * @return void
 	 */
-	public function setGueltigbis($gueltigbis) {
-		$this->gueltigbis = $gueltigbis;
+	public function setStrasse($strasse) {
+		$this->strasse = $strasse;
 	}
 
 	/**
-	 * Returns the leistungstabelle1
+	 * Returns the plz
 	 *
-	 * @return integer $leistungstabelle1
+	 * @return string $plz
 	 */
-	public function getLeistungstabelle1() {
-		return $this->leistungstabelle1;
+	public function getPlz() {
+		return $this->plz;
 	}
 
 	/**
-	 * Sets the leistungstabelle1
+	 * Sets the plz
 	 *
-	 * @param integer $leistungstabelle1
+	 * @param string $plz
 	 * @return void
 	 */
-	public function setLeistungstabelle1($leistungstabelle1) {
-		$this->leistungstabelle1 = $leistungstabelle1;
+	public function setPlz($plz) {
+		$this->plz = $plz;
 	}
 
 	/**
-	 * Returns the ablagedatum1
+	 * Returns the ort
 	 *
-	 * @return integer $ablagedatum1
+	 * @return string $ort
 	 */
-	public function getAblagedatum1() {
-		return $this->ablagedatum1;
+	public function getOrt() {
+		return $this->ort;
 	}
 
 	/**
-	 * Sets the ablagedatum1
+	 * Sets the ort
 	 *
-	 * @param integer $ablagedatum1
+	 * @param string $ort
 	 * @return void
 	 */
-	public function setAblagedatum1($ablagedatum1) {
-		$this->ablagedatum1 = $ablagedatum1;
+	public function setOrt($ort) {
+		$this->ort = $ort;
 	}
 
 	/**
-	 * Returns the pruefer1
+	 * Returns the email
 	 *
-	 * @return integer $pruefer1
+	 * @return string $email
 	 */
-	public function getPruefer1() {
-		return $this->pruefer1;
+	public function getEmail() {
+		return $this->email;
 	}
 
 	/**
-	 * Sets the pruefer1
+	 * Sets the email
 	 *
-	 * @param integer $pruefer1
+	 * @param string $email
 	 * @return void
 	 */
-	public function setPruefer1($pruefer1) {
-		$this->pruefer1 = $pruefer1;
+	public function setEmail($email) {
+		$this->email = $email;
 	}
 
 	/**
-	 * Returns the ergebnis1
+	 * Returns the telefon
 	 *
-	 * @return integer $ergebnis1
+	 * @return string $telefon
 	 */
-	public function getErgebnis1() {
-		return $this->ergebnis1;
+	public function getTelefon() {
+		return $this->telefon;
 	}
 
 	/**
-	 * Sets the ergebnis1
+	 * Sets the telefon
 	 *
-	 * @param integer $ergebnis1
+	 * @param string $telefon
 	 * @return void
 	 */
-	public function setErgebnis1($ergebnis1) {
-		$this->ergebnis1 = $ergebnis1;
+	public function setTelefon($telefon) {
+		$this->telefon = $telefon;
 	}
 
 	/**
-	 * Returns the punkte1
+	 * Returns the jahrderletztenpruefung
 	 *
-	 * @return integer $punkte1
+	 * @return integer $jahrderletztenpruefung
 	 */
-	public function getPunkte1() {
-		return $this->punkte1;
+	public function getJahrderletztenpruefung() {
+		return $this->jahrderletztenpruefung;
 	}
 
 	/**
-	 * Sets the punkte1
+	 * Sets the jahrderletztenpruefung
 	 *
-	 * @param integer $punkte1
+	 * @param integer $jahrderletztenpruefung
 	 * @return void
 	 */
-	public function setPunkte1($punkte1) {
-		$this->punkte1 = $punkte1;
+	public function setJahrderletztenpruefung($jahrderletztenpruefung) {
+		$this->jahrderletztenpruefung = $jahrderletztenpruefung;
 	}
 
 	/**
-	 * Returns the leistungstabelle2
+	 * Returns the anzteilnahmen
 	 *
-	 * @return integer $leistungstabelle2
+	 * @return integer $anzteilnahmen
 	 */
-	public function getLeistungstabelle2() {
-		return $this->leistungstabelle2;
+	public function getAnzteilnahmen() {
+		return $this->anzteilnahmen;
 	}
 
 	/**
-	 * Sets the leistungstabelle2
+	 * Sets the anzteilnahmen
 	 *
-	 * @param integer $leistungstabelle2
+	 * @param integer $anzteilnahmen
 	 * @return void
 	 */
-	public function setLeistungstabelle2($leistungstabelle2) {
-		$this->leistungstabelle2 = $leistungstabelle2;
+	public function setAnzteilnahmen($anzteilnahmen) {
+		$this->anzteilnahmen = $anzteilnahmen;
 	}
 
 	/**
-	 * Returns the ablagedatum2
+	 * Returns the schwimmnachweisgueltigbis
 	 *
-	 * @return integer $ablagedatum2
+	 * @return integer $schwimmnachweisgueltigbis
 	 */
-	public function getAblagedatum2() {
-		return $this->ablagedatum2;
+	public function getSchwimmnachweisgueltigbis() {
+		return $this->schwimmnachweisgueltigbis;
 	}
 
 	/**
-	 * Sets the ablagedatum2
+	 * Sets the schwimmnachweisgueltigbis
 	 *
-	 * @param integer $ablagedatum2
+	 * @param integer $schwimmnachweisgueltigbis
 	 * @return void
 	 */
-	public function setAblagedatum2($ablagedatum2) {
-		$this->ablagedatum2 = $ablagedatum2;
-	}
-
-	/**
-	 * Returns the pruefer2
-	 *
-	 * @return integer $pruefer2
-	 */
-	public function getPruefer2() {
-		return $this->pruefer2;
-	}
-
-	/**
-	 * Sets the pruefer2
-	 *
-	 * @param integer $pruefer2
-	 * @return void
-	 */
-	public function setPruefer2($pruefer2) {
-		$this->pruefer2 = $pruefer2;
-	}
-
-	/**
-	 * Returns the ergebnis2
-	 *
-	 * @return integer $ergebnis2
-	 */
-	public function getErgebnis2() {
-		return $this->ergebnis2;
-	}
-
-	/**
-	 * Sets the ergebnis2
-	 *
-	 * @param integer $ergebnis2
-	 * @return void
-	 */
-	public function setErgebnis2($ergebnis2) {
-		$this->ergebnis2 = $ergebnis2;
-	}
-
-	/**
-	 * Returns the punkte2
-	 *
-	 * @return integer $punkte2
-	 */
-	public function getPunkte2() {
-		return $this->punkte2;
-	}
-
-	/**
-	 * Sets the punkte2
-	 *
-	 * @param integer $punkte2
-	 * @return void
-	 */
-	public function setPunkte2($punkte2) {
-		$this->punkte2 = $punkte2;
-	}
-
-	/**
-	 * Returns the leistungstabelle3
-	 *
-	 * @return integer $leistungstabelle3
-	 */
-	public function getLeistungstabelle3() {
-		return $this->leistungstabelle3;
-	}
-
-	/**
-	 * Sets the leistungstabelle3
-	 *
-	 * @param integer $leistungstabelle3
-	 * @return void
-	 */
-	public function setLeistungstabelle3($leistungstabelle3) {
-		$this->leistungstabelle3 = $leistungstabelle3;
-	}
-
-	/**
-	 * Returns the ablagedatum3
-	 *
-	 * @return integer $ablagedatum3
-	 */
-	public function getAblagedatum3() {
-		return $this->ablagedatum3;
-	}
-
-	/**
-	 * Sets the ablagedatum3
-	 *
-	 * @param integer $ablagedatum3
-	 * @return void
-	 */
-	public function setAblagedatum3($ablagedatum3) {
-		$this->ablagedatum3 = $ablagedatum3;
-	}
-
-	/**
-	 * Returns the pruefer3
-	 *
-	 * @return integer $pruefer3
-	 */
-	public function getPruefer3() {
-		return $this->pruefer3;
-	}
-
-	/**
-	 * Sets the pruefer3
-	 *
-	 * @param integer $pruefer3
-	 * @return void
-	 */
-	public function setPruefer3($pruefer3) {
-		$this->pruefer3 = $pruefer3;
-	}
-
-	/**
-	 * Returns the ergebnis3
-	 *
-	 * @return integer $ergebnis3
-	 */
-	public function getErgebnis3() {
-		return $this->ergebnis3;
-	}
-
-	/**
-	 * Sets the ergebnis3
-	 *
-	 * @param integer $ergebnis3
-	 * @return void
-	 */
-	public function setErgebnis3($ergebnis3) {
-		$this->ergebnis3 = $ergebnis3;
-	}
-
-	/**
-	 * Returns the punkte3
-	 *
-	 * @return integer $punkte3
-	 */
-	public function getPunkte3() {
-		return $this->punkte3;
-	}
-
-	/**
-	 * Sets the punkte3
-	 *
-	 * @param integer $punkte3
-	 * @return void
-	 */
-	public function setPunkte3($punkte3) {
-		$this->punkte3 = $punkte3;
-	}
-
-	/**
-	 * Returns the leistungstabelle4
-	 *
-	 * @return integer $leistungstabelle4
-	 */
-	public function getLeistungstabelle4() {
-		return $this->leistungstabelle4;
-	}
-
-	/**
-	 * Sets the leistungstabelle4
-	 *
-	 * @param integer $leistungstabelle4
-	 * @return void
-	 */
-	public function setLeistungstabelle4($leistungstabelle4) {
-		$this->leistungstabelle4 = $leistungstabelle4;
-	}
-
-	/**
-	 * Returns the ablagedatum4
-	 *
-	 * @return integer $ablagedatum4
-	 */
-	public function getAblagedatum4() {
-		return $this->ablagedatum4;
-	}
-
-	/**
-	 * Sets the ablagedatum4
-	 *
-	 * @param integer $ablagedatum4
-	 * @return void
-	 */
-	public function setAblagedatum4($ablagedatum4) {
-		$this->ablagedatum4 = $ablagedatum4;
-	}
-
-	/**
-	 * Returns the pruefer4
-	 *
-	 * @return integer $pruefer4
-	 */
-	public function getPruefer4() {
-		return $this->pruefer4;
-	}
-
-	/**
-	 * Sets the pruefer4
-	 *
-	 * @param integer $pruefer4
-	 * @return void
-	 */
-	public function setPruefer4($pruefer4) {
-		$this->pruefer4 = $pruefer4;
-	}
-
-	/**
-	 * Returns the ergebnis4
-	 *
-	 * @return integer $ergebnis4
-	 */
-	public function getErgebnis4() {
-		return $this->ergebnis4;
-	}
-
-	/**
-	 * Sets the ergebnis4
-	 *
-	 * @param integer $ergebnis4
-	 * @return void
-	 */
-	public function setErgebnis4($ergebnis4) {
-		$this->ergebnis4 = $ergebnis4;
-	}
-
-	/**
-	 * Returns the punkte4
-	 *
-	 * @return integer $punkte4
-	 */
-	public function getPunkte4() {
-		return $this->punkte4;
-	}
-
-	/**
-	 * Sets the punkte4
-	 *
-	 * @param integer $punkte4
-	 * @return void
-	 */
-	public function setPunkte4($punkte4) {
-		$this->punkte4 = $punkte4;
+	public function setSchwimmnachweisgueltigbis($schwimmnachweisgueltigbis) {
+		$this->schwimmnachweisgueltigbis = $schwimmnachweisgueltigbis;
 	}
 
 	/**
@@ -968,99 +449,54 @@ class Tx_Blsvsa2013_Domain_Model_Schueler extends Tx_Extbase_DomainObject_Abstra
 	public function setSchule(Tx_Blsvsa2013_Domain_Model_Schulen $schule) {
 		$this->schule = $schule;
 	}
-
+	
 	/**
-	 * Returns the leistung1
+	 * Sets the schulnummer
 	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung1
-	 */
-	public function getLeistung1() {
-		return $this->leistung1;
-	}
-
-	/**
-	 * Sets the leistung1
-	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung1
+	 * @param string $schulnummer
 	 * @return void
 	 */
-	public function setLeistung1(Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung1) {
-		$this->leistung1 = $leistung1;
+	public function setSchulnummer($schulnummer) {
+		if (  ($schulnummer=='') or ($schulnummer=='0')  ) throw new InvalidArgumentException('Jedem Schuler muss eine Schulnummer zugeordnet sein',1350915961);
+		$this->schulnummer = $schulnummer;
 	}
-
+	
+	
 	/**
-	 * Returns the leistung2
+	 * Returns the schulnummer
 	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung2
+	 * @return string $schulnummer
 	 */
-	public function getLeistung2() {
-		return $this->leistung2;
+	public function getSchulnummer() {
+		return $this->schulnummer;
 	}
-
+	
 	/**
-	 * Sets the leistung2
+	 * Liefert das Alter des Schuelers
 	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung2
-	 * @return void
+	 * @return integer $alter
 	 */
-	public function setLeistung2(Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung2) {
-		$this->leistung2 = $leistung2;
-	}
-
-	/**
-	 * Returns the leistung3
-	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung3
-	 */
-	public function getLeistung3() {
-		return $this->leistung3;
-	}
-
-	/**
-	 * Sets the leistung3
-	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung3
-	 * @return void
-	 */
-	public function setLeistung3(Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung3) {
-		$this->leistung3 = $leistung3;
-	}
-
-	/**
-	 * Returns the leistung4
-	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung4
-	 */
-	public function getLeistung4() {
-		return $this->leistung4;
-	}
-
-	/**
-	 * Sets the leistung4
-	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung4
-	 * @return void
-	 */
-	public function setLeistung4(Tx_Blsvsa2013_Domain_Model_Leistungstabelle $leistung4) {
-		$this->leistung4 = $leistung4;
+	public function getAlter(){
+		$alter = Tx_Blsvsa2013_Service_Tools::getAlter($this->getGeburtstag());
+		return $alter;
 	}
 
 	/**
 	 * Returns the feuser
 	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Feuser $feuser
+	 * @return Tx_Blsvsa2013_Domain_Model_Feusers $feuser
 	 */
 	public function getFeuser() {
 		return $this->feuser;
 	}
-
+	
 	/**
 	 * Sets the feuser
 	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Feuser $feuser
+	 * @param Tx_Blsvsa2013_Domain_Model_Feusers $feuser
 	 * @return void
 	 */
-	public function setFeuser(Tx_Blsvsa2013_Domain_Model_Feuser $feuser) {
+	public function setFeuser(Tx_Blsvsa2013_Domain_Model_Feusers $feuser) {
 		$this->feuser = $feuser;
 	}
 }

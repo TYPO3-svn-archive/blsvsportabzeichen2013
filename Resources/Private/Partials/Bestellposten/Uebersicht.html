@@ -1,0 +1,17 @@
+<table>
+	<tr>
+		<th class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_bestellposten.anzahl" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellposten.bestellpostennummer" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellposten.bestellposten" /></th>
+	</tr>
+	
+	<f:for each="{bestellpostens}"  as="bestellposten">
+		<f:if  condition="{bestellposten.anzahl}">
+			<tr>
+				<td><b>{bestellposten.anzahl}</b></td>
+				<td>{bestellposten.artikel.artikelnummer}</td>
+				<td>{bestellposten.artikel.artikel}</td>
+			</tr>
+		</f:if>
+	</f:for>	
+</table>

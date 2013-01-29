@@ -1,0 +1,77 @@
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages class="flashmessages" />
+<f:render partial="FormErrors" />
+
+
+<div id="schulaccordion">
+
+	<h2><f:translate key="tx_blsvsa2013_verwaltung_schuldaten" /> - {schulen.name}</h2>
+	<div class="tx_blsvsa2013_schulen_editadm">
+		<f:form action="updateAdm" name="schulen" object="{schulen}" >
+		<f:render partial="Schulen/FormFieldsAdm" arguments="{schulen:schulen}" />
+		</f:form>
+	</div>
+	
+	<h2><f:translate key="tx_blsvsa2013_verwaltung_einzeleingabe" /></h2>
+	<div class="tx_blsvsa2013_schulen_editadm">
+		<f:form action="importSchueler" name="einzeleingabe">
+		<f:form.hidden property="schulnummer" value="{schulen.schulnummer}" />
+		<f:render partial="Schulen/FormFieldsEinzeleingabe" arguments="{schulen:schulen, schueleranzahlArray:schueleranzahlArray, geburtsjahreArray:geburtsjahreArray}" />
+		</f:form>
+	</div>
+	
+	<h2><f:translate key="tx_blsvsa2013_verwaltung_schuelertextfeld" /></h2>
+	<div class="tx_blsvsa2013_schulen_editadm">
+		<div class="icon blueicons_7_16" title="icon blueicons_7_16">
+		<a title="download" href="typo3conf/ext/blsvsa2013/Resources/Public/xls/VorlageSchuelertextfeld.xls"></a>
+		</div>
+		<div>
+		<a title="download" href="typo3conf/ext/blsvsa2013/Resources/Public/xls/VorlageSchuelertextfeld.xls"><f:translate key="tx_blsvsa2013_verwaltung_excelvorlage" /></a>
+		</div>
+	
+		<f:form action="importSchueler" name="reqdata">
+			<f:form.hidden property="schulnummer" value="{schulen.schulnummer}" />
+			<f:form.textarea cols="80" rows="5" property="schuelerstring" /><br />
+			<f:form.submit value="<f:translate key='tx_blsvsa2013_domain_model_schueler.importieren' />" />
+		</f:form>
+	</div>
+	
+	<h2><f:translate key="tx_blsvsa2013_verwaltung_klassenuebersicht" /></h2>
+	<div>
+		<f:render partial="Schulen/FormFieldsKlassenuebersicht" arguments="{klassen:klassen, schulsumme:schulsumme, pidKlasse:pidKlasse, schule:schulen}" />
+	</div>
+</div>
+
+
+<script>
+<![CDATA[
+  $(document).ready( function(){
+	 $(function() {
+		$("#schulaccordion").accordion({
+    		heightStyle: "content",
+    	    navigation: true,
+    		collapsible: true,
+    		active:]]>{active}<![CDATA[
+        });
+	 });
+  });
+  
+  $(".holeKlasse").click(function(){
+	    var url = $(this).val();
+			$('#tx_blsvsa2013_klasse_popup').show();
+			$('.ActivityIndicator').show();
+			var jqxhr = $.ajax(  url  )
+		.done(function(data) {
+			$('#tx_blsvsa2013_klasse_popup_content').html(data); 
+			
+			$('.ActivityIndicator').hide();
+		});
+	 });		
+	 $("#tx_blsvsa2013_klasse_popup_close").click(function(){
+		$('#tx_blsvsa2013_klasse_popup').hide();
+	 });
+  ]]>  
+</script>
+     
+</f:section>

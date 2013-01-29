@@ -1,0 +1,126 @@
+
+
+/* ******************************************************************************************/
+/* small Icons                                                                              */
+/* ******************************************************************************************/
+
+.smallicon_plus{
+    background:                url(/fileadmin/images/small_icons/smallicons.png) ;
+    background-position:       0px 0px;  
+    width:                     9px;
+    height:                    9px;
+    display:                   inline-block;
+}
+
+.smallicon_kreuz{
+    background:                url(/fileadmin/images/small_icons/smallicons.png) ;
+    background-position:       0px -11px;  
+    width:                     9px;
+    height:                    9px;
+    display:                   inline-block;
+}
+
+.smallicon_auge{
+    background:                url(/fileadmin/images/small_icons/smallicons) ;
+    background-position:       0px -23px;  
+    width:                     14px;
+    height:                    7px;
+    display:                   inline-block;
+}
+
+.smallicon_aktualisieren{
+    background:                url(/fileadmin/images/small_icons/smallicons.png) ;
+    background-position:       0px -32px;  
+    width:                     20px;
+    height:                    20px;
+    display:                   inline-block;
+}
+
+.smallicon_edit{
+    background:                url(/fileadmin/images/small_icons/smallicons.png) ;
+    background-position:       0px -52px;  
+    width:                     15px;
+    height:                    15px;
+    display:                   inline-block;
+}
+
+
+.smallicon_ok{
+    background:                url(/fileadmin/images/small_icons/smallicons.png) ;
+    background-position:       0px -69px;  
+    width:                     10px;
+    height:                    17px;
+    display:                   inline-block;
+}
+
+.smallicon_drucker{
+    background:                url(/fileadmin/images/small_icons/smallicons.png) ;
+    background-position:       0px -87px;  
+    width:                     17px;
+    height:                    17px;
+    display:                   inline-block;
+}
+
+
+.smallicon_lupe{
+    background:                url(/fileadmin/images/small_icons/smallicons.png);
+    background-position:       0px -106px;  
+    width:                     17px;
+    height:                    17px;
+    display:                   inline-block;
+}
+
+.smallicon_delete{
+    background:                url(/fileadmin/images/small_icons/smallicons.png);
+    background-position:       0px -128px;  
+    width:                     17px;
+    height:                    17px;
+    display:                   inline-block;
+}
+
+.smallicon_delete a:hover,
+.smallicon_edit a:hover,
+.smallicon_plus a:hover,
+.smallicon_auge a:hover,
+.smallicon_drucker a:hover,
+.smallicon_lupe a:hover,
+.smallicon_ok a:hover{
+  background-color:              transparent;
+}
+
+.icon_rechts_unten{
+  position:                    relative;
+  margin-top:                         25px;
+  left:                        30px;
+  
+}
+.icon_rechts_unten2{
+  position:                    relative;
+  margin-top:                         10px;
+  left:                        25px;
+   width:                        20px;
+  
+}
+.icon_links_unten{
+  position:                  relative;
+  top:                         25px;
+  left:                        5px;
+  width:                        20px;
+  display:                    inline-block;  
+  
+}
+.sa_icon a {
+    display: block;
+    height: 50px;
+    margin-top: -50px;
+}
+
+.urkunden_status_0 {
+	color: blue;
+}
+.urkunden_status_1 {
+	color: black;
+}
+.urkunden_status_2 {
+	color: red;
+}

@@ -47,21 +47,21 @@ class Tx_Blsvsa2013_Domain_Model_Sportarten extends Tx_Extbase_DomainObject_Abst
 	 *
 	 * @var integer
 	 */
-	protected $sportartgruppe;
+	protected $sportartgruppe=1;
 
 	/**
 	 * Ergebnisart
 	 *
 	 * @var integer
 	 */
-	protected $ergebnisart;
+	protected $ergebnisart=0;
 
 	/**
 	 * Reihenfolge
 	 *
 	 * @var integer
 	 */
-	protected $reihenfolge;
+	protected $reihenfolge=0;
 
 	/**
 	 * Returns the name

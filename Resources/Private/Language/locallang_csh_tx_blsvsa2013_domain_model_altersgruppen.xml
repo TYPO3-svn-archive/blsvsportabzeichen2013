@@ -12,6 +12,7 @@
 			<label index="geschlecht.description">Geschlecht</label>
 			<label index="altervon.description">Alter von</label>
 			<label index="alterbis.description">Alter bis</label>
+			<label index="testtca.description">Alter bis</label>
 		</languageKey>
 	</data>
 </T3locallang>

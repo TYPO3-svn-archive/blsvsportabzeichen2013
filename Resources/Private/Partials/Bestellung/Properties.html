@@ -1,0 +1,36 @@
+
+
+
+<div id="debitorstammdaten" ">
+
+	<b> {schule.uid} - {schule.name} ({schule.institutionsartart.institutionsart})</b>  
+	
+	<h2><f:translate key="tx_blsvsa2013_domain_model_bestellung.headRechnungsadresse" /></h2>
+		
+	<label for="anrede"><f:translate key="tx_blsvsa2013_domain_model_bestellung.anrede" /></label>{bestellung.anrede}<br />
+	<label for="vorname"><f:translate key="tx_blsvsa2013_domain_model_bestellung.vorname" /></label>{bestellung.vorname}<br />
+	<label for="vorname"><f:translate key="tx_blsvsa2013_domain_model_bestellung.name" /></label>{bestellung.name}<br />
+	<label for="adresszusatz"><f:translate key="tx_blsvsa2013_domain_model_bestellung.adresszusatz" /></label>{bestellung.adresszusatz}<br />
+	<label for="strasse"><f:translate key="tx_blsvsa2013_domain_model_bestellung.strasse" /></label>{bestellung.strasse}<br />
+	<label for="plz"><f:translate key="tx_blsvsa2013_domain_model_bestellung.plz" /></label>{bestellung.plz}<br />
+	<label for="ort"><f:translate key="tx_blsvsa2013_domain_model_bestellung.ort" /></label>{bestellung.ort}<br />
+	
+</div>		
+<div id="lieferadresse">	
+
+	<div id="lafade">
+		<h2><f:translate key="tx_blsvsa2013_domain_model_bestellung.headLieferadresse" /></h2>
+		<label for="lieferinstitution">	<f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferinstitution" /></label>{bestellung.lieferinstitution}<br />
+		<label for="liefername"><f:translate key="tx_blsvsa2013_domain_model_bestellung.liefername" /></label>{bestellung.liefername}<br />
+		<label for="liefervorname">	<f:translate key="tx_blsvsa2013_domain_model_bestellung.liefervorname" /></label>{bestellung.liefervorname}<br />
+		<label for="lieferanrede"><f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferanrede" /></label>{bestellung.lieferanrede}<br />
+		<label for="lieferstrasse">	<f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferstrasse" /></label>{bestellung.lieferstrasse}<br />
+		<label for="lieferplz"><f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferplz" /></label>{bestellung.lieferplz}<br />
+		<label for="lieferort"><f:translate key="tx_blsvsa2013_domain_model_bestellung.lieferort" /></label>{bestellung.lieferort}<br />
+	</div>	
+</div>	
+<f:if condition="{bestellung.abweichnedelieferadresse}">
+	<script>
+					$('#lafade').fadeTo( 'slow', 1); 		
+	</script>
+</f:if>

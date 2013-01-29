@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<T3locallang>
-    <meta type="array">
-        <type>module</type>
-        <description>Language labels for class 'tx_blsvschulwettbewerb_import'</description>
-    </meta>
-    <data type="array">
-        <languageKey index="default" type="array">
-            <label index="err_too_many_fields">Zeile kann nicht gelesen werden: zu viele Felder</label>
-            <label index="err_too_less_fields">Zeile kann nicht gelesen werden: zu wenige Felder</label>
-            <label index="err_empty_field">###FELD### darf nicht leer sein</label>
-            <label index="field_lastname">Name</label>
-            <label index="field_firstname">Vorname</label>
-            <label index="field_class">Klasse</label>
-            <label index="field_tests">Teilnahmen</label>
-            <label index="err_find_field_class_id">Klasse nicht vorhanden</label>
-            <label index="err_read_field_date">Datum kann nicht gelesen werden (###DATUM###)</label>
-            <label index="err_read_field_gender">Geschlecht kann nicht gelesen werden (###GESCHLECHT###)</label>
-            <label index="err_nok">Fehler beim Import!\n\n###IMP_BLK###</label>
-            <label index="err_nok_line_inf">Zeile: ###IMP_ZEILE###</label>
-            <label index="err_nok_line_msg">- ###IMP_FEHLER###\n</label>
-            <label index="err_nok_line_blk">###INF###\n###MSG###\n</label>
-            <label index="imp_ok">Von den eingestellten ###ANZ_SCHUELER_GESAMT### Schülern wurden ###ANZ_SCHUELER_NEU### Schüler importiert und ###ANZ_SCHUELER_AKT### aktualisiert.</label>
-        </languageKey>
-    </data>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for class 'tx_blsvschulwettbewerb_import'</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="err_too_many_fields">Zeile kann nicht gelesen werden: zu viele Felder</label>
+            <label index="err_too_less_fields">Zeile kann nicht gelesen werden: zu wenige Felder</label>
+            <label index="err_empty_field">###FELD### darf nicht leer sein</label>
+            <label index="field_lastname">Name</label>
+            <label index="field_firstname">Vorname</label>
+            <label index="field_class">Klasse</label>
+            <label index="field_tests">Teilnahmen</label>
+            <label index="err_find_field_class_id">Klasse nicht vorhanden</label>
+            <label index="err_read_field_date">Datum kann nicht gelesen werden (###DATUM###)</label>
+            <label index="err_read_field_gender">Geschlecht kann nicht gelesen werden (###GESCHLECHT###)</label>
+            <label index="err_nok">Fehler beim Import!\n\n###IMP_BLK###</label>
+            <label index="err_nok_line_inf">Zeile: ###IMP_ZEILE###</label>
+            <label index="err_nok_line_msg">- ###IMP_FEHLER###\n</label>
+            <label index="err_nok_line_blk">###INF###\n###MSG###\n</label>
+            <label index="imp_ok">Von den eingestellten ###ANZ_SCHUELER_GESAMT### Schülern wurden ###ANZ_SCHUELER_NEU### Schüler importiert und ###ANZ_SCHUELER_AKT### aktualisiert.</label>
+        </languageKey>
+    </data>
 </T3locallang>

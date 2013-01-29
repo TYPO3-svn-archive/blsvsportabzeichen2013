@@ -4,14 +4,14 @@ config.tx_extbase{
 
             Tx_Extbase_Domain_Model_FrontendUser {
                 subclasses {
-                    Tx_Blsvsa2013_Feuser = Tx_Blsvsa2013_Domain_Model_Feuser
+                    Tx_Blsvsa2013_Feusers = Tx_Blsvsa2013_Domain_Model_Feusers
 					
           		}
             }
-            Tx_Blsvsa2013_Domain_Model_Feuser {
+            Tx_Blsvsa2013_Domain_Model_Feusers {
                 mapping {
                     tableName = fe_users
-                    recordType = Tx_Blsvsa2013_Feuser
+                    recordType = Tx_Blsvsa2013_Feusers
                 }
             }
             

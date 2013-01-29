@@ -1,0 +1,879 @@
+/*Dateiname:     style_myblsv.css
+ * Erstellt von:   B.Golf
+ * Angelegt am:   06.07.2012
+ * Beschreibung:  main-stylesheet für sportabzeichen online 2013
+ * Version:      0.1
+ * Beschreibung: 
+ */
+ 
+/* ********************************************************************* */
+/* Body                                                                  */
+/* ********************************************************************* */
+body {
+	text-decoration: none;
+	font-family: Verdana, Arial, Tahoma, "San Serif";
+	background-color: #eee;
+	background: url("../Images/sportabzeichen_hg.jpg") fixed; //
+	background: #555;
+	margin: 0;
+	border: 0px solid black;
+	padding: 0px;
+	font-size: 10px;
+	line-height: 14px;
+	color: #333333;
+	font-weight: normal;
+	height: 100%;
+}
+	/* ********************************************************************* */
+/* Texte und Überschriften                                               */
+/* ********************************************************************* */
+img {
+	border: 0px;
+}
+
+a,p {
+	text-decoration: none;
+	margin: 0px;
+}
+
+h1 {
+	font-size: 20px;
+	line-height: 25px;
+	font-weight: bold;
+	color: #66cc33;
+	text-shadow: 2px 2px 2px #666;
+}
+
+h2 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #66cc33;
+	text-shadow: 2px 2px 2px #666;
+}
+
+h3 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #66cc33;
+	text-shadow: 2px 2px 2px #666;
+}
+
+h4 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #66cc33;
+	margin: 0px;
+}
+	/* ********************************************************************* */
+/* Formular-Felder                                                       */
+/* ********************************************************************* */
+fieldset {
+	-webkit-box-shadow: 3px 3px 3px #444;
+	-moz-box-shadow: 3px 3px 3px #444;
+	box-shadow: 3px 3px 3px #444;
+	border-radius: 5px;
+	padding: 20px;
+	background-color: #fff;
+	background-color: RGBA(255, 255, 255, 0.9);
+}
+
+fieldset legend {
+	-webkit-box-shadow: 3px 3px 3px #444;
+	-moz-box-shadow: 3px 3px 3px #444;
+	box-shadow: 3px 3px 3px #444;
+	background-color: #c8e3ac;
+	border-radius: 4px;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 5px;
+}
+
+input.input {
+	border: 0px solid #003063;
+	border-right: 0px solid #003063;
+	border-bottom: 0px solid #003063;
+	width: 150px;
+	margin-bottom: 1px;
+	color: #5290cc;
+	background-color: #eeeeff;
+}
+	/* ********************************************************************* */
+/* Buttons                                                                                                                   */
+/* ********************************************************************* */
+input.submit {
+	width: 150px;
+	border: 0px solid #003063;
+	border-right: 0px solid #003063;
+	border-bottom: 0px solid #003063;
+	color: #ffffff;
+	background-color: #003063;
+}
+	/* ********************************************************************* */
+/* any links                                                             */
+/* ********************************************************************* */
+a:link {
+	color: #333333;
+	font-weight: bold;
+}
+
+a:visited {
+	color: #333333;
+	font-weight: bold;
+}
+
+a:active {
+	color: #66cc33;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #66cc33;
+	font-weight: bold;
+} /* weisse links */
+a.LinkWeiss:link {
+	color: #ffffff;
+}
+
+a.LinkWeiss:visited {
+	color: #ffffff;
+}
+
+a.LinkWeiss:active {
+	color: #5290cc;
+}
+
+a.LinkWeiss:hover {
+	color: #5290cc;
+}
+	/* ********************************************************************* */
+/* Tabellen/Listen                                                       */
+/* ********************************************************************* */
+.tbl_kopf {
+	background: #5299cc;
+	color: #ffffff;
+}
+
+.tbl_normal {
+	
+}
+
+.tbl_hover {
+	background-color: #cccccc;
+	color: #ffffff;
+	cursor: pointer;
+}
+	/* ********************************************************************* */
+/* Container für gesamte seite                                           */
+/* ********************************************************************* */
+#main {
+	position: relative;
+	top: 20px;
+	left: 0px;
+	min-height: 730px;
+	heigth: auto;
+	width: 800px;
+	border: 0px solid black;
+	padding: 0px 0px 230px 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.7);
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+	/* ********************************************************************* */
+/* Container für Kopf-Bereich                                            */
+/* ********************************************************************* */
+#balken_oben {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 180px;
+	width: 800px;
+	background-image: url("../Images/balken_oben.jpg");
+	background-repeat: no-repeat;
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid black;
+	background-color: #ffffff;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+	/* ********************************************************************* */
+/* Container für linken Bereich                                          */
+/* ********************************************************************* */
+#unten {
+	position: relative;
+	top: 180px;
+	left: 0px;
+	height: auto;
+	width: 800px;
+	margin: 0px 0px 20px 0px;
+	padding: 0px;
+	border: 0px solid black;
+}
+
+#menuelinks {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	min-height: 730px;
+	height: auto;
+	width: 140px;
+	padding: 30px 0px 20px 0px;
+	margin: 0px 0px 20px 0px;
+	border: 0px solid white;
+	background-color: #C8E3AC;
+	color: #333333;
+	font-weight: bold;
+	text-align: center;
+}
+
+#menuelinks nav {
+	border-bottom: 1px solid #8a8;
+	text-align: left ! important;
+	padding: 0px 3px;
+}
+
+#menuelinks nav ul {
+	padding: 0px;
+}
+
+#menuelinks nav li {
+	border-top: 1px solid #8a8;
+	display: block;
+	background: transparent;
+}
+
+#menuelinks nav li.active a,#menuelinks nav li.current a {
+	background: #eee;
+}
+
+#menuelinks nav li.with-subpage a,#menuelinks nav li.normal a {
+	background: transparent;
+}
+
+.menu-level2 {
+	margin-left: 15px;
+	border-left: 1px solid #8a8;
+}
+
+.menu-level3 {
+	margin-left: 50px;
+	border-left: 1px solid #8a8;
+}
+
+#menuelinks nav a {
+	display: block;
+	background-color: #C8E3AC;
+	color: #333333;
+	padding: 1px;
+}
+
+#menuelinks nav a:active {
+	color: #66cc33;
+}
+
+#menuelinks nav a:hover {
+	color: #66cc33;
+}
+	/* **********************************************************************/
+/* Container für Inhalts-Bereich                                        */
+/* **********************************************************************/
+#content {
+	position: relative;
+	top: 0px;
+	left: 146px;
+	height: auto;
+	width: 614px;
+	padding: 10px;
+	border: 0px solid black; //
+	background-color: rgba(255, 255, 255, 0.7);
+}
+	/* ********************************************************************* */
+/* Definitionen für Extension blsvschulwettbewerb                       */
+/* ********************************************************************* */
+.einzeleingabe th,th {
+	background-color: #c8e3ac;
+	color: #222222;
+	text-align: center;
+	padding: 5px;
+}
+
+.einzeleingabe td,td {
+	background-color: #eeeeee;
+	padding: 5px;
+}
+
+.einzeleingabe input {
+	width: 100px;
+}
+
+form {
+	text-align: left;
+	width: auto;
+	padding: 0px 0px 0px 0px;
+}
+
+.tx-felogin-pi1 form {
+	width: 300px;
+}
+
+.w_tabelle th {
+	background-color: #c8e3ac;
+	color: #222222;
+	text-align: center;
+	padding: 5px;
+}
+
+.tx-blsvschulwettbewerb-pi4-table th {
+	background-color: #c8e3ac;
+	color: #222222;
+	text-align: center;
+	padding: 5px;
+}
+
+table,.tx-blsvschulwettbewerb-pi4-table {
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #aaa;
+	border-spacing: 1px;
+	font-size: 12px;
+}
+
+.tx-blsvschulwettbewerb-pi4-table table {
+	width: 100%;
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+}
+
+.tx-blsvschulwettbewerb-pi4-table td {
+	background-color: #eeeeee;
+	text-align: left;
+	padding: 2px;
+}
+
+.tx-blsvschulwettbewerb-pi2-form {
+	text-align: left;
+	width: 500px;
+	padding: 0px 30px 0px 30px;
+} /* Fenster WETTBEWERB */
+#w_main {
+	padding: 0px;
+	margin: 10px auto 0px auto;
+	border: 0px solid black;
+	background-color: #ffffff;
+	width: 1024px;
+	min-height: 800px;
+}
+
+#w2_main {
+	padding: 0px;
+	margin: 10px auto 0px auto;
+	border: 0px solid black;
+	background-color: #ffffff;
+	width: 780px;
+	min-height: 400px;
+}
+
+#w_top {
+	background-image: url("../Images/head_ergebnisse.png");
+	background-repeat: no-repeat;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid black;
+	background-color: #ffffff;
+	width: 1024px;
+	height: 198px;
+}
+
+#w_klasse {
+	position: relative;
+	padding: 100px 0px 0px 585px;
+	margin: 0px;
+	border: 0px solid black;
+	width: 80px;
+	height: 30px;
+	font-size: 10px;
+}
+
+#w_datum {
+	position: relative;
+	padding: 00px 0px 0px 625px;
+	margin: 0px;
+	border: 0px solid black;
+	width: 80px;
+	height: 30px;
+	font-size: 10px;
+}
+
+#w_tabelle {
+	position: relative; left; 0 px;
+	top: 0px;
+	padding: 0px;
+	margin: 0px 0px 10px 1px;
+	border-top: 0px solid black;
+	border-right: 4px solid black;
+	border-left: 1px solid black;
+	border-bottom: 4px solid black;
+	background-color: #ffffff;
+	width: 99%;
+	min-height: 550px;
+}
+
+#w_tabelle table {
+	border-spacing: 0px;
+	width: 100%;
+	font-size: 9px;
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+}
+
+.borderright_dick {
+	border-right: 2px solid black !important;
+}
+
+.bordertop_dick {
+	border-top: 2px solid black !important;
+}
+
+.borderbottom_dick {
+	border-bottom: 2px solid black !important;
+}
+
+.borderright {
+	border-right: 1px solid black !important;
+}
+
+.small {
+	font-size: 9px;
+}
+
+.borderbottom {
+	border-bottom: 1px solid black !important;
+}
+
+#w_tabelle input {
+	width: 15px;
+	font-size: 11px;
+	padding: 0px;
+}
+
+#w_tabelle th {
+	background-color: #c8e3ac;
+	color: #222222;
+	text-align: center;
+	padding: 5px;
+}
+
+#w_tabelle td {
+	text-align: center;
+}
+
+.textalignleft {
+	text-align: left ! important;
+}
+
+.w_submit {
+	height: 40px !important;
+	margin: 20px !important;
+	width: 350px !important;
+	font-size: 20px !important;
+}
+	/* ********************************************************************* */
+/* Definitionen für Kontexthilfe                                         */
+/* ********************************************************************* */
+#main_hilfstext {
+	width: 400px;
+	height: 400px;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	background-image: url("../Images/hilfe_hg_main.png");
+	background-repeat: repeat-y;
+}
+
+#divtop_hilfstext {
+	background-image: url("../Images/hilfe_hg_oben.png");
+	background-repeat: no-repeat;
+	left: 0px;
+	width: 400px;
+	height: 120px;
+}
+
+#divmiddle_hilfstext {
+	width: 350px;
+	height: 250px;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 25px 25px 25px;
+	overflow: auto;
+	background-image: url("../Images/hilfe_hg_main.png");
+	background-repeat: repeat-y;
+}
+
+#divbottom_hilfstext {
+	position: relative;
+	left: 0px;
+	width: 400px;
+	height: 30px;
+	padding-top: 20px;
+	padding-left: 25px;
+	background-image: url("../Images/hilfe_hg_unten.png");
+	background-repeat: no-repeat;
+	font-size: 10px;
+}
+
+div.hilfe {
+	background-color: transparent;
+	background-image:
+		url("../Icons/hilfe_fragezeichen.png");
+	border: 0px;
+	color: transparent;
+	padding: 0px;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: help;
+}
+	/* ********************************************************************* */
+/* Definitionen für bestanden/nicht bestanden                           */
+/* ********************************************************************* */
+.bestanden {
+	color: #00dd00 ! important;
+	font-weight: bold;
+}
+
+.bestandenBorder {
+	border: 1px solid #00dd00 ! important;
+}
+
+.bestandenBG {
+	background-color: #00dd00 ! important;
+}
+
+.nichtbestanden {
+	color: #dd0000 ! important;
+	font-weight: bold;
+}
+
+.nichtbestandenBG {
+	background-color: #dd0000 ! important;
+}
+
+.BGgreen {
+	background-color: #00dd00 ! important;
+}
+
+.BGred {
+	background-color: #dd0000 ! important;
+}
+
+.BGgrau {
+	background-color: #dddddd ! important;
+}
+
+.BGwhite {
+	background-color: #fff ! important;
+}
+
+.green {
+	color: #00dd00 ! important;
+	text-align: center ! important;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.gelb {
+	color: #F9853F ! important;
+	text-align: center ! important;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.rot {
+	color: #dd0000 ! important;
+	text-align: center ! important;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.schwarz {
+	color: #000000 ! important;
+	text-align: center ! important;
+	font-size: 14px;
+}
+
+.clgross a {
+	font-size: 14px;
+	color: #777;
+}
+
+.clgross a:hover {
+	color: #66cc33;
+}
+
+.zurucksetzen {
+	margin-top: 20px;
+}
+	/** ********************************************************************* */
+/* icons                                                                  */
+/** ********************************************************************* */
+.icon {
+	height: 50px;
+	width: 50px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: -20px;
+	-moz-transform: scale(0.7) rotate(0deg) translate(0px, -30px)
+		skew(0deg, 0deg);
+	-webkit-transform: scale(0.7) rotate(0deg) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-o-transform: scale(0.7) rotate(deg) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-ms-transform: scale(0.7) rotate(0deg) translate(0px, 0px)
+		skew(0deg, 0deg);
+	transform: scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+
+.icon:hover {
+	-moz-transform: scale(0.8) rotate(0deg) translate(0px, -30px)
+		skew(0deg, 0deg);
+	-webkit-transform: scale(0.8) rotate(0deg) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-o-transform: scale(0.8) rotate(deg) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-ms-transform: scale(0.8) rotate(0deg) translate(0px, 0px)
+		skew(0deg, 0deg);
+	transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-box-shadow: 3px 3px 3px #444444;
+	box-shadow: 3px 3px 3px #444444;
+}
+
+.icon_akt {
+	background: url("../Images/aktualisieren_black.png");
+}
+
+a.aktualisieren {
+	margin: 10px;
+	padding: 0px;
+	background-color: #fff;
+	height: 50px;
+	display: inline-block;
+	-moz-box-shadow: 3px 3px 3px #444444;
+	box-shadow: 3px 3px 3px #444444;
+}
+
+a.aktualisieren p {
+	padding: 20px 20px 20px 0px;
+	display: inline-block;
+}
+
+.oben {
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.unten {
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;;
+}
+
+.linksoben {
+	-webkit-border-radius: 5px 0px 0px 0px;
+	border-radius: 5px 0px 0px 0px;
+}
+
+.rechtsoben {
+	-webkit-border-radius: 0px 5px 0px 0px;
+	border-radius: 0px 5px 0px 0px;
+}
+
+.linksunten {
+	-webkit-border-radius: 0px 0px 5px 0px;
+	border-radius: 0px 0px 5px 0px;
+}
+
+.rechtsunten {
+	-webkit-border-radius: 0px 0px 0px 5px;
+	border-radius: 0px 0px 0px 5px;
+}
+
+input[type=text] {
+	width: 200px;
+}
+
+input.schmal {
+	width: 50px;
+}
+
+input.breit {
+	width: 300px;
+}
+
+ul.flashmessages {
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: solid 1px #f00;
+	padding: 5px;
+}
+
+ul.flashmessages li {
+	margin: 15px;
+}
+
+.schule td {
+	font-weight: bold;
+	background-color: #444;
+	text-align: center;
+	color: #eee;
+}
+
+td.bestanden,td.alle,td.nichtbestanden,td.klasse {
+	text-align: center;
+	width: 40px;
+}
+
+.alle {
+	color: #222;
+}
+
+td.excelholen,td.klassebearbeiten {
+	width: 100px;
+	text-align: center;
+}
+
+td.geschlecht {
+	width: 60px;
+	text-align: center;
+}
+
+#tx_blsvsa2013_klasse_popup {
+	position: absolute;
+	top: 100px;
+	left: -100px;
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: solid 1p #444;
+	padding: 0px;
+	height: 400px;
+	overflow: hidden;
+	width: 700px;
+	display: none;
+}
+
+.blsv_popup_header {
+	widht: 100%;
+	height: 20px;
+	padding: 3px;
+	background-color: #eee;
+	background-color: rgba(50, 50, 50, 0.7);
+}
+
+.blsv_popup_header span {
+	color: #eee;
+	font-size: 12px;
+	padding: 10px;
+	line-height: 20px;
+}
+
+.blsv_popup_header_close_button {
+	width: 50px;
+	height: 20px;
+	margin: 0;
+	border: 0;
+	float: right;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background-image:
+		url("../Icons/listicons.png");
+	background-position: -220px 0px;
+}
+
+.blsv_popup_header_close_button:hover {
+	background-position: -280px 0px;
+}
+
+#tx_blsvsa2013_klasse_popup_content {
+	height: 375px;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.9);
+	overflow: auto;
+	padding: 0px 10px;
+}
+
+.ui-accordion {
+	-webkit-box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	box-shadow: 5px 5px 5px 3px rgba(50, 50, 50, 0.5);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	font-family: Verdana;
+}
+
+h3.ui-accordion-header {
+	background-color: #c8e3ac;
+	font-size: 16px;
+	color: #666;
+	text-shadow: 2px 2px 2px #666;
+}
+
+h3.ui-accordion-header-active {
+	font-weight: bold;
+	color: #66cc33;
+	text-shadow: 2px 2px 2px #222;
+}
+
+.ui-accordion-content {
+	font-size: 12px;
+}
+
+#importaccordion input {
+	width: 100px;
+}
+
+.ActivityIndicator {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: RGBA(255, 255, 255, 0.8);
+	background-image:
+		url("../Icons/ActivityIndicator.gif");
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.bgabzeichen,.bgabzeichen0,.bgabzeichen1,.bgabzeichen2,.bgabzeichen3,.punktegesamt option[value="0"],.punktegesamt option[value="1"],.punktegesamt option[value="2"],.punktegesamt option[value="3"]
+	{
+	background-color: #f00;
+}
+
+.bgabzeichen4,.bgabzeichen5,.bgabzeichen6,.bgabzeichen7,.punktegesamt option[value="4"],.punktegesamt option[value="5"],.punktegesamt option[value="6"],.punktegesamt option[value="7"]
+	{
+	background-color: #cd7F32;
+}
+
+.bgabzeichen8,.bgabzeichen9,.bgabzeichen10,.punktegesamt option[value="8"],.punktegesamt option[value="9"],.punktegesamt option[value="10"]
+	{
+	background-color: #c0c0c0;
+}
+
+.bgabzeichen11,.bgabzeichen12,.punktegesamt option[value="11"],.punktegesamt option[value="12"]
+	{
+	background-color: #FFD700;
+}

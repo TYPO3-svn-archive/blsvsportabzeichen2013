@@ -34,13 +34,13 @@
  */
 class Tx_Blsvsa2013_Controller_FeuserController extends Tx_Extbase_MVC_Controller_ActionController {
 
-	
-	
-	/**
-	 * feuser
-	 *
-	 * @var int
-	 */
+	
+	
+	/**
+	 * feuser
+	 *
+	 * @var int
+	 */
 	protected $feuser;
 	
 	/**
@@ -61,31 +61,31 @@ class Tx_Blsvsa2013_Controller_FeuserController extends Tx_Extbase_MVC_Controlle
 		$this->feuserRepository = $feuserRepository;
 	}
 	
-
-	/**
-	 * Initializes the current action
-	 * @return void
-	 */
-	protected function initializeAction() {
-			
-		$this->feuser = $this->feuserRepository->findByUid( $GLOBALS['TSFE']->fe_user->user['uid'] ) ;
-			
+
+	/**
+	 * Initializes the current action
+	 * @return void
+	 */
+	protected function initializeAction() {
+			
+		$this->feuser = $this->feuserRepository->findByUid( $GLOBALS['TSFE']->fe_user->user['uid'] ) ;
+			
 	}
 	
-	/**
-	 * erstellt Liste der Lehrer der Schule
-	 * @return void
-	 */
-	protected function listAction() {
+	/**
+	 * erstellt Liste der Lehrer der Schule
+	 * @return void
+	 */
+	protected function listAction() {
 			
 		//echo($this->feuser->getSchule());
-		
+		
 		$lehrer = $this->feuserRepository->findBySchule( $this->feuser->getSchule() );
 		
 		
 		$this->view->assign( 'feusers', $lehrer );
-		
-			
+		
+			
 	}
 	
 	

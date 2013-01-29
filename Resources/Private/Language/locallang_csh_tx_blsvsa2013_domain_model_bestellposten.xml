@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_blsvsa2013_domain_model_bestellposten</description>
+		<type>CSH</type>
+		<csh_table>tx_blsvsa2013_domain_model_bestellposten</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+			<label index="anzahl.description">anzahl</label>
+			<label index="bestellung.description">bestellung</label>
+			<label index="artikel.description">artikel</label>
+		</languageKey>
+	</data>
+</T3locallang>

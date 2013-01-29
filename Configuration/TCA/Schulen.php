@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_blsvsa2013_domain_model_schulen'] = array(
 	'ctrl' => $TCA['tx_blsvsa2013_domain_model_schulen']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, schulnummer, name, schulart, strasse, plz, ort, telefon, email, bezirk, kreis, blsvkreis, bankempfaenger, kto, blz, verwendungszweck, grundschulen, schulwettbewerb, anzschueler, anzteilnahmeberechtigt, anzbestanden, feuser',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, schulnummer, name, schulart, strasse, plz, ort, telefon, email, bezirk, kreis, blsvkreis, bankempfaenger, kto, blz, verwendungszweck, grundschulen, schulwettbewerb, anzschueler, anzteilnahmeberechtigt, anzbestanden, feuser, institutionsartart',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, schulnummer, name, schulart, strasse, plz, ort, telefon, email, bezirk, kreis, blsvkreis, bankempfaenger, kto, blz, verwendungszweck, grundschulen, schulwettbewerb, anzschueler, anzteilnahmeberechtigt, anzbestanden, feuser,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, schulnummer, name, schulart, strasse, plz, ort, telefon, email, bezirk, kreis, blsvkreis, bankempfaenger, kto, blz, verwendungszweck, grundschulen, schulwettbewerb, anzschueler, anzteilnahmeberechtigt, anzbestanden, feuser, institutionsartart,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -277,7 +277,7 @@ $TCA['tx_blsvsa2013_domain_model_schulen'] = array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_schulen.feuser',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'fe_users',
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -288,6 +288,32 @@ $TCA['tx_blsvsa2013_domain_model_schulen'] = array(
 					'showPossibleLocalizationRecords' => 1,
 					'showAllLocalizationLink' => 1
 				),
+			),
+		),
+		'institutionsartart' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_schulen.institutionsartart',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_blsvsa2013_domain_model_institutionsartart',
+				'minitems' => 0,
+				'maxitems' => 1,
+				'appearance' => array(
+					'collapseAll' => 0,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				),
+			),
+		),
+		'tstamp' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:blsvsa2013/Resources/Private/Language/locallang_db.xml:tx_blsvsa2013_domain_model_teilnahmen.tstamp',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
 			),
 		),
 	),

@@ -29,6 +29,7 @@
 			<label index="anzteilnahmeberechtigt.description">Anzahl teilnahmeberechtigter Schüler</label>
 			<label index="anzbestanden.description">Anzahl bestandene Schüler</label>
 			<label index="feuser.description">fe_user</label>
+			<label index="institutionsartart.description">Art der Schule bzw. institution z.B. Polizei</label>
 		</languageKey>
 	</data>
 </T3locallang>

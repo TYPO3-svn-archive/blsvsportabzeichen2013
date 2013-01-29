@@ -1,0 +1,8 @@
+<f:form action="list" name="filter" object="filter" >
+ 	<b><f:translate key="tx_blsvsa2013_domain_model_bestellung.filter" />:</b> 
+	<f:form.select name="status" options="{ 0: 'alle Status', 1: 'offen', 2: 'ungedruckt' , 3: 'abgeschlossen' }" />
+	<f:form.select property="bezirk"  value="{bezirk}" options="{ 0: 'alle Bezirke', 1: 'Oberbayern', 2: 'Niederbayern' , 3: 'Oberpfalz', 4:'Oberfranken', 5:'Mittelfranken', 6:'Unterfranken', 7:'Schwaben' }" />
+	<f:form.select property="institutionen" options="{ 0: 'alle Institutionen', 1: 'Verein', 2: 'Schule' , 3: 'Bundeswehr', 4:'Polizei', 6:'Privat', 7:'BGS', 8:'Zoll', 9:'Ausland' }" />
+	<f:form.select property="jahr" options="{ 2013: '2013', 2012: '2012', 2011: '2011' , 2010: '2010' }" />
+	<f:form.submit name="submit" value="<f:translate key='tx_blsvsa2013_domain_model_bestellung.filtern' />" />
+</f:form>

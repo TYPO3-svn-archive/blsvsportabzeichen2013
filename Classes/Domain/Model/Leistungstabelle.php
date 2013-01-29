@@ -37,23 +37,23 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Leistung Bronze
 	 *
-	 * @var integer
+	 * @var string
 	 */
-	protected $leistungbronze;
+	protected $leistungbronze=1;
 
 	/**
 	 * Leistung Silber
 	 *
-	 * @var integer
+	 * @var string
 	 */
-	protected $leistungsilber;
+	protected $leistungsilber=2;
 
 	/**
 	 * Leistung Gold
 	 *
-	 * @var integer
+	 * @var string
 	 */
-	protected $leistunggold;
+	protected $leistunggold=3;
 
 	/**
 	 * Sportart
@@ -74,7 +74,7 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Returns the leistungbronze
 	 *
-	 * @return integer $leistungbronze
+	 * @return string $leistungbronze
 	 */
 	public function getLeistungbronze() {
 		return $this->leistungbronze;
@@ -83,7 +83,7 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Sets the leistungbronze
 	 *
-	 * @param integer $leistungbronze
+	 * @param string $leistungbronze
 	 * @return void
 	 */
 	public function setLeistungbronze($leistungbronze) {
@@ -93,7 +93,7 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Returns the leistungsilber
 	 *
-	 * @return integer $leistungsilber
+	 * @return string $leistungsilber
 	 */
 	public function getLeistungsilber() {
 		return $this->leistungsilber;
@@ -102,7 +102,7 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Sets the leistungsilber
 	 *
-	 * @param integer $leistungsilber
+	 * @param string $leistungsilber
 	 * @return void
 	 */
 	public function setLeistungsilber($leistungsilber) {
@@ -112,7 +112,7 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Returns the leistunggold
 	 *
-	 * @return integer $leistunggold
+	 * @return string $leistunggold
 	 */
 	public function getLeistunggold() {
 		return $this->leistunggold;
@@ -121,7 +121,7 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	/**
 	 * Sets the leistunggold
 	 *
-	 * @param integer $leistunggold
+	 * @param string $leistunggold
 	 * @return void
 	 */
 	public function setLeistunggold($leistunggold) {
@@ -134,6 +134,9 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 	 * @return Tx_Blsvsa2013_Domain_Model_Sportarten $sportart
 	 */
 	public function getSportart() {
+		if ('object' != gettype($this->sportart)){
+			throw new \Exception(Tx_Extbase_Utility_Localization::translate('tx_blsvsa2013_domain_repository_leistungstabellenrepository.error_sportart_wert', 'blsvsa2013', array($this->getUid())), 1355327031);
+		}
 		return $this->sportart;
 	}
 
@@ -166,5 +169,95 @@ class Tx_Blsvsa2013_Domain_Model_Leistungstabelle extends Tx_Extbase_DomainObjec
 		$this->altersgruppe = $altersgruppe;
 	}
 
+
+	/**
+	 * liefert die Leistung als Integer
+	 * 
+	 * @param string $strLeistung
+	 * @return string $intLeistung
+	 */
+	private function getLeistungAsInt($strLeistung){
+		$intErgebnisart = $this->sportart->getErgebnisart();
+		
+		if (!(($intErgebnisart>0) && ($intErgebnisart<6))){
+			throw new \Exception( "Tx_Blsvsa2013_Domain_Model_Leistungstabelle invalid value for ergebnisart (leistungstabelle={$this->uid}, ergebnisart=$intErgebnisart", 1352812850);					
+		}
+		
+		switch($intErgebnisart){
+			// mm:ss Zeit in Sekunden
+			case 1:
+				if (preg_match('/([0-9]*):([0-9]{1,2})/', $strLeistung, $m)){
+					$intLeistung = $m[1]*60 + $m[2];
+				} else {
+					throw new \Exception( "Tx_Blsvsa2013_Domain_Model_Leistungstabelle invalid value for leistung (leistungstabelle={$this->uid}, ergebnisart=$intErgebnisart, leistung=$strLeistung", 1352812850);					
+				}
+				break;
+				
+			// ss,z Zeit in Zehntelsekunden 
+			case 2:
+				if (preg_match('/([0-9]*),([0-9])/', $strLeistung, $m)){
+					$intLeistung = $m[1]*10 + $m[2];
+				} else {
+					throw new \Exception( "Tx_Blsvsa2013_Domain_Model_Leistungstabelle invalid value for leistung (leistungstabelle={$this->uid}, ergebnisart=$intErgebnisart, leistung=$strLeistung", 1352812850);					
+				}
+				break;
+				
+			// mm,cc m Laenge in cm
+			case 3:
+				if (preg_match('/([0-9]*),([0-9]{1,2})/', $strLeistung, $m)){
+					$intLeistung = $m[1]*100 + $m[2];
+				} else {
+					throw new \Exception( "Tx_Blsvsa2013_Domain_Model_Leistungstabelle invalid value for leistung (leistungstabelle={$this->uid}, ergebnisart=$intErgebnisart, leistung=$strLeistung", 1352812850);					
+				}
+				break;
+				
+			//	4	xx	Punkte/Anzahl
+			case 4:
+				if (preg_match('/([0-9]{1,2})/', $strLeistung, $m)){
+					$intLeistung = $m[1];
+				} else {
+					throw new \Exception( "Tx_Blsvsa2013_Domain_Model_Leistungstabelle invalid value for leistung (leistungstabelle={$this->uid}, ergebnisart=$intErgebnisart, leistung=$strLeistung", 1352812850);					
+				}
+				break;
+				
+			//	5	mm:ss
+			case 5:
+				if (preg_match('/([0-9]*):([0-9]{1,2})/', $strLeistung, $m)){
+					$intLeistung = $m[1]*60 + $m[2];
+				} else {
+					throw new \Exception( "Tx_Blsvsa2013_Domain_Model_Leistungstabelle invalid value for leistung (leistungstabelle={$this->uid}, ergebnisart=$intErgebnisart, leistung=$strLeistung", 1352812850);					
+				}
+				break;
+		}
+		
+		return $intLeistung;
+	}	
+	
+	/**
+	 * Returns the leistungbronze
+	 *
+	 * @return integer $leistungbronze
+	 */
+	public function getLeistungbronzeAsInt() {
+		return $this->getLeistungAsInt($this->leistungbronze);
+	}
+
+	/**
+	 * Returns the leistungsilber
+	 *
+	 * @return integer $leistungsilber
+	 */
+	public function getLeistungsilberAsInt() {
+		return $this->getLeistungAsInt($this->leistungsilber);
+	}
+
+	/**
+	 * Returns the leistunggold
+	 *
+	 * @return integer $leistunggold
+	 */
+	public function getLeistunggoldAsInt() {
+		return $this->getLeistungAsInt($this->leistunggold);
+	}
 }
 ?>

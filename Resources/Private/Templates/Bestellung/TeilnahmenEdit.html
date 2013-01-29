@@ -1,0 +1,51 @@
+<div>
+	<table>
+		<tr>
+			<th>Nr.</th><th>Vorname</th><th>Name</th><th>Geb.<br/> Datum</th><th>Anz.</th><th>Art</th><th>Datum</th><th>Jahr</th><th>Urkunde</th>
+		</tr>
+		<tr>
+			<td><f:form.textfield  class="spinner" name="teilnahme.uid[]" type="text" placeholder="UID" /></td>
+			<td><f:form.textfield id="suchname" class="" name="teilnahme.name[]" type="text" placeholder="Name" /></td>
+			<td><f:form.textfield class="" property="teilnahme.vorname" type="text" placeholder="Vorname" /></td>				
+			<td><f:form.textfield class="datepicker" property="teilnahme.geburtsdatum" type="text" placeholder="tt.mm.jjjj" /></td>
+			<td><f:form.textfield class="zahl" property="teilnahme.anzahlteilnahmen" type="text" placeholder="nn" /></td>
+			<td><f:form.select class="punktegesamt bgabzeichen{schueler.punktegesamt}" id="schuelerAnzpunkte{schueler.uid}" property="teilnahme.punktegesamt[]" options="{ 0:'0 ', 1:'1 ', 2:'2 ',3:'3 ',
+																				 4:'4 ', 5:' 5  ', 6:'  6 ',7:'  7  ',
+																				 8:'8 ', 9:' 9 ', 10:' 10 ',
+																				 11:' 11', 12:'12 ' }" /></td>
+			<td><f:form.textfield class="zahl" property="vorname" type="text" placeholder="Name" /></td>
+			<td><f:form.textfield class="zahl" property="vorname" type="text" placeholder="Name" /></td>
+			<td><f:form.textfield class="zahl" property="vorname" type="text" placeholder="Name" /></td>
+		</tr>
+	
+	</table>
+</div> 
+				
+<script>
+<![CDATA[ 
+	$('.punktegesamt').change(function(){
+		$( this ).removeClass('bgabzeichen0' );
+		$( this ).removeClass('bgabzeichen1' );
+		$( this ).removeClass('bgabzeichen2' );
+		$( this ).removeClass('bgabzeichen3' );
+		$( this ).removeClass('bgabzeichen4' );
+		$( this ).removeClass('bgabzeichen5' );
+		$( this ).removeClass('bgabzeichen6' );
+		$( this ).removeClass('bgabzeichen7' );
+		$( this ).removeClass('bgabzeichen8' );
+		$( this ).removeClass('bgabzeichen9' );
+		$( this ).removeClass('bgabzeichen10' );
+		$( this ).removeClass('bgabzeichen11' );
+		$( this ).removeClass('bgabzeichen12' );
+		
+        $( this ).addClass('bgabzeichen' + $( this ).val() );
+       
+            
+	});
+	
+	$('#suchname').keyup(function(){
+		alert( $( this ).val() );		
+	});
+	
+	]]>
+</script>

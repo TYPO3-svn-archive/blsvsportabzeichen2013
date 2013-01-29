@@ -1,0 +1,61 @@
+<f:layout name="Default" />
+
+<f:debug title="Debug of Schulen">{schulen}</f:debug>
+
+
+<f:section name="main">
+
+<f:flashMessages class="flashmessages" />
+<f:render partial="FormErrors" />
+
+
+<h1>Schulen</h1>
+ 
+
+	<f:form method="post" action="listAdm" name="suche" object="{suche}">
+    <table>
+    	<tr>
+    		<td class="SchulenAdmFilter SchulenAdmStatus0"><f:link.action action="listAdm" arguments="{filter:0, suchtext:suchtext}"><f:translate key="tx_blsvsa2013_verwaltung_status.0" /></f:link.action></td>
+    		<td class="SchulenAdmFilter SchulenAdmStatus1"><f:link.action action="listAdm" arguments="{filter:1, suchtext:suchtext}"><f:translate key="tx_blsvsa2013_verwaltung_status.1" /></f:link.action></td>
+    		<td class="SchulenAdmFilter SchulenAdmStatus2"><f:link.action action="listAdm" arguments="{filter:2, suchtext:suchtext}"><f:translate key="tx_blsvsa2013_verwaltung_status.2" /></f:link.action></td>
+    		<td class="SchulenAdmFilter SchulenAdmStatus3"><f:link.action action="listAdm" arguments="{filter:3, suchtext:suchtext}"><f:translate key="tx_blsvsa2013_verwaltung_status.3" /></f:link.action></td>
+    	</tr>
+    </table>
+    
+    <br />
+    
+    <table>
+		<tr>
+			<td valign="top" >Suche:<f:form.textfield name="suchtext" size="10" value="{suchtext}"/></td>
+			<td><f:form.submit value="Suchen" /></td>
+		</tr>
+    </table>
+	</f:form>
+ 
+
+	<table>
+		<tr>
+			<th  class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_schulen.schulnummer" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_schulen.kreis" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_schulen.kreisname" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_schulen.name" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_schulen.plz" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_schulen.ort" /></th>
+			<th class="rechtsoben"><f:translate key="tx_blsvsa2013_domain_model_schulen.anzbestanden" /></th>
+		</tr>
+	 
+		<f:widget.paginate objects="{schulen}" as="paginatedSchulen" configuration="{itemsPerPage: 20}">
+		  <f:for each="{paginatedSchulen}" as="schule">
+			<tr>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.schulnummer}</f:link.action></td>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.kreis}</f:link.action></td>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.kreisname}</f:link.action></td>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.name}</f:link.action></td>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.plz}</f:link.action></td>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.ort}</f:link.action></td>
+				<td class="SchulenAdmStatus{schule.urkundenStatus}"><f:link.action action="editAdm" arguments="{schulen : schule}">{schule.anzbestanden}</f:link.action></td>
+			</tr>  
+		 </f:for>
+		</f:widget.paginate> 
+	</table>   
+</f:section>

@@ -32,5 +32,27 @@
  */
 class Tx_Blsvsa2013_Domain_Repository_LeistungstabelleRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * Gibt die Leistungen fuer die uebergebene Altersgruppe zurueck
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Altersgruppen $objAltersgruppe
+	 * @throws Tx_Blsvsa2013_Exception_Error
+	 * @return array $erg
+	 */
+	public function getByAltersgruppe(Tx_Blsvsa2013_Domain_Model_Altersgruppen $objAltersgruppe){
+		$erg = null;
+		if (empty($objAltersgruppe)) {
+			throw new Tx_Blsvsa2013_Exception_Error('Es muss eine Altersgruppe übergeben werden', 1351159647);
+		}
+		
+		$query = $this->createQuery();
+		$query->matching( $query->equals('altersgruppe', $objAltersgruppe->getUid() ) );
+		$erg = $query->execute();
+				
+		if(!$erg) {
+			throw new Tx_Blsvsa2013_Exception_Error('Für die Altersgruppe konnte keine Leistungstabelle zugeordnet werden!',1351159675 );
+		}
+		return $erg;
+	}
 }
 ?>

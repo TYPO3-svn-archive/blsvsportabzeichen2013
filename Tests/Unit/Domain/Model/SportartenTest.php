@@ -74,7 +74,7 @@ class Tx_Blsvsa2013_Domain_Model_SportartenTest extends Tx_Extbase_Tests_Unit_Ba
 	 */
 	public function getSportartgruppeReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			1,
 			$this->fixture->getSportartgruppe()
 		);
 	}

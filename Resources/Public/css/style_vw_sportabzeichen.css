@@ -1,0 +1,1509 @@
+/*
+
+Dateiname:     style_vw_myblsv.css
+
+Erstellt von:   B.Golf
+
+Angelegt am:   06.11.2012
+
+Beschreibung:  main-stylesheet für vrerwaltung sportabzeichen online 2013
+
+Version:      0.1
+
+
+Beschreibung: 
+ 
+*/
+
+/* ********************************************************************* */
+
+/* Body                                                                  */
+
+/* ********************************************************************* */
+html{
+  height:      100%;
+   min-height:   400px;
+}
+
+body {
+
+        text-decoration: none;
+		font-family: Verdana, Arial, Tahoma, San Serif;
+        background-color: #eee;
+		margin: 0;
+        border: 0px solid black;
+        padding: 0 0 10px 0;
+        font-size: 10px;
+        line-height: 14px;
+        color: #333333;
+        font-weight: normal;
+        height: 100%;
+        min-height:   400px;
+}
+
+/* ********************************************************************* */
+
+/* Texte und Überschriften                                               */
+
+/* ********************************************************************* */
+
+img{
+    border:0px;
+}
+
+a, p {
+         text-decoration:none;
+         margin:0px;
+}
+
+h1 {
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: bold;
+        color:#003063;
+        text-shadow: 2px 2px 2px #666;
+}
+h2 {
+        font-size: 16px;
+        font-weight: bold;
+        color: #003063;
+        text-shadow: 2px 2px 2px #666;
+}
+
+h3 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #003063;
+        text-shadow: 2px 2px 2px #666;
+
+}
+
+h4 {
+
+        font-size: 12px;
+
+        font-weight: bold;
+
+        color: #003063;
+
+        margin:0px;
+
+}
+
+/* ********************************************************************* */
+/* Formular-Felder                                                       */
+/* ********************************************************************* */
+
+
+fieldset{
+  -webkit-box-shadow: 3px 3px 3px #444;
+  -moz-box-shadow: 3px 3px 3px #444;
+  box-shadow: 3px 3px 3px #444;
+  border-radius: 5px;
+  padding:20px;
+  background-color: #fff;
+  background-color: RGBA(255,255,255,0.9);
+}
+
+fieldset legend{
+  -webkit-box-shadow:   3px 3px 3px #444;
+    -moz-box-shadow:   3px 3px 3px #444;
+    box-shadow:     3px 3px 3px #444;
+   background-color:   #003063;
+   border-radius:   4px;
+   font-weight:     bold;
+   font-size:     14px;
+  padding:     5px;   
+  color:      #eee;
+}
+
+input{
+	margin:   2px;
+}
+input.input{
+
+        border:0px solid #003063;
+        width:150px;
+        margin-bottom:1px;
+        color:#5290cc;
+        background-color: #eeeeff;
+}
+
+/* ********************************************************************* */
+/* Buttons                                                                                                                   */
+
+/* ********************************************************************* */
+
+input.submit{
+        width:150px;
+        border:0px solid #003063;
+        color:#ffffff;
+        background-color: #003063;
+}
+
+/* ********************************************************************* */
+
+/* any links                                                             */
+
+/* ********************************************************************* */
+
+a:link {
+
+        color: #333333;
+
+        font-weight: bold;
+
+}
+
+a:visited {
+   color: #333333;
+   font-weight: bold;
+
+}
+
+a:active {
+    color: #003063;
+    font-weight: bold;
+
+}
+
+a:hover {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10+,Safari5.1+ */  
+  background: -o-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C */
+     color: #003063;
+
+         font-weight: bold;
+
+}
+
+/* weisse links */
+
+a.LinkWeiss:link { color: #ffffff; }
+
+a.LinkWeiss:visited { color: #ffffff; }
+
+a.LinkWeiss:active { color: #5290cc; }
+
+a.LinkWeiss:hover { color: #5290cc; }
+
+/* ********************************************************************* */
+
+/* Tabellen/Listen                                                       */
+
+/* ********************************************************************* */
+
+.tbl_kopf {
+    background: #5299cc;
+    color: #ffffff;
+}
+
+.tbl_normal {
+
+ 
+
+}
+
+.tbl_hover {
+        background-color: #cccccc;
+        color: #ffffff;
+        cursor: pointer;
+}
+
+/* ********************************************************************* */
+
+/* Container für gesamte seite                                           */
+
+/* ********************************************************************* */
+
+#main {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        min-height: 400px;
+        height:   auto;
+        width: 90%;
+        border: 0px solid black;
+        padding: 0px 0px 0px 0px;
+        margin:   20px;
+        background: #fff;
+        background: rgba(255,255,255,0.7);
+       -webkit-box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);     
+        box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+
+}
+
+/* ********************************************************************* */
+
+/* Container für Kopf-Bereich                                            */
+
+/* ********************************************************************* */
+
+#balken_oben {
+  display: none;
+}
+
+/* ********************************************************************* */
+
+/* Container für linken Bereich                                          */
+
+/* ********************************************************************* */
+
+
+
+#menuelinks {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   min-height: 400px;
+   height:   100%;
+   width: 140px;
+   padding: 0px 10px 0px 10px;
+   margin: 0px 0px 0px 0px;
+   border: 0px solid white;
+   background: #003063; /* Old browsers */
+   background: -moz-linear-gradient(top, #003063 0%, #003063 31%, #5290cc 100%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#003063), color-stop(31%,#003063), color-stop(100%,#5290cc)); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top, #003063 0%,#003063 31%,#5290cc 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top, #003063 0%,#003063 31%,#5290cc 100%); /* Opera 11.10+ */
+   background: -ms-linear-gradient(top, #003063 0%,#003063 31%,#5290cc 100%); /* IE10+ */
+   background: linear-gradient(to bottom, #003063 0%,#003063 31%,#5290cc 100%); /* W3C */
+   color:#eee;
+   font-weight: bold;
+   text-align: center;
+
+}
+#menuelinks h2{
+  color:#eee;
+
+}
+#menuelinks nav {
+
+        border: 0px solid #8a8;
+        text-align: left ! important;
+        padding: 0px 3px;
+
+}
+
+#menuelinks nav ul { 
+     
+  padding:           0px;
+}  
+  
+#menuelinks nav li { 
+  border: 1px 1px 0px 1px solid #8a8;  
+  display: block;
+  background: transparent;
+  padding:  3px;
+}
+
+#menuelinks nav li.active a,
+#menuelinks nav li.current a{
+    background: #eee; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C */
+        color: #5290cc; 
+}
+
+
+
+.menu-level2 {
+
+    margin-left: 15px;
+     border-left: 1px solid #8a8;
+
+}
+
+
+
+.menu-level3 {
+
+    margin-left: 50px;
+    border-left:  1px solid #8a8;
+
+}
+
+#menuelinks nav a{
+        display: block;
+        background-color: #444;
+         background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C */
+        color: #fff;
+        padding: 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+}
+
+#menuelinks nav a:active {
+        color: #003063;
+
+}
+
+#menuelinks nav a:hover {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C */
+  color:    #333;  
+}
+
+/* **********************************************************************/
+
+/* Container für Inhalts-Bereich                                        */
+
+/* **********************************************************************/
+
+#content{
+
+        position: relative;
+        top: 0px;
+        margin-left: 165px;
+        height: auto;
+        width: auoto;
+        padding: 10px;
+        border: 0px solid black;
+       // background-color: rgba(255,255,255,0.7);
+
+}
+
+/* ********************************************************************* */
+
+/* Definitionen für Extension blsvschulwettbewerb                       */
+
+/* ********************************************************************* */
+
+.einzeleingabe th,
+th {
+
+        background-color: #003063;
+
+        color: #eee;
+
+        text-align:center;
+
+        padding: 5px;
+
+}
+
+.einzeleingabe td, td {
+
+      background-color: #eeeeee;
+
+      padding: 5px;
+
+ } 
+
+.einzeleingabe input {
+      width: 100px;
+}
+
+form {
+
+       text-align:  left;
+
+       width:     auto;
+
+       padding:   0px 0px 0px 0px;
+
+}
+
+
+.tx-felogin-pi1 form{
+   width:     300px;
+}
+
+
+
+.w_tabelle th{
+
+        background-color: #c8e3ac;
+
+        color: #222222;
+
+        text-align:center;
+
+        padding: 5px;
+
+}
+
+.tx-blsvschulwettbewerb-pi4-table th {
+
+        background-color:      #c8e3ac;
+
+        color:                 #222222;
+
+        text-align:            center;
+
+        padding:               5px;
+
+}
+
+table,
+.tx-blsvschulwettbewerb-pi4-table{
+  -webkit-box-shadow:    5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+        box-shadow:      5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+    -webkit-border-radius:   5px;
+  border-radius: 5px; 
+  background-color:       #aaa;
+  border-spacing:         1px;
+  font-size:    12px;    
+}
+
+.tx-blsvschulwettbewerb-pi4-table table {
+
+        width:100%;
+         
+-webkit-box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+        
+        box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+}
+
+.tx-blsvschulwettbewerb-pi4-table td {
+
+      background-color:        #eeeeee;
+
+      text-align:              left;
+
+      padding:                 2px;
+
+ }
+
+.tx-blsvschulwettbewerb-pi2-form {
+
+       text-align:     left;
+
+       width:          500px;
+
+       padding:        0px 30px 0px 30px;
+
+}
+
+/* Fenster WETTBEWERB */
+
+#w_main{
+
+        padding:               0px;
+
+        margin:                10px auto 0px auto;
+
+        border:                0px solid black;
+
+        background-color:      #ffffff;
+
+        width:                 1024px;
+
+        min-height:            800px;
+
+}
+
+#w2_main{
+
+        padding:               0px;
+
+        margin:                10px auto 0px auto;
+
+        border:                0px solid black;
+
+        background-color:      #ffffff;
+
+        width:                 780px;
+
+        min-height:            400px;
+
+}
+
+#w_top{
+
+               background-image:      url(../images/head_ergebnisse.png);
+
+               background-repeat:     no-repeat;
+
+               top:                                                         0px;
+
+               padding:                                              0px;
+
+               margin:                                               0px;
+
+               border:                                               0px solid black;
+
+               background-color:      #ffffff;
+
+               width:                                                1024px;
+
+               height:                                               198px;
+
+}
+
+#w_klasse{
+
+               position:                                     relative;
+
+               padding:                                      100px 0px 0px 585px;
+
+               margin:                                       0px;
+
+               border:                                       0px solid black;
+
+               width:                                        80px;
+
+               height:                                       30px;
+
+               font-size:                            10px;
+
+}
+
+#w_datum{
+
+    position:                                 relative;
+
+               padding:                                      00px 0px 0px 625px;
+
+               margin:                                       0px;
+
+               border:                                       0px solid black;
+
+               width:                                        80px;
+
+               height:                                       30px;
+
+               font-size:                            10px;
+
+}
+
+#w_tabelle{   
+
+        position:              relative;     
+
+        left;                  0px;
+
+        top:                   0px;
+
+        padding:               0px;
+
+        margin:               0px 0px 10px 1px;
+
+        border-top:            0px solid black;
+
+        border-right:          4px solid black;
+
+        border-left:           1px solid black;
+
+        border-bottom:         4px solid black;
+
+        background-color:      #ffffff;
+
+        width:                 99%;
+
+        min-height:            550px;
+
+}
+
+#w_tabelle table {
+
+               border-spacing:        0px;
+
+               width:                 100%;
+
+               font-size:             9px;
+ -webkit-box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+        
+        box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+
+}
+
+.borderright_dick {
+
+        border-right:                  2px solid black !important;
+
+}
+
+.bordertop_dick {
+
+        border-top:                 2px solid black !important;
+
+}
+
+.borderbottom_dick {
+
+        border-bottom:                 2px solid black !important;
+}
+
+
+
+.borderright {
+
+        border-right:                  1px solid black !important;
+
+}
+
+.small{
+
+        font-size:                            9px;
+
+}
+
+.borderbottom {
+
+        border-bottom:         1px solid black !important;
+
+}
+
+#w_tabelle input {
+
+        width:                 15px;
+
+        font-size:             11px;
+
+        padding:               0px;
+
+}
+
+#w_tabelle th  {
+
+        background-color:      #c8e3ac;
+
+        color:                 #222222;
+
+        text-align:            center;
+
+        padding:               5px;
+
+}
+
+#w_tabelle td  {
+
+        text-align:            center;
+
+ }
+
+.textalignleft{
+
+        text-align:            left ! important;
+
+ }
+
+.w_submit{
+
+        height:                40px !important;
+
+        margin:                20px !important;
+
+        width:                 350px !important;
+
+        font-size:             20px !important;
+
+}
+
+/* ********************************************************************* */
+
+/* Definitionen für Kontexthilfe                                         */
+
+/* ********************************************************************* */
+
+#main_hilfstext{
+
+        width:400px;
+
+        height:400px;
+
+        margin:0px;
+
+        border:0px;
+
+        padding:0px;
+
+        background-image: url(../images/hilfe_hg_main.png);
+
+        background-repeat: repeat-y;
+
+}
+
+#divtop_hilfstext {
+
+        background-image: url(../images/hilfe_hg_oben.png);
+
+        background-repeat: no-repeat;
+
+        left: 0px;
+
+        width: 400px;
+
+        height: 120px;
+
+}
+
+#divmiddle_hilfstext{
+
+        width: 350px;
+
+        height:250px;
+
+        margin: 0px 0px 0px 0px;      
+
+        padding: 5px 25px 25px 25px;
+
+        overflow:auto;
+
+        background-image: url(../images/hilfe_hg_main.png);
+
+        background-repeat: repeat-y;
+
+} 
+
+#divbottom_hilfstext{
+
+        position: relative;
+
+        left: 0px;
+
+        width: 400px;
+
+        height: 30px;
+
+        padding-top:20px;
+
+        padding-left: 25px;
+
+        background-image: url(../images/hilfe_hg_unten.png);
+
+        background-repeat: no-repeat;
+
+        font-size: 10px;
+
+        }
+
+div.hilfe{
+
+        background-color: transparent;
+        background-image: url(/typo3conf/ext/blsvsa2013/Resources/Public/Icons/hilfe_fragezeichen.png);
+        
+        border:0px;   
+
+        color: transparent;
+
+        padding:0px;
+  
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        cursor: help;
+
+}
+
+
+
+
+
+/* ********************************************************************* */
+
+/* Definitionen für bestanden/nicht bestanden                           */
+
+/* ********************************************************************* */
+
+.bestanden{
+
+        color:         #00dd00 ! important;
+
+        font-weight:   bold;
+
+}
+
+.bestandenBorder{
+
+        border:        1px solid #00dd00 ! important;
+
+}
+
+.bestandenBG{
+
+        background-color:  #00dd00 ! important;
+
+}
+
+.nichtbestanden{
+
+        color:         #dd0000 ! important;
+
+        font-weight:   bold;
+
+}
+
+.nichtbestandenBG{
+
+        background-color:  #dd0000 ! important;
+
+}
+
+
+.BGgreen{
+  background-color:    #00dd00 ! important;
+  
+}
+
+.BGred{
+  background-color:    #dd0000 ! important;
+  
+}
+
+.BGgrau{
+  background-color:    #dddddd! important;
+  
+}
+
+.BGwhite{
+  background-color:    #fff! important;
+  
+}
+.green{
+  color:    #00dd00 ! important;
+  text-align:  center! important;
+  font-weight:  bold;
+  font-size:  14px;
+}
+
+.gelb{
+  color:    #F9853F! important;
+  text-align:  center! important;
+  font-weight:  bold;
+  font-size:  14px;
+}
+
+
+.rot{
+  color:    #dd0000 ! important;
+  text-align:  center! important;
+  font-weight:  bold;
+  font-size:  14px;
+}
+
+.schwarz{
+  color:    #000000 ! important;
+  text-align:  center! important;
+  font-size:  14px;
+}
+
+.clgross a{
+   font-size:  14px;
+  color:   #777;
+  
+}
+.clgross a:hover{
+   
+  color:   #003063;
+}
+.zurucksetzen{
+  margin-top:  20px;
+}
+
+/** ********************************************************************* */
+/* icons                                                                  */ 
+/** ********************************************************************* */
+
+.icon{
+  height:               50px;
+  width:                50px;
+  -moz-border-radius:   6px;
+  border-radius:         6px;   -webkit-transition: all 1s ease-in-out;
+  -moz-transition:       all 1s ease-in-out;
+  transition:           all 1s ease-in-out;
+  cursor:                pointer;
+  display:               inline-block;
+  margin-top:            -20px;
+  -moz-transform:        scale(0.7) rotate(0deg) translate(0px, -30px) skew(0deg, 0deg);
+   -webkit-transform:  scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -o-transform:        scale(0.7) rotate(deg) translate(0px, 0px) skew(0deg, 0deg);
+  -ms-transform:      scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  transform:           scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  
+}
+
+.icon:hover{
+  -moz-transform:     scale(0.8) rotate(0deg) translate(0px, -30px) skew(0deg, 0deg);
+  -webkit-transform:  scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -o-transform:        scale(0.8) rotate(deg) translate(0px, 0px) skew(0deg, 0deg);
+  -ms-transform:      scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  transform:           scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -moz-box-shadow:     3px 3px 3px #444444;
+  box-shadow:           3px 3px 3px #444444; 
+  
+}
+
+.icon_akt{
+   background:           url(/fileadmin/images/aktualisieren_black.png);
+}
+
+a.aktualisieren{
+  margin:              10px;
+  padding:             0px;
+  background-color:      #fff;
+  height:              50px;
+   display:               inline-block;
+   -moz-box-shadow:     3px 3px 3px #444444;
+  box-shadow:           3px 3px 3px #444444; 
+}
+a.aktualisieren p{
+  padding:             20px 20px 20px 0px;
+  display:               inline-block;
+}
+
+
+.links{
+ -webkit-border-radius: 5px 0px 0px 5px;
+ border-radius: 5px 0px 0px 5px;          
+}
+
+.oben{
+ -webkit-border-radius: 5px 5px 0px 0px;
+ border-radius: 5px 5px 0px 0px;          
+}
+
+.unten{
+ -webkit-border-radius: 0px 0px  5px 5px;
+ border-radius:    0px 0px  5px 5px;;     
+}
+.linksoben{
+ -webkit-border-radius: 5px 0px 0px 0px;
+ border-radius:   5px 0px 0px 0px;          
+}
+
+.rechtsoben{
+ -webkit-border-radius: 0px 5px 0px 0px;
+border-radius:     0px 5px 0px 0px;            
+}
+
+.linksunten{
+ -webkit-border-radius: 0px 0px 5px 0px;
+border-radius:     0px 0px 5px 0px;           
+}
+
+.rechtsunten{
+-webkit-border-radius: 0px 0px 0px 5px;
+border-radius: 0px 0px 0px 5px;           
+}
+
+
+input[type=text]{
+  width: 200px;
+}
+
+
+input.schmal{
+  
+ width: 50px;
+}
+
+
+input.breit{
+  width: 300px;
+}
+
+ul.flashmessages{
+  -webkit-box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);     
+  box-shadow:  5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  border:    solid 1px #f00;
+  padding: 5px;
+}
+ul.flashmessages li{
+  margin:  15px;
+}
+
+.schule td{
+  font-weight:    bold;
+  background-color:  #444;
+  text-align:    center;
+  color:      #eee;
+  
+}
+
+td.bestanden,td.alle,td.nichtbestanden,td.klasse{
+  text-align:  center;
+  width:    40px;
+}
+
+.alle{
+  color:    #222;
+}
+
+td.excelholen,td.klassebearbeiten{
+  width:    100px;
+  text-align:  center;
+}
+
+td.geschlecht{
+  width:    60px;
+  text-align:  center;
+}
+
+#tx_blsvsa2013_klasse_popup{
+ position:      absolute;
+ top:        100px;
+ left:        -100px;
+ 
+  -webkit-box-shadow:      5px 5px 5px 3px rgba( 50, 50, 50, 0.5);     
+  box-shadow:        5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+  -webkit-border-radius:   5px;
+  border-radius:     5px; 
+  border:          solid 1p #444;
+  padding:       0px;
+  height:      400px;
+  overflow:      hidden;
+  width:      700px;
+  display:      none;
+
+}
+
+.blsv_popup_header{ 
+  widht: 100%;
+  height: 20px;
+  padding: 3px;
+  background-color:   #eee;
+  background-color:    rgba( 50, 50, 50, 0.7);
+  
+}
+
+.blsv_popup_header span{ 
+  color:      #eee;
+  font-size:    12px;
+  padding:     10px;
+  line-height:     20px;
+}
+.blsv_popup_header_close_button{
+  width:      50px;
+  height:      20px;
+  margin:      0;
+  border:      0;
+  float:      right;
+  -webkit-border-radius:   0px;
+    border-radius:     0px;
+    background-image:   url(/typo3conf/ext/blsvsa2013/Resources/Public/Icons/listicons.png);
+    background-position:  -220px 0px;
+    
+}
+.blsv_popup_header_close_button:hover{
+  background-position:  -280px 0px;
+}
+
+#tx_blsvsa2013_klasse_popup_content{
+  height:      375px;
+  background-color:   #fff;
+  background-color:    rgba( 255, 255, 255, 0.9);
+  overflow:    auto;
+  padding:    0px 10px;
+  
+}
+
+.ui-accordion{
+  -webkit-box-shadow:      5px 5px 5px 3px rgba( 50, 50, 50, 0.5);     
+  box-shadow:        5px 5px 5px 3px rgba( 50, 50, 50, 0.5);
+  -webkit-border-radius:   5px;
+  border-radius:     5px; 
+  font-family:    Verdana;
+
+}
+h3.ui-accordion-header{
+  background-color: #c8e3ac;
+  font-size: 16px;
+        color: #666;
+        text-shadow: 2px 2px 2px #666;
+}
+
+
+h3.ui-accordion-header-active{
+  font-weight: bold;
+        color: #003063;
+        text-shadow: 2px 2px 2px #222;
+        
+}
+.ui-accordion-content{
+  font-size: 12px;
+}
+
+
+#importaccordion input{
+  width: 100px;
+}
+
+
+.ActivityIndicator{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height:100%;
+  background-color: RGBA(255,255,255,0.8);
+  background-image: url(/typo3conf/ext/blsvsa2013/Resources/Public/Icons/ActivityIndicator.gif);
+  background-position: center center;
+  background-repeat:   no-repeat;
+
+}
+.bgabzeichen,
+.bgabzeichen0,
+.bgabzeichen1,
+.bgabzeichen2,
+.bgabzeichen3,
+.punktegesamt option[value="0"],
+.punktegesamt option[value="1"],
+.punktegesamt option[value="2"],
+.punktegesamt option[value="3"]{
+  background-color: #f00;
+}
+.bgabzeichen4,
+.bgabzeichen5,
+.bgabzeichen6,
+.bgabzeichen7,
+.punktegesamt option[value="4"],
+.punktegesamt option[value="5"],
+.punktegesamt option[value="6"],
+.punktegesamt option[value="7"]{
+  background-color: #cd7F32;
+}
+.bgabzeichen8,
+.bgabzeichen9,
+.bgabzeichen10,
+.punktegesamt option[value="8"],
+.punktegesamt option[value="9"],
+.punktegesamt option[value="10"]{
+  background-color: #c0c0c0;
+}
+
+.bgabzeichen11,
+.bgabzeichen12,
+.punktegesamt option[value="11"],
+.punktegesamt option[value="12"]
+{
+  background-color: #FFD700;
+}
+
+.Extbase-Utility-Debugger-VarDump-Floating {
+    margin:    20px 150px;
+    width:  70%;
+
+}
+
+
+/* ################################################################# */
+/* Bestellungen                                                      */
+/* ################################################################# */
+
+
+.tx-blsvsa2013 .artikelrechts,
+.tx-blsvsa2013 .neuanlegenrechts{
+  display:        block;
+  width:          450px;
+  padding:        5px;
+  height:         610px;
+    -webkit-box-shadow: 3px 3px 3px #444;
+  -moz-box-shadow: 3px 3px 3px #444;
+  box-shadow: 3px 3px 3px #444;
+  border-radius: 5px;
+  background-color: #fff;
+  background-color: RGBA(255,255,255,0.9);
+ 
+}
+.tx-blsvsa2013 .artikelrechts{
+ 	margin:         0 0 0 700px;
+ 	 overflow:                  auto;
+}
+.tx-blsvsa2013 .neuanlegenrechts{
+ 	margin:         0 0 0 500px;
+ 	 overflow:                  hidden;
+}
+.tx-blsvsa2013 .artikelrechts  > div,
+.tx-blsvsa2013 .neuanlegenrechts > div{
+   display:        block;
+   width:          430px;
+   height:         570px;
+   padding:         10px;
+ 	margin:0; 
+   overflow:       auto;
+}
+
+
+.tx-blsvsa2013 .teilnehmerlinks,
+.tx-blsvsa2013 .auswahllinks{
+  display:        block;
+  
+  margin:         -620px 0 0 0;
+  padding:        10px 5px;
+   -webkit-box-shadow: 3px 3px 3px #444;
+  -moz-box-shadow: 3px 3px 3px #444;
+  box-shadow: 3px 3px 3px #444;
+  border-radius: 5px;
+  background-color: #fff;
+  background-color: RGBA(255,255,255,0.9);
+  overflow:                  hidden;
+}
+#aktionen .buttonbreit{
+	width: 300px;
+	font-size: 20px;
+	padding:	10px;
+	margin:     0px 20px;
+}
+
+#aktionen{
+	width: 1120px;
+}
+#aktionen a{
+	display: inline-block;
+	width: 300px;
+	 padding:        15px 10px;
+   -webkit-box-shadow: 3px 3px 3px #444;
+  -moz-box-shadow: 3px 3px 3px #444;
+  box-shadow: 3px 3px 3px #444;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #444;
+  	font-size: 20px;
+	font-weight: normal;
+	text-align: center;
+	}
+
+.tx-blsvsa2013 .teilnehmerlinks{
+	width:          650px;
+   height:         600px;
+	
+}
+.tx-blsvsa2013 .auswahllinks{
+	width:          450px;
+   height:         600px;
+}
+
+.tx-blsvsa2013. teilnehmerlinks > div{
+	 display:        block;
+   width:          450px;
+   height:         590px;
+  padding:         0;
+ margin:0; 
+   overflow:       auto;
+	
+}
+.tx-blsvsa2013 .auswahllinks > div{
+   display:        block;
+   width:          450px;
+   height:         590px;
+  padding:         0;
+ margin:0; 
+   overflow:       auto;
+}
+
+.tx-blsvsa2013 input{
+  width:           50px;
+}
+.tx-blsvsa2013 input.zahl{
+  width:           20px;
+}
+.dummyicons:hover,
+.dummyicons{
+  background-image:   url(/typo3conf/ext/blsvsa2013/Resources/Public/Icons/dummyicons.png); 
+  height: 50px;
+  width: 280px;
+  display: inline-block;
+}
+
+.icon_rechts_unten{
+  position:                    relative;
+  margin-top:                         25px;
+  left:                        30px;
+  
+}
+.icon_rechts_unten2{
+  position:                    relative;
+  margin-top:                         10px;
+  left:                        25px;
+   width:                        20px;
+  
+}
+.icon_links_unten{
+  position:                  relative;
+  top:                         25px;
+  left:                        5px;
+  width:                        20px;
+  display:                    inline-block;  
+  
+}
+.urkunden_status_0 {
+	color: blue;
+}
+.urkunden_status_1 {
+	color: black;
+}
+.urkunden_status_2 {
+	color: red;
+}
+
+.SchulenAdmFilter{
+	width: 25%
+}
+.SchulenAdmStatus0{
+}
+.SchulenAdmStatus1{
+	background: none repeat scroll 0 0 #00DD00;
+}
+.SchulenAdmStatus2{
+	background: none repeat scroll 0 0 #FFFB19;
+}
+.SchulenAdmStatus3{
+	background: none repeat scroll 0 0 #FF99AA;
+}
+
+.sa_icon{
+  height:               50px;
+  width:                50px;
+  -moz-border-radius:   6px;
+  border-radius:         6px;   -webkit-transition: all 1s ease-in-out;
+  cursor:                pointer;
+  float:                left;
+  margin:                0px;
+   overflow:             hidden;
+}
+
+.sa_icon:hover{
+  -moz-box-shadow: 3px 3px 3px #444444;
+  box-shadow: 3px 3px 3px #444444; 
+}
+
+.sa_icon a {
+	float: left;
+    display: block;
+    height: 50px;
+	width: 50px;
+	color: transparent;
+	margin-top: -50px;
+   padding: 38px 0px 0px 0px;
+}
+
+.debitoroben{
+	display: block;
+	height: 250px;
+	width: 1115px;
+}
+
+#debitorstammdaten{
+	display: inline-block;
+	height: 200px;
+	width: 400px;	
+}
+#lieferadresse{
+	display: inline-block;
+	height: 200px;
+	width: 400px;		
+}
+
+#debitorstammdaten label{
+  width:       150px;
+  display: inline-block; 
+}
+
+#lieferadresse label{
+	width:       150px;
+  	display: inline-block;
+}
+
+
+
+#debitorstammdaten input,
+#lieferadresse input{
+	width:       150px;
+}
+	
+#lieferadresse div{
+	opacity:  0.2;	
+}
+
+
+
+#debitorstammdaten input[type='checkbox'],
+#lieferadresse input[type='checkbox']{
+	width:       20px;
+}
+	
+	
+	
+.auswahllinks input,	
+.neuanlegenrechts input{
+	width:       150px;	
+}
+
+.auswahllinks input[type='submit'],	
+.neuanlegenrechts input[type='submit']{
+	width:       auto;	
+}
+
+
+
+.auswahllinks input.spinner,	
+.neuanlegenrechts input.spinner{
+	width:       20px;	
+}
+	
+input.datepicker{
+	width: 60px;
+}
+
+
+.auswahllinks input.schmal{
+	width: 80px;
+}
+
+
+#suchergebnis{
+	position: 	absolute;
+	top:		55px;
+	left:		115px;
+	background:	rgba(255,255,255,0.9);
+	 -webkit-box-shadow: 3px 3px 3px #444;
+  -moz-box-shadow: 3px 3px 3px #444;
+  box-shadow: 3px 3px 3px #444;
+  -webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px; 
+	width:       auto;	
+	min-height: 20px;
+	padding: 0px 0px 10px 0px;
+}
+
+.schuelersuchlist{
+	 -webkit-box-shadow: 0px 0px 0px #444;
+  -moz-box-shadow: 0px 0px 0px #444;
+  box-shadow: 0px 0px 0px #444;
+  -webkit-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px; 
+	
+}
+.schuelersuchlist  tr td{
+	background:	#fff;
+	cursor:  	pointer;
+}
+
+.schuelersuchlist  tr:hover td{
+	background:	#eee;
+	cursor:  	pointer;
+}
+
+#urkunden{
+	width: 100%;
+}
+
+.tx_blsvsa2013_schulen_editadm input{
+	width: 200px;
+}
+
+.sa_disabled{
+	opacity:  0.3;
+	cursor: default;
+}

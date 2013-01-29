@@ -1,0 +1,6 @@
+seite.headerData.20 = TEXT
+seite.headerData.20.value (
+	<link rel="stylesheet" type="text/css" href="typo3conf/ext/blsvsa2013/Resources/Public/css/style_vw_sportabzeichen.css" />
+	<link rel="stylesheet" type="text/css" href="typo3conf/ext/blsvsa2013/Resources/Public/css/small_icons.css" />
+	<link rel="stylesheet" type="text/css" href="typo3conf/ext/blsvsa2013/Resources/Public/css/blueicons.css" />
+)

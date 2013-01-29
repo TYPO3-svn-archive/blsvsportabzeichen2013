@@ -2,7 +2,7 @@
 
 <f:section name="main">
 
-<h1>Import Schueler</h1>
+<h1><f:translate key="tx_blsvsa2013_domain_model_schueler.importheader" /></h1>
 
 
 
@@ -26,16 +26,67 @@
 	</f:for>
 </f:if>
 
+<div id="importaccordion">
+	<h3><f:translate key="tx_blsvsa2013_domain_model_schueler.entwederschuelerlisten" /></h3>
+	<div>
+		<f:form action="import" name="reqdata">
+			<f:form.textarea cols="80" rows="5" property="schuelerstring" /><br />
+			<f:form.submit value="<f:translate key='tx_blsvsa2013_domain_model_schueler.importieren' />" />
+		</f:form>
+	</div>
+	
+	
+	<h3><f:translate key="tx_blsvsa2013_domain_model_schueler.odereinzeleingabe" /></h3>
+	<div>
+		<f:form action="import" name="einzeleingabe">
+		<table>
+			<tr>
+				<th class="linksoben"></th>
+				<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.vorname" /></th>
+				<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.name" /></th>
+				<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.geburtsjahr" /></th>
+				<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.geschlecht" /></th>
+				<th class="rechtsoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.klasse" /></th>
+			</tr>
+			<f:for each="{schueleranzahlArray}" as="number" >
+				<tr>
+					<td>{number}</td>
+					<td><f:form.textfield name="einzeleingabe[{number}][vorname]" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schueler.vorname' />" /></td>
+					<td><f:form.textfield name="einzeleingabe[{number}][name]" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schueler.name' />" /></td>
+					<td><f:form.select name="einzeleingabe[{number}][geburtsjahr]" options="{geburtsjahreArray}" value="2000" /></td>
+					<td><f:form.select name="einzeleingabe[{number}][geschlecht]" options="{1:'männlich', 2:'weiblich'}"  /></td>
+					<td><f:form.textfield name="einzeleingabe[{number}][klasse]" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schueler.klasse' />" /></td>
+				</tr>
+			</f:for>
+		</table>
+			
+			
+			
+			<f:form.submit value="<f:translate key='tx_blsvsa2013_domain_model_schueler.importieren' />" />
+		</f:form>
+	</div>
+</div>
 
 
-
-
-
-<f:form action="import" name="reqdata">
-	<f:form.textarea cols="20" rows="5" property="schuelerstring" /><br />
-	<f:form.submit value="Import" />
-</f:form>
-
-
+<script>
+   <![CDATA[
+           
+  $(document).ready(function(){
+	 
+    	$(function() {
+        	$("#importaccordion" ).accordion({
+        		heightStyle: "content",
+    	       	navigation: true,
+    			collapsible: true,
+    			active:2
+        	});
+        	
+   		 }); 	
+	
+  });   
+  		
+  ]]>  
+    
+    </script>
 </f:section>
 

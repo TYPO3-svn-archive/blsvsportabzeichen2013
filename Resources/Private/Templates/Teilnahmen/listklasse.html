@@ -1,0 +1,99 @@
+<f:layout name="Default" />
+This Template is responsible for creating a table of domain objects.
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:  
+Resources:    Private:      Templates:        List.html: keep
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+
+<f:section name="main">
+
+<h1>Klasse {teilnahmen.0.klasse} <f:translate key="tx_blsvsa2013_domain_model_schueler.geschlecht{teilnahmen.0.geschlecht}" /></h1>
+
+<table>
+	<tr>
+			<th  class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.vorname" /></th>
+			<th  class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.name" /></th>
+			<th  class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.geburtstag" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_schueler.punkteabzeichen" /></th>
+			<th class="rechtsoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.anzahlteilnahmen" /></th>		
+		</tr>
+ 
+	 <f:for each="{teilnahmen}" as="schueler">
+	 <form.hidden name="tx_blsvsa2013_blsvsa2013[teilnahmen][{schueler.uid}][uid]" value="{schueler.uid}" />
+		<tr>
+			<td class="klasse"> {schueler.vorname}</td>
+			<td class="">{schueler.name}</td>
+			<td class="geschlecht"><f:format.date format="d.m.Y">@{schueler.geburtstag}</f:format.date></td>			
+							
+			<td class="excelholen">
+				<f:if condition="{schueler.gedruckt}">
+				 	<f:then>
+							<f:form.select  disabled="disabled" class="punktegesamt bgabzeichen{schueler.punktegesamt}" id="schuelerAnzpunkte{schueler.uid}" name="tx_blsvsa2013_blsvsa2013[teilnahmen][{schueler.uid}][punktegesamt]"  value="{schueler.punktegesamt}"
+											options="{ 0:'0 Pkte / keins', 1:'1 Pkt  / keins', 2:'2 Pkte / keins',3:'3 Pkte / keins',
+														 4:'4 Pkte / Bronze', 5:' 5 Pkte / Bronze ', 6:'  6 Pkte / Bronze',7:'  7 Pkte / Bronze/ ',
+														 8:'8 Pkte / Silber', 9:' 9 Pkte / Silber', 10:' 10 Pkte / Silber',
+														 11:' 11 Pkte / Gold', 12:'12 Pkte / Gold' }" />
+					</f:then>
+					<f:else>
+						<f:form.select  class="punktegesamt bgabzeichen{schueler.punktegesamt}" id="schuelerAnzpunkte{schueler.uid}" name="tx_blsvsa2013_blsvsa2013[teilnahmen][{schueler.uid}][punktegesamt]" value="{schueler.punktegesamt}"
+						 options="{ 0:'0 Pkte / keins', 1:'1 Pkt  / keins', 2:'2 Pkte / keins',3:'3 Pkte / keins',
+																					 4:'4 Pkte / Bronze', 5:' 5 Pkte / Bronze ', 6:'  6 Pkte / Bronze',7:'  7 Pkte / Bronze/ ',
+																					 8:'8 Pkte / Silber', 9:' 9 Pkte / Silber', 10:' 10 Pkte / Silber',
+																					 11:' 11 Pkte / Gold', 12:'12 Pkte / Gold' }" />
+					</f:else>				 
+				</f:if> 
+																					 
+				</td>
+			<td class="klassebearbeiten">
+				<f:if condition="{schueler.gedruckt}">
+				 	<f:then>
+				 		<form.hidden name="tx_blsvsa2013_blsvsa2013[teilnahmen][{schueler.uid}][anzteilnahmen]" value="{schueler.anzteilnahmen}" />
+						{schueler.anzteilnahmen} <f:translate key="tx_blsvsa2013_domain_model_schueler.gedruckt" /><sup>1</sup>
+					</f:then>
+					<f:else>
+						<f:form.select  id="anzteilnahmen{schueler.uid}" name="tx_blsvsa2013_blsvsa2013[teilnahmen][{schueler.uid}][anzteilnahmen]" value="{schueler.anzteilnahmen}" options="{ 1:'1', 2:'2', 3:'3',4:'4', 5:'5', 6:'6',7:'7', 8:'8', 9:'9',10:'10',11:'11', 12:'12', 13:'13',14:'14', 15:'15', 16:'16',17:'17', 18:'18', 19:'19',20:'20' }" />
+						
+					</f:else>				 
+				</f:if> 			
+						
+			</td>
+		</tr>
+	</f:for>
+		
+	<tr>
+		<td colspan="5" class="hinweis"><f:translate key="tx_blsvsa2013_domain_model_schueler.hinweisgedruckt"   htmlEscape="false" /></td>
+	</tr>
+	<tr>
+		<td colspan="5" class="unten"><f:form.submit name="submit"  value="<f:translate key='tx_blsvsa2013_domain_model_schueler.ergspeichernunduebermitteln'   htmlEscape='false' />"   /></td>
+	</tr>
+</table>
+
+
+<script>
+<![CDATA[ 
+	$('.punktegesamt').change(function(){
+		$( this ).removeClass('bgabzeichen0' );
+		$( this ).removeClass('bgabzeichen1' );
+		$( this ).removeClass('bgabzeichen2' );
+		$( this ).removeClass('bgabzeichen3' );
+		$( this ).removeClass('bgabzeichen4' );
+		$( this ).removeClass('bgabzeichen5' );
+		$( this ).removeClass('bgabzeichen6' );
+		$( this ).removeClass('bgabzeichen7' );
+		$( this ).removeClass('bgabzeichen8' );
+		$( this ).removeClass('bgabzeichen9' );
+		$( this ).removeClass('bgabzeichen10' );
+		$( this ).removeClass('bgabzeichen11' );
+		$( this ).removeClass('bgabzeichen12' );
+		
+        $( this ).addClass('bgabzeichen' + $( this ).val() );
+         
+	});
+	
+	]]>
+	</script>
+ </f:section>
+
+
+

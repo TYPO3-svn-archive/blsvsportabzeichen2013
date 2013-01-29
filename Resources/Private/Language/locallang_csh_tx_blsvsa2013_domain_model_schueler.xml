@@ -9,44 +9,20 @@
 	<languageKey index="default" type="array">
 	   
 			<label index="vorname.description">Vorname</label>
-			<label index="name.description">Name</label>
-			<label index="geschlecht.description">Geschlecht</label>
+			<label index="name.description">name</label>
+			<label index="geschlecht.description">geschlecht</label>
 			<label index="geburtstag.description">Geburtstag</label>
-			<label index="anzteilnahmen.description">Anzahl Teilnahmen</label>
-			<label index="punktegesamt.description">Punkte gesamt</label>
-			<label index="urkundenart.description">Urkundenart</label>
-			<label index="gedruckt.description">gedruckt</label>
-			<label index="drucktstamp.description">Drucktimestamp</label>
 			<label index="klasse.description">Klasse</label>
 			<label index="grundschulwettbewerb.description">Grundschulwettbewerb</label>
-			<label index="schwimmnachweis.description">Schwimmnachweis</label>
-			<label index="gueltigbis.description">gültig bis</label>
-			<label index="leistungstabelle1.description">Leistungstabelle Gruppe 1</label>
-			<label index="ablagedatum1.description">Ablagedatum Gruppe 1</label>
-			<label index="pruefer1.description">Prüfer Gruppe 1</label>
-			<label index="ergebnis1.description">Ergebnis Gruppe 1</label>
-			<label index="punkte1.description">Punkte Gruppe 1</label>
-			<label index="leistungstabelle2.description">Leistungstabelle Gruppe 2</label>
-			<label index="ablagedatum2.description">Ablagedatum Gruppe 2</label>
-			<label index="pruefer2.description">Prüfer Gruppe 2</label>
-			<label index="ergebnis2.description">Ergebnis Gruppe 2</label>
-			<label index="punkte2.description">Punkte Gruppe 2</label>
-			<label index="leistungstabelle3.description">Leistungstabelle Gruppe 3</label>
-			<label index="ablagedatum3.description">Ablagedatum Gruppe 3</label>
-			<label index="pruefer3.description">Prüfer Gruppe 3</label>
-			<label index="ergebnis3.description">Ergebnis Gruppe 3</label>
-			<label index="punkte3.description">Punkte Gruppe 3</label>
-			<label index="leistungstabelle4.description">Leistungstabelle Gruppe 4</label>
-			<label index="ablagedatum4.description">Ablagedatum Gruppe 4</label>
-			<label index="pruefer4.description">Prüfer Gruppe 4</label>
-			<label index="ergebnis4.description">Ergebnis Gruppe 4</label>
-			<label index="punkte4.description">Punkte Gruppe 4</label>
-			<label index="schule.description">Schule</label>
-			<label index="leistung1.description">Leistung 1</label>
-			<label index="leistung2.description">Leistung 2</label>
-			<label index="leistung3.description">Leistung 3</label>
-			<label index="leistung4.description">Leistung 4</label>
-			<label index="feuser.description">fe_user</label>
+			<label index="strasse.description">Straße</label>
+			<label index="plz.description">PLZ</label>
+			<label index="ort.description">Ort</label>
+			<label index="email.description">Email</label>
+			<label index="telefon.description">Telefon</label>
+			<label index="jahrderletztenpruefung.description">Jahr der letzten Prüfung</label>
+			<label index="anzteilnahmen.description">Anzahr der bisher beurkundeten Sportabzeichen (kommulatver Aspekt)</label>
+			<label index="schwimmnachweisgueltigbis.description">schwimmnachweisgueltigbis</label>
+			<label index="schule.description">schule</label>
 		</languageKey>
 	</data>
 </T3locallang>

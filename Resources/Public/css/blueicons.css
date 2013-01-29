@@ -1,0 +1,909 @@
+#iconleiste{
+  
+  height: 50px;
+}
+
+.icon{
+  height:               50px;
+  width:                50px;
+  -moz-border-radius:   6px;
+  border-radius:         6px;   -webkit-transition: all 1s ease-in-out;
+  -moz-transition:       all 1s ease-in-out;
+  transition:           all 1s ease-in-out;
+  cursor:                pointer;
+  float:                left;
+  margin:                0px;
+   -moz-transform:       scale(0.9) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -webkit-transform:       scale(0.9) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg); 
+  -o-transform:       scale(0.9) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+   -ms-transform:       scale(0.9) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  transform:             scale(0.9) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+   overflow:             hidden;
+}
+
+
+.icon p.bodytext{
+     padding:            0px;
+     margin-top:          -30px;
+   
+}
+
+
+.icon a{
+  
+  display:                block;  
+  line-height:            15px;
+  width:                  50px;
+  overflow:               hidden;
+  font-size:              8px;
+  color:                 transparent;
+  padding:                38px 0px 0px 0px;
+}
+
+.icon:hover{
+  -moz-transform:     scale(1.5) rotate(359.9deg) translate(0px, 0px) skew(0deg, 0deg);
+  -webkit-transform:  scale(1.5) rotate(359.9deg) translate(0px, 0px) skew(0deg, 0deg);
+  -o-transform:        scale(1.5) rotate(359.9deg) translate(0px, 0px) skew(0deg, 0deg);
+  -ms-transform:      scale(1.5) rotate(359.9deg) translate(0px, 0px) skew(0deg, 0deg);
+  transform:           scale(1.5) rotate(359.9deg) translate(0px, 0px) skew(0deg, 0deg);
+  -moz-box-shadow: 3px 3px 3px #444444;
+  box-shadow: 3px 3px 3px #444444; 
+  
+}
+
+.icon a:hover{
+  -moz-transform:     scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -webkit-transform:  scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -o-transform:        scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  -ms-transform:      scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  transform:           scale(0.7) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+  
+  
+}
+
+/* bluicons 1 ---------------------------------------------------------*/
+.blueicons_1_1{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png);
+}
+
+.blueicons_1_2{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_1_3{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_1_4{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -150px 0px;
+}
+/* reihe 2*/
+
+.blueicons_1_5{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -200px 0px;
+}
+.blueicons_1_6{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -0px -50px;
+}
+
+.blueicons_1_7{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -50px -50px;
+}
+
+.blueicons_1_8{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -100px -50px;
+}
+.blueicons_1_9{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -150px -50px;
+}
+.blueicons_1_10{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+/* reihe 3*/
+.blueicons_1_11{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_1_12{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_1_13{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -100px -97px;
+}
+.blueicons_1_14{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_1_15{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+/* reihe 4*/
+.blueicons_1_16{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -0px -143px;
+}
+
+.blueicons_1_17{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -50px -143px;
+}
+
+.blueicons_1_18{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -100px -143px;
+}
+.blueicons_1_19{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_1_20{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -200px -143px;
+}
+
+/* reihe 5*/
+.blueicons_1_21{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_1_22{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_1_23{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -100px -193px;
+}
+.blueicons_1_24{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_1_25{
+   background:           url(../Icons/blueicons/lightblueicons_1_250x250.png) ;
+    background-position:  -200px -193px;
+}
+
+
+
+/* bluicons 2 ---------------------------------------------------------*/
+
+.blueicons_2_1{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png);
+}
+
+.blueicons_2_2{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_2_3{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_2_4{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -150px 0px;
+}
+
+.blueicons_2_5{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -200px 0px;
+}
+
+/* reihe 2*/
+.blueicons_2_6{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -0px -50px;
+}
+
+.blueicons_2_7{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -50px -50px;
+}
+
+.blueicons_2_8{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -100px -50px;
+}
+.blueicons_2_9{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -150px -50px;
+}
+.blueicons_2_10{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+/* reihe 3*/
+.blueicons_2_11{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_2_12{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_2_13{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -100px -97px;
+}
+.blueicons_2_14{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_2_15{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+/* reihe 4*/
+.blueicons_2_16{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  2px -140px;
+}
+
+.blueicons_2_17{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -50px -143px;
+}
+
+.blueicons_2_18{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -100px -143px;
+}
+.blueicons_2_19{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_2_20{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -200px -143px;
+}
+
+/* reihe 5*/
+.blueicons_2_21{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_2_22{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_2_23{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -100px -193px;
+}
+.blueicons_2_24{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_2_25{
+   background:           url(../Icons/blueicons/lightblueicons_2_250x250.png) ;
+    background-position:  -202px -193px;
+}
+
+
+/* bluicons 3 ---------------------------------------------------------*/
+
+.blueicons_3_1{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png);
+}
+
+.blueicons_3_2{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_3_3{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_3_4{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -150px 0px;
+}
+
+.blueicons_3_5{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -200px 0px;
+}
+.blueicons_3_6{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -0px -50px;
+}
+
+.blueicons_3_7{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -50px -50px;
+}
+
+.blueicons_3_8{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -100px -50px;
+}
+.blueicons_3_9{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -150px -50px;
+}
+.blueicons_3_10{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+/* reihe 3*/
+.blueicons_3_11{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_3_12{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_3_13{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -100px -97px;
+}
+.blueicons_3_14{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_3_15{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+/* reihe 4*/
+.blueicons_3_16{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -0px -143px;
+}
+
+.blueicons_3_17{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -50px -147px;
+}
+
+.blueicons_3_18{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -100px -143px;
+}
+.blueicons_3_19{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_3_20{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -200px -143px;
+}
+
+/* reihe 5*/
+.blueicons_3_21{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_3_22{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_3_23{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -100px -193px;
+}
+.blueicons_3_24{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_3_25{
+   background:           url(../Icons/blueicons/lightblueicons_3_250x250.png) ;
+    background-position:  -200px -193px;
+}
+
+
+/* bluicons 4 ---------------------------------------------------------*/
+
+.blueicons_4_1{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png);
+}
+
+.blueicons_4_2{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_4_3{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_4_4{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -150px 0px;
+}
+.blueicons_4_5{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -200px 0px;
+}
+
+
+
+/* reihe 2 */
+.blueicons_4_6{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -0px -50px;
+}
+
+.blueicons_4_7{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -50px -50px;
+}
+.blueicons_4_8{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_4_9{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -200px -193px;
+}
+.blueicons_4_10{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -100px -50px;
+}
+
+/* reihe 3*/
+.blueicons_4_11{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -145px -51px;
+}
+.blueicons_4_12{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+.blueicons_4_13{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_4_14{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_4_15{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -100px -97px;
+
+}
+/* reihe 4*/
+.blueicons_4_16{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_4_17{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+.blueicons_4_18{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -0px -143px;
+}
+
+.blueicons_4_19{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -50px -143px;
+}
+
+.blueicons_4_20{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -100px -143px;
+}
+
+
+/* reihe 5*/
+.blueicons_4_21{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_4_22{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -200px -143px;
+}
+.blueicons_4_23{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_4_24{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_4_25{
+   background:           url(../Icons/blueicons/lightblueicons_4_250x250.png) ;
+    background-position:  -100px -193px;
+}
+
+
+/* bluicons 5 ---------------------------------------------------------*/
+
+.blueicons_5_1{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png);
+}
+
+.blueicons_5_2{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_5_3{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_5_4{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -150px 0px;
+}
+
+.blueicons_5_5{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -200px 0px;
+}
+
+/* reihe 2 */
+.blueicons_5_6{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -0px -50px;
+}
+
+.blueicons_5_7{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -50px -50px;
+}
+
+.blueicons_5_8{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -100px -50px;
+}
+.blueicons_5_9{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -150px -50px;
+}
+.blueicons_5_10{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+/* reihe 3*/
+.blueicons_5_11{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_5_12{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_5_13{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -100px -97px;
+}
+.blueicons_5_14{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_5_15{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+/* reihe 4*/
+.blueicons_5_16{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -0px -143px;
+}
+
+.blueicons_5_17{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -50px -143px;
+}
+
+.blueicons_5_18{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -100px -143px;
+}
+.blueicons_5_19{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_5_20{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -200px -143px;
+}
+
+/* reihe 5*/
+.blueicons_5_21{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_5_22{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_5_23{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -100px -193px;
+}
+.blueicons_5_24{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_5_25{
+   background:           url(../Icons/blueicons/lightblueicons_5_250x250.png) ;
+    background-position:  -200px -193px;
+}
+/* bluicons 6 ---------------------------------------------------------*/
+
+.blueicons_6_1{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png);
+}
+
+.blueicons_6_2{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_6_3{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_6_4{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -150px 0px;
+}
+
+.blueicons_6_5{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -200px 0px;
+}
+
+/* reihe 2 */
+.blueicons_6_6{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -0px -50px;
+}
+
+.blueicons_6_7{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -50px -50px;
+}
+
+.blueicons_6_8{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -100px -50px;
+}
+.blueicons_6_9{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -150px -50px;
+}
+.blueicons_6_10{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+/* reihe 3*/
+.blueicons_6_11{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_6_12{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_6_13{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -100px -97px;
+}
+.blueicons_6_14{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_6_15{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+/* reihe 4*/
+.blueicons_6_16{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -0px -143px;
+}
+
+.blueicons_6_17{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -50px -143px;
+}
+
+.blueicons_6_18{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -100px -143px;
+}
+.blueicons_6_19{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_6_20{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -200px -143px;
+}
+
+/* reihe 5*/
+.blueicons_6_21{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_6_22{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_6_23{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -100px -193px;
+}
+.blueicons_6_24{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_6_25{
+   background:           url(../Icons/blueicons/lightblueicons_6_250x250.png) ;
+    background-position:  -200px -193px;
+}
+
+/* bluicons 7 ---------------------------------------------------------*/
+
+.blueicons_7_1{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png);
+}
+
+.blueicons_7_2{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -50px 0px;
+}
+.blueicons_7_3{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -100px 0px;
+}
+.blueicons_7_4{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -150px 0px;
+}
+
+.blueicons_7_5{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -200px 0px;
+}
+
+/* reihe 2 */
+.blueicons_7_6{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -0px -50px;
+
+}
+.blueicons_7_7{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -50px -50px;
+}
+
+.blueicons_7_8{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -100px -50px;
+}
+.blueicons_7_9{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -150px -50px;
+}
+.blueicons_7_10{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -200px -50px;
+}
+
+/* reihe 3*/
+.blueicons_7_11{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -0px -97px;
+}
+
+.blueicons_7_12{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -50px -97px;
+}
+
+.blueicons_7_13{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -100px -97px;
+}
+.blueicons_7_14{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -150px -97px;
+}
+.blueicons_7_15{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -200px -97px;
+}
+
+/* reihe 4*/
+.blueicons_7_16{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -0px -143px;
+}
+
+.blueicons_7_17{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -50px -143px;
+}
+
+.blueicons_7_18{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -100px -143px;
+}
+.blueicons_7_19{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -150px -143px;
+}
+.blueicons_7_20{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -200px -143px;
+}
+
+/* reihe 5*/
+.blueicons_7_21{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -0px -193px;
+}
+
+.blueicons_7_22{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -50px -193px;
+}
+
+.blueicons_7_23{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -100px -193px;
+}
+.blueicons_7_24{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -150px -193px;
+}
+.blueicons_7_25{
+   background:           url(../Icons/blueicons/lightblueicons_7_250x250.png) ;
+    background-position:  -200px -193px;
+}
+
+.blueicons_hilfe{
+   background:           url(icon_hilfe.png);
+}

@@ -3,7 +3,14 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2012-09-32T11:04:32Z" product-name="blsvsa2013">
 		<header/>
 		<body>
-
+			<trans-unit id="schulnummer.description">
+				<source>Schulnummer</source>
+			</trans-unit>
+			<trans-unit id="Schule.description">
+				<source>Schule</source>
+			</trans-unit>
+			<trans-unit id="fe_user.description">
+				<source>zuletzt geändert von</source>
 		</body>
 	</file>
 </xliff>

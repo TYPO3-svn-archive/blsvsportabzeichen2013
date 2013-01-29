@@ -1,0 +1,100 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Teilnahmen</h1>
+
+<f:flashMessages />
+
+<table  class="tx_blsvsa2013" >
+	<tr>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.vorname" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.name" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.geschlecht" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.geburtstag" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.anzteilnahmen" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.punktegesamt" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.urkundenart" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.gedruckt" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.drucktstamp" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.klasse" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.grundschulwettbewerb" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.schwimmnachweisgueltigbis" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.leistungstabelle1" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ablagedatum1" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.pruefer1" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ergebnis1" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.punkte1" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.leistungstabelle2" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ablagedatum2" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.pruefer2" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ergebnis2" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.punkte2" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.leistungstabelle3" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ablagedatum3" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.pruefer3" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ergebnis3" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.punkte3" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.leistungstabelle4" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ablagedatum4" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.pruefer4" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.ergebnis4" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.punkte4" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.pruefungsjahr" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{teilnahmens}" as="teilnahmen">
+		<tr>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.vorname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.geschlecht}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.geburtstag}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.anzteilnahmen}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.punktegesamt}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.urkundenart}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.gedruckt}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.drucktstamp}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.klasse}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.grundschulwettbewerb}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.schwimmnachweisgueltigbis}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.leistungstabelle1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ablagedatum1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.pruefer1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ergebnis1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.punkte1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.leistungstabelle2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ablagedatum2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.pruefer2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ergebnis2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.punkte2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.leistungstabelle3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ablagedatum3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.pruefer3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ergebnis3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.punkte3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.leistungstabelle4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ablagedatum4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.pruefer4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.ergebnis4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.punkte4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnahmen : teilnahmen}"> {teilnahmen.pruefungsjahr}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{teilnahmen : teilnahmen}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{teilnahmen : teilnahmen}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Teilnahmen</f:link.action>
+</f:section>

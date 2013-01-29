@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Feuser</h1>
+
+<f:flashMessages />
+
+<table  class="tx_blsvsa2013" >
+	<tr>
+		
+		<th><f:translate key="tx_blsvsa2013_domain_model_feuser.uid" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_feuser.name" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_feuser.kuerzel" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_feuser.passwort" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_feuser.admin" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{feusers}" as="feuser">
+		<tr>
+			<td><f:link.action action="show" arguments="{feuser : feuser}"> {feuser.uid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{feuser : feuser}"> {feuser.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{feuser : feuser}"> {feuser.username}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{feuser : feuser}"> **********</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{feuser : feuser}">Speichern</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{feuser : feuser}">Löschen</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Feuser</f:link.action>
+
+</f:section>

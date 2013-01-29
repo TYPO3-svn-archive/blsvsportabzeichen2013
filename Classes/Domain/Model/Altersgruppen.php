@@ -47,21 +47,21 @@ class Tx_Blsvsa2013_Domain_Model_Altersgruppen extends Tx_Extbase_DomainObject_A
 	 *
 	 * @var integer
 	 */
-	protected $geschlecht;
+	protected $geschlecht=1;
 
 	/**
 	 * Alter von
 	 *
 	 * @var integer
 	 */
-	protected $altervon;
+	protected $altervon=0;
 
 	/**
 	 * Alter bis
 	 *
 	 * @var integer
 	 */
-	protected $alterbis;
+	protected $alterbis=99;
 
 	/**
 	 * Returns the bezeichnung
@@ -98,6 +98,7 @@ class Tx_Blsvsa2013_Domain_Model_Altersgruppen extends Tx_Extbase_DomainObject_A
 	 * @return void
 	 */
 	public function setGeschlecht($geschlecht) {
+		if ( ( $geschlecht < 1 ) or  ($geschlecht > 2) )  throw new \InvalidArgumentException( "Tx_Blsvsa2013_Domain_Model_Altersgruppen.geschlecht should be 1 or 2!", 1349780407 ); 
 		$this->geschlecht = $geschlecht;
 	}
 
@@ -138,6 +139,8 @@ class Tx_Blsvsa2013_Domain_Model_Altersgruppen extends Tx_Extbase_DomainObject_A
 	public function setAlterbis($alterbis) {
 		$this->alterbis = $alterbis;
 	}
-
+	
+	
+	
 }
 ?>

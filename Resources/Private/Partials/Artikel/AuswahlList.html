@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<th class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_artikel.anzahl" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_artikel.artikelnummer" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_artikel.artikel" /></th>
+	</tr>
+	
+	<f:for each="{artikels}" as="artikel">
+		<tr>
+		<td><f:form.textfield class="spinner" id="bestellposten_{artikel.uid}" name="bestellposten[{artikel.artikelnummer}]" /> </td>
+		<td><f:form.textfield class="spinner" id="_bestellposten_{artikel.uid}" name="bestellposten[{artikel.artikelnummer}]" value="{artikel.anzahl}" /> </td>
+		<td>{artikel.artikelnummer}</td>
+		<td>{artikel.artikel}</td>
+	</tr>
+
+	</f:for>
+</table>
+

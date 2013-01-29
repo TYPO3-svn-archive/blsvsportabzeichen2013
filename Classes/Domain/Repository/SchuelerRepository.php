@@ -39,17 +39,9 @@ class Tx_Blsvsa2013_Domain_Repository_SchuelerRepository extends Tx_Extbase_Pers
 	 * @return boolean
 	 */
 	public function inDb(Tx_Blsvsa2013_Domain_Model_Schueler $schueler){
-		$query = $this->createQuery();
-		$query->matching(
-				$query->logicalAnd(
-						$query->equals('name', $schueler->getName(), false),
-						$query->equals('vorname', $schueler->getVorname(), false),
-						$query->equals('geschlecht', $schueler->getGeschlecht()),
-						$query->equals('geburtstag', $schueler->getGeburtstag()),
-						$query->equals('klasse', $schueler->getKlasse(), false)
-				)
-		);
-		$query->setLimit(1);
+		$query = $this->createQuery();		$query->matching(			$query->logicalAnd(
+				$query->equals('schulnummer', $schueler->getSchulnummer(), false),
+				$query->equals('name', $schueler->getName(), false),				$query->equals('vorname', $schueler->getVorname(), false),				$query->equals('geschlecht', $schueler->getGeschlecht()),				$query->equals('geburtstag', $schueler->getGeburtstag()),				$query->equals('klasse', $schueler->getKlasse(), false)			)		);		$query->setLimit(1);
 		if ($query->execute()->count() > 0){
 			return true;
 		}
@@ -64,10 +56,84 @@ class Tx_Blsvsa2013_Domain_Repository_SchuelerRepository extends Tx_Extbase_Pers
 	 */
 	public function addNew(Tx_Blsvsa2013_Domain_Model_Schueler $schueler){
 		if (!$this->inDb($schueler)){
-			$this->add($schueler);
-			return 1;
-		}
+			$res = $this->add($schueler);
+			return 1;		}
 		return 0;
 	}
+	
+	/**
+	 * Schueler nach Schulnummer und Klasse finden 
+	 * und Sortieren nach name, vorname, geburtstag
+	 * 
+	 * @param string $schulnummer
+	 * @param Tx_Blsvsa2013_Domain_Model_Klassen $klasse
+	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 */
+	public function findBySchulnummerOrKlasseSorted($schulnummer, Tx_Blsvsa2013_Domain_Model_Klassen $klasse=null){
+		$arrOrderings = array(
+				'name' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING,
+				'vorname' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING,
+				'geburtstag' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING
+		);
+		$query = $this->createQuery();
+		if (is_null($klasse)){
+			$query->matching($query->equals('schulnummer', $schulnummer));
+		} else {
+			$query->matching(
+				$query->logicalAnd(
+					$query->equals('schulnummer', $schulnummer),
+					$query->logicalAnd(
+						$query->equals('geschlecht', $klasse->getGeschlecht()),
+						$query->equals('klasse', $klasse->getKlasse())
+					)
+				)
+			);
+		}
+		$query->setOrderings($arrOrderings);
+		$schuelers = $query->execute();		
+		return $schuelers;
+	}
+	
+	/**
+	 * Gibt die Anzahl der Schueler zurueck
+	 * 
+	 * @param string $schulnummer
+	 * @return $anzahl Anzahl der Schueler
+	 */
+	public function getAnzahl($schulnummer){
+		if ($schulnummer==0){
+			throw new \Exception( "Tx_Blsvsa2013_Domain_Repository_SchuelerRepository invalid value for schulnummer (schulnummer={$schulnummer}}", 1352978551);
+		}
+		
+		$query = $this->createQuery();
+		$query->matching($query->equals('schulnummer', $schulnummer));
+		return $query->execute()->count();
+	}
+	
+	/**
+	 * Gibt die Schueler gefiltert bei Namen zurück
+	 *
+	 * @param string $suchtext
+	 * @return void
+	 */
+	public function findByName( $suchtext ){
+		if ($suchtext==''){
+			$erg="";
+		}
+		else{
+			$query = $this->createQuery();
+			$query->matching($query->like('name', $suchtext . '%' ));
+								
+			if(	$query->execute()->count() == 0 ){
+				$erg='';
+			}
+			else{
+				$erg = $query->setOrderings ( Array( 'name' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING,  'vorname' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING ) )->execute();
+			}
+		}
+			return $erg;
+	}
+	
+	
 }
 ?>

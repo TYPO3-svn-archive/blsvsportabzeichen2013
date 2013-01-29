@@ -1,0 +1,43 @@
+<div style="position: relative;">
+<div id="suchergebnis"></div>	
+
+	
+	<table id="urkunden">
+		<tr>
+		
+			<th class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_bestellung.teilnehmer" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.anz" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.art" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.datum" /></th>
+			<th class="rechtsoben"><f:translate key="tx_blsvsa2013_domain_model_bestellung.jahr" /></th>
+			
+		</tr>
+
+		<f:for each="{teilnahmen}" as="teilnahme">
+
+		<tr id="row{teilnahme.schueler.uid}">
+			<td>{teilnahme.schueler.uid} {teilnahme.name} {teilnahme.vorname} <f:format.date format="d.m.Y">@{teilnahme.geburtstag}</f:format.date></td>
+			<td><span >{teilnahme.anzteilnahmen}</span></td>
+			<td class="punktegesamt bgabzeichen{teilnahme.punktegesamt}">
+				<span  >{teilnahme.punktegesamt}</span>
+			</td>
+			<td><f:format.date format="d.m.Y">@{teilnahme.ablagedatum1}</f:format.date></td>
+			<td>{teilnahme.pruefungsjahr}</td>
+		</tr>
+
+		</f:for>
+		
+		<tr>
+		
+			<td class="rechtsunten"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="linksunten "></td>
+			
+		</tr>
+	</table>
+		
+</div>
+
+

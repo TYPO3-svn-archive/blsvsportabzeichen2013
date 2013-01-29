@@ -41,12 +41,12 @@ class Tx_Blsvsa2013_Domain_Model_Feuser extends Tx_Extbase_Domain_Model_Frontend
 	 */
 	protected $schule;
 	
-	/**
-	 * feuser
-	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Feuser
-	 * @lazy
-	 */
+	/**
+	 * feuser
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Model_Feuser
+	 * @lazy
+	 */
 	protected $feuser;
 
 	/**
@@ -70,23 +70,23 @@ class Tx_Blsvsa2013_Domain_Model_Feuser extends Tx_Extbase_Domain_Model_Frontend
 		$this->schule = $schule;
 	}
 	
-	/**
-	 * Returns the feuser
-	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Feuser $feuser
-	 */
-	public function getFeuser() {
-		return $this->feuser;
-	}
-	
-	/**
-	 * Sets the feuser
-	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Feuser $feuser
-	 * @return void
-	 */
-	public function setFeuser(Tx_Blsvsa2013_Domain_Model_Feuser $feuser) {
-		$this->feuser = $feuser;
+	/**
+	 * Returns the feuser
+	 *
+	 * @return Tx_Blsvsa2013_Domain_Model_Feuser $feuser
+	 */
+	public function getFeuser() {
+		return $this->feuser;
+	}
+	
+	/**
+	 * Sets the feuser
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Feuser $feuser
+	 * @return void
+	 */
+	public function setFeuser(Tx_Blsvsa2013_Domain_Model_Feuser $feuser) {
+		$this->feuser = $feuser;
 	}
 
 }

@@ -32,5 +32,40 @@
  */
 class Tx_Blsvsa2013_Domain_Repository_AltersgruppenRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * Gibt die Altersgruppe fuer den uebergebenen Schueler zurueck
+	 * 
+	 * @param $schueler (Tx_Blsvsa2013_Domain_Model_Schueler oder TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy)
+	 * @return Tx_Blsvsa2013_Domain_Model_Altersgruppen $erg
+	 */
+	public function getBySchueler($schueler){
+		$erg = Null;
+        if (empty($schueler)) throw new \Exception(Tx_Extbase_Utility_Localization::translate('tx_blsvsa2013_domain_repository_altersgruppenrepository.error_kein_schueler', 'blsvsa2013'), 1350922669);
+        
+		$geschlecht = $schueler->getGeschlecht();
+		$alter = Tx_Blsvsa2013_Service_Tools::getAlter($schueler->getGeburtstag());
+		$query = $this->createQuery();
+		$query->matching( $query->logicalAnd($query->equals( 'geschlecht',$geschlecht ),$query->logicalAnd( $query->lessThanOrEqual( 'altervon',$alter ),$query->greaterThanOrEqual( 'alterbis',$alter ) ) ) );
+		$erg = $query->execute()->getFirst();
+//		if(!$erg) throw new \Exception(Tx_Extbase_Utility_Localization::translate('tx_blsvsa2013_domain_repository_altersgruppenrepository.error_keine_altersgruppe', 'blsvsa2013', array($schueler->getUid())), 1350922669);
+		return $erg;
+	}
+	
+	/**
+	 * Gibt die Altersgruppe zurueck
+	 * 
+	 * @param integer $geburtstag Geburtstag
+	 * @param integer $geschlecht Geschlecht
+	 * @return Tx_Blsvsa2013_Domain_Model_Altersgruppen $erg
+	 */
+	public function getByGeburtstagAndGeschlecht($geburtstag, $geschlecht){
+		$erg = Null;
+		$alter = Tx_Blsvsa2013_Service_Tools::getAlter($geburtstag);
+		$query = $this->createQuery();
+		$query->matching( $query->logicalAnd($query->equals( 'geschlecht',$geschlecht ),$query->logicalAnd( $query->lessThanOrEqual( 'altervon',$alter ),$query->greaterThanOrEqual( 'alterbis',$alter ) ) ) );
+		$erg = $query->execute()->getFirst();
+		return $erg;
+	}
+	
 }
 ?>

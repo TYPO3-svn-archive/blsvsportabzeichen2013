@@ -3,36 +3,244 @@
   <sDEF>
    <ROOT>
      <TCEforms>
-      <sheetTitle>Funktion</sheetTitle>
+      <sheetTitle>Einstellungen</sheetTitle>
      </TCEforms>
      <type>array</type>
      <el>
       <switchableControllerActions>
        <TCEforms>
-         <label>Select function</label>
+         <label>Wähle zu ladendende Funktionen:</label>
+         <onChange>reload</onChange>
+         
          <config>
           <type>select</type>
           <items>
             
             <numIndex index="0">
-             <numIndex index="0">Schulen</numIndex>
-             <numIndex index="1">Schulen->edit;Schulen->update</numIndex>
+            	<numIndex index="0">Schulen</numIndex>
+            	<numIndex index="1">Schulen->edit;Schulen->update;</numIndex>
             </numIndex>
             
             <numIndex index="1">
-             <numIndex index="0">Lehrer</numIndex>
-             <numIndex index="1">Feuser->list;Feuser->edit</numIndex>
+            	<numIndex index="0">Lehrer</numIndex>
+            	<numIndex index="1">Feusers->list;Feusers->edit</numIndex>
             </numIndex>
             
             <numIndex index="2">
-             <numIndex index="0">Schueler</numIndex>
-             <numIndex index="1">Schueler->import;Schueler->export;Schueler->list;Schueler->edit;Schueler->update</numIndex>
+            	<numIndex index="0">Schueler</numIndex>
+            	<numIndex index="1">Schueler->import;Schueler->export;Schueler->list;Schueler->edit;Schueler->update;Klassen->list;Teilnahmen->listklasse;Schueler->listFilterName;Schueler->list;Schulen->list;</numIndex>
+            </numIndex>
+	        <numIndex index="3">
+	             <numIndex index="0">Klassenübersicht / Ergebnisse eingeben</numIndex>
+	             <numIndex index="1">Klassen->list;Schueler->edit;Schueler->list;Schueler->update;Schueler->export;Schueler->importErgebnisListen;Schueler->importErgebnisExcel;Teilnahmen->updateklasse;Teilnahmen->updateFromExcel;Schueler->updateSchule</numIndex>
+            </numIndex>
+            <numIndex index="4">
+	             <numIndex index="0">Bestellungen</numIndex>
+	             <numIndex index="1">Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</numIndex>
+            </numIndex>
+
+            <numIndex index="5">
+            	<numIndex index="0">Schulen Verwaltung</numIndex>
+            	<numIndex index="1">Schulen->listAdm;Schulen->editAdm;Schulen->updateAdm;Schulen->fehler;Schulen->importSchueler;Teilnahmen->updateklasse;Schueler->export;Schueler->updateSchule;</numIndex>
+            </numIndex>
+
+            <numIndex index="6">
+            	<numIndex index="0">Urkunden</numIndex>
+            	<numIndex index="1">Schulen->listUrkunden; Schulen->printUrkunden; Schulen->printPackliste; Schulen->showUrkunden; Schulen->confirmUrkunden; Schulen->fehler;</numIndex>
             </numIndex>
             
            </items>
          </config>
        </TCEforms>
       </switchableControllerActions>
+      
+      <settings.anzSchuelerEinzeleingabe>
+     	<TCEforms>
+         	<label>Anzahl der Schüler, die bei Einzeleingabe angezeigt werden sollen</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schueler->import;Schueler->export;Schueler->list;Schueler->edit;Schueler->update;Klassen->list;Teilnahmen->listklasse;Schueler->listFilterName;Schueler->list;Schulen->list;</displayCond>
+        	 <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>35</default>
+         </config>
+     </TCEforms>
+     </settings.anzSchuelerEinzeleingabe>
+     <settings.pidErgebnisEingabe>
+     	<TCEforms>
+         	<label>PID in der Klassenübersicht / Ergebnisse / Namensuche eingeben installiert ist </label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schueler->import;Schueler->export;Schueler->list;Schueler->edit;Schueler->update;Klassen->list;Teilnahmen->listklasse;Schueler->listFilterName;Schueler->list;Schulen->list;</displayCond>
+        <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>23</default>
+         </config> 
+     </TCEforms>
+     </settings.pidErgebnisEingabe>
+
+     <settings.pidbestellungNamenssuche>
+     	<TCEforms>
+         	<label>PID in der die Namenssuche  installiert ist </label>
+         	<displayCond>FIELD:switchableControllerActions:=:Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</displayCond>
+        <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>23</default>
+         </config> 
+     </TCEforms>
+     </settings.pidbestellungNamenssuche>
+
+     <settings.pidBestellungTeilnehmerNeu>
+     	<TCEforms>
+         	<label>PID zum Anlegen von Teilnehmern</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</displayCond>
+        <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>44</default>
+         </config> 
+     </TCEforms>
+     </settings.pidBestellungTeilnehmerNeu>
+	<settings.pidBestellungBestellung>
+		<TCEforms>
+			<label>PID Bestellungen</label>
+			<displayCond>FIELD:switchableControllerActions:=:Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</displayCond>
+			<config>
+				<type>input</type>
+				<size>5</size>
+				<max>5</max>
+				<default>31</default>
+			</config> 
+		</TCEforms>
+	</settings.pidBestellungBestellung>
+	<settings.pidBestellungBestellposten>
+		<TCEforms>
+			<label>PID Bestellungposten</label>
+			<displayCond>FIELD:switchableControllerActions:=:Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</displayCond>
+			<config>
+				<type>input</type>
+				<size>5</size>
+				<max>5</max>
+				<default>43</default>
+			</config> 
+		</TCEforms>
+	</settings.pidBestellungBestellposten>
+	<settings.pidBestellungTeilnahmen>
+		<TCEforms>
+			<label>PID Teilnahmen</label>
+			<displayCond>FIELD:switchableControllerActions:=:Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</displayCond>
+			<config>
+				<type>input</type>
+				<size>5</size>
+				<max>5</max>
+				<default>29</default>
+			</config> 
+		</TCEforms>
+	</settings.pidBestellungTeilnahmen>
+	<settings.pidBestellungSchulen>
+		<TCEforms>
+			<label>PID Institutionen</label>
+			<displayCond>FIELD:switchableControllerActions:=:Bestellung->list;Bestellung->edit;Bestellung->create;Bestellung->new;Bestellung->update;Bestellung->debitorwahl;Bestellung->fehler;Bestellung->createInDebitor;Bestellung->newTeilnehmer;Bestellung->createTeilnehmer;Bestellung->show;Bestellung->printUrkunden;Bestellung->printPackliste;Bestellung->showUrkunden;Bestellung->confirmUrkunden</displayCond>
+			<config>
+				<type>input</type>
+				<size>5</size>
+				<max>5</max>
+				<default>28</default>
+			</config> 
+		</TCEforms>
+	</settings.pidBestellungSchulen>
+
+      <settings.pidAjaxContainerKlassenuebersicht>
+     	<TCEforms>
+         	<label>PID der Seite, die den Ajaxcontainer der Klassenübersicht enthält</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Klassen->list;Schueler->edit;Schueler->list;Schueler->update;Schueler->export;Schueler->importErgebnisListen;Schueler->importErgebnisExcel;Teilnahmen->updateklasse;Teilnahmen->updateFromExcel;Schueler->updateSchule</displayCond>
+        	 <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>35</default>
+         </config>
+     </TCEforms>
+     	</settings.pidAjaxContainerKlassenuebersicht>
+
+     <settings.pidSchuelerImport>
+     	<TCEforms>
+         	<label>PID für Schülerimport</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schueler->import;Schueler->export;Schueler->list;Schueler->edit;Schueler->update;Klassen->list;Teilnahmen->listklasse;Schueler->listFilterName;Schueler->list;Schulen->list;</displayCond>
+        	 <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>23</default>
+         </config>
+     </TCEforms>
+     </settings.pidSchuelerImport>
+
+      <settings.anzSchulenSchuelerEinzeleingabe>
+     	<TCEforms>
+         	<label>Anzahl der Schüler, die bei Einzeleingabe angezeigt werden sollen</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schulen->listAdm;Schulen->editAdm;Schulen->updateAdm;Schulen->fehler;Schulen->importSchueler;Teilnahmen->updateklasse;Schueler->export;Schueler->updateSchule;</displayCond>
+        	 <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>35</default>
+         </config>
+     </TCEforms>
+     </settings.anzSchulenSchuelerEinzeleingabe>
+     
+     <settings.pidSchulenAjaxContainerKlassenuebersicht>
+     	<TCEforms>
+         	<label>PID der Seite, die den Ajaxcontainer der Klassenübersicht enthält</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schulen->listAdm;Schulen->editAdm;Schulen->updateAdm;Schulen->fehler;Schulen->importSchueler;Teilnahmen->updateklasse;Schueler->export;Schueler->updateSchule;</displayCond>
+        	 <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>35</default>
+         </config>
+     </TCEforms>
+     	</settings.pidSchulenAjaxContainerKlassenuebersicht>
+
+     <settings.pidSchulenSchuelerImport>
+     	<TCEforms>
+         	<label>PID für Schülerimport</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schulen->listAdm;Schulen->editAdm;Schulen->updateAdm;Schulen->fehler;Schulen->importSchueler;Teilnahmen->updateklasse;Schueler->export;Schueler->updateSchule;</displayCond>
+        	 <config>
+             <type>input</type>
+             <size>5</size>
+             <max>5</max>
+             <default>23</default>
+         </config>
+     </TCEforms>
+     </settings.pidSchulenSchuelerImport>
+
+      <settings.urkundenAuswahl>
+     	<TCEforms>
+         	<label>Urkundenstatus</label>
+         	<displayCond>FIELD:switchableControllerActions:=:Schulen->listUrkunden; Schulen->printUrkunden; Schulen->printPackliste; Schulen->showUrkunden; Schulen->confirmUrkunden;</displayCond>
+			<config>
+				<type>select</type>
+				<items type="array">
+					<numIndex index="0" type="array">
+						<numIndex index="0">alle</numIndex>
+						<numIndex index="1">alle</numIndex>
+					</numIndex>
+					<numIndex index="1" type="array">
+						<numIndex index="0">ungedruckt</numIndex>
+						<numIndex index="1">ungedruckt</numIndex>
+					</numIndex>
+					<numIndex index="3" type="array">
+						<numIndex index="0">gedruckt</numIndex>
+						<numIndex index="1">gedruckt</numIndex>
+					</numIndex>
+				</items>
+			</config>         	
+     </TCEforms>
+     </settings.urkundenAuswahl>
      </el>
    </ROOT>
   </sDEF>

@@ -1,0 +1,131 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages class="flashmessages" />
+<div id="ergebnisaccordion">
+    <h3><f:translate key="tx_blsvsa2013_domain_model_klassen.entwederperexcellisten" /></h3>
+    <div>
+        <p>
+        <f:translate key="tx_blsvsa2013_domain_model_klassen.entwederperexcellistentext" />
+         <f:form action="importErgebnisListen" controller="Schueler" name="importErgebnisListen"  >
+     		<f:form.textarea name="ergebnisListe" value="" rows="10" cols="80"  />
+    		<f:form.submit value="Ergebnisse übernehmen und übermitteln" />
+	   	</f:form>
+
+        </p>
+    </div>
+    <h3><f:translate key="tx_blsvsa2013_domain_model_klassen.oderperexcelupload" /></h3>
+    <div>
+        <p>
+        <f:translate key="tx_blsvsa2013_domain_model_klassen.oderperexceluploadtext" />
+         <f:form enctype="multipart/form-data" action="importErgebnisExcel" controller="Schueler" name="importErgebnisExcel"  >
+     <f:form.upload name="ergebnisExcel" />
+     <f:form.submit value="Excel hochladen und übermitteln" />
+   </f:form>
+        </p>
+    </div>
+      <h3><f:translate key="tx_blsvsa2013_domain_model_klassen.oderperkurzerfassung" /></h3>
+    <div>
+	<p><f:translate key="tx_blsvsa2013_domain_model_klassen.oderperkurzerfassungtext" /></p>
+	<table  class="tx_blsvsa2013" >
+	<tr>
+		<th class="linksoben" rowspan="2"><f:translate key="tx_blsvsa2013_domain_model_klassen.klasse" /></th>
+		<th rowspan="2"><f:translate key="tx_blsvsa2013_domain_model_klassen.geschlecht" /></th>
+		<th colspan="3"><f:translate key="tx_blsvsa2013_domain_model_klassen.anzahl" /></th>
+		<th rowspan="2">Excel holen </th>
+		<th class="rechtsoben" rowspan="2"><f:translate key="tx_blsvsa2013_domain_model_klassen.klassebearbeiten" /></th>
+	</tr>
+	<tr>
+		<th><f:translate key="tx_blsvsa2013_domain_model_klassen.alle" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_klassen.bestanden" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_klassen.nichtbestanden" /></th>
+		
+		
+	</tr>
+	<tr class="schule">
+		<td colspan="2" ><f:translate key="tx_blsvsa2013_domain_model_klassen.schulegesamt" /></th>
+		<td class="alle">{schulsumme.alle}</td>
+		<td class="bestanden">{schulsumme.bestanden}</td>
+		<td class="nichtbestanden">{schulsumme.nichtbestanden}</td>
+		<td><f:link.action action="export" controller="Schueler" ><button><f:translate key="tx_blsvsa2013_domain_model_klassen.holeexcel" /></button></f:link.action></td>
+		<td><button class="holeKlasse" id="{klasse.uid}"  value='<f:uri.action pageUid="{pidKlasse}" action="listklasse" controller="Teilnahmen" />' ><f:translate key="tx_blsvsa2013_domain_model_klassen.zeigeschule" /></button></td>
+	</tr>
+
+	<f:for each="{klassen}" as="klasse">
+	
+		<tr>
+			<td  class="klasse">{klasse.klasse}</td>
+			<td class="geschlecht"><f:translate key="tx_blsvsa2013_domain_model_klassen.geschlecht{klasse.geschlecht}" /></td>
+			<td class="alle">{klasse.alle}</td>
+			<td class="bestanden">{klasse.bestanden}</td>
+			<td class="nichtbestanden">{klasse.nichtbestanden}</td>
+			
+			<td class="excelholen"><f:link.action action="export" controller="Schueler" arguments="{klasse : klasse}"><button><f:translate key="tx_blsvsa2013_domain_model_klassen.holeexcel" /></button></f:link.action></td>
+			<td class="klassebearbeiten"><button class="holeKlasse" id="{klasse.uid}"  value='<f:uri.action pageUid="{pidKlasse}" action="listklasse" controller="Teilnahmen" arguments="{klasse : klasse}" />' ><f:translate key="tx_blsvsa2013_domain_model_klassen.zeigeklasse" /></button></td>
+		</tr>
+	</f:for>
+	<tr><td colspan="7" class="unten"></td></tr>
+</table> 
+ </div>
+
+</div>
+ <section id="tx_blsvsa2013_klasse_popup">
+  <div class="blsv_popup_header rechtsoben linksoben"><span>Klassenliste</span><button class="blsv_popup_header_close_button" id="tx_blsvsa2013_klasse_popup_close">&nbsp;</button></div>
+   <f:form action="updateklasse" controller="Teilnahmen" name="teilnahmen"  >
+   <div id="tx_blsvsa2013_klasse_popup_content" class="unten">
+   
+   </div> 
+ </f:form>	
+ 	<div class="ActivityIndicator"></div>
+ </section>
+
+  <script>
+   <![CDATA[
+           
+  $(document).ready( function(){
+	 
+    	$(function() {
+        	$("#ergebnisaccordion" ).accordion({
+        		heightStyle: "content",
+    	       	navigation: true,
+    			collapsible: true,
+    			active:2
+        	});
+        	
+   		 });
+    
+ 	
+		
+		$(".holeKlasse").click(function(){
+		    var url = $(this).val();
+	 			$('#tx_blsvsa2013_klasse_popup').show();
+	 			$('.ActivityIndicator').show();
+				var jqxhr = $.ajax(  url  )
+					.done(function(data) {
+						$('#tx_blsvsa2013_klasse_popup_content').html(data); 
+						$('.ActivityIndicator').hide();
+					});
+	 	 });		
+	 	 $("#tx_blsvsa2013_klasse_popup_close").click(function(){
+	 		$('#tx_blsvsa2013_klasse_popup').hide();
+	 	 });
+  }); 
+  
+  
+  		
+  ]]>  
+    
+    </script>
+</f:section>

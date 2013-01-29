@@ -1,0 +1,51 @@
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+
+
+	<h1><f:translate key="tx_blsvsa2013_domain_model_bestellung.h1edit" /></h1>
+	<fieldset class="debitoroben">
+		<legend>Debitor </legend>
+		<f:render partial="Bestellung/Properties" arguments="{bestellung:bestellung, schule:schule}" />
+	</fieldset>
+
+	<br /><br />
+ 	
+	<fieldset class="artikelrechts">
+		<legend><f:translate key="tx_blsvsa2013_domain_model_bestellung.artikel" /></legend>
+		<f:render partial="Bestellposten/Uebersicht" arguments="{bestellpostens:bestellpostens}" />
+	</fieldset>
+ 
+	<fieldset class="teilnehmerlinks" >
+		<legend><f:translate key="tx_blsvsa2013_domain_model_bestellung.urkunden" /></legend>
+		<f:render partial="Bestellung/TeilnahmenListe" arguments="{schule:schule, pidNamenssuche:pidNamenssuche, pidTeilnehmerNeu:pidTeilnehmerNeu, teilnahmen:teilnahmen, punktegesamtOptions:punktegesamtOptions}" />
+	</fieldset>	<br />
+<fieldset id="aktionen">	
+<legend><f:translate key="tx_blsvsa2013_domain_model_bestellung.aktionen" /></legend>
+<f:form action="rechnungerstellen" name="bestellung" object="{bestellung}" >
+	<f:form.hidden name="status" value="2" />
+	<f:link.action action="edit" controller="Bestellung" arguments="{bestellung:bestellung}"><- <f:translate key="tx_blsvsa2013_domain_model_bestellung.zurueckedit" /></f:link.action>
+	<f:form.submit class="buttonbreit" value="<f:translate key='tx_blsvsa2013_domain_model_bestellung.rechnungerstellen' />" />
+	<f:link.action action="list" controller="Bestellung"><f:translate key="tx_blsvsa2013_domain_model_bestellung.zuruebersicht" /></f:link.action>
+</f:form>	
+</fieldset>
+	
+
+
+</f:section>

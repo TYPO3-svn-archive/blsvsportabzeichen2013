@@ -57,7 +57,7 @@ class Tx_Blsvsa2013_Domain_Model_LeistungstabelleTest extends Tx_Extbase_Tests_U
 	 */
 	public function getLeistungbronzeReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			1,
 			$this->fixture->getLeistungbronze()
 		);
 	}
@@ -79,7 +79,7 @@ class Tx_Blsvsa2013_Domain_Model_LeistungstabelleTest extends Tx_Extbase_Tests_U
 	 */
 	public function getLeistungsilberReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			2,
 			$this->fixture->getLeistungsilber()
 		);
 	}
@@ -101,7 +101,7 @@ class Tx_Blsvsa2013_Domain_Model_LeistungstabelleTest extends Tx_Extbase_Tests_U
 	 */
 	public function getLeistunggoldReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			3,
 			$this->fixture->getLeistunggold()
 		);
 	}

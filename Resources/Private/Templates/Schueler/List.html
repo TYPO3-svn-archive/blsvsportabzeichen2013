@@ -1,100 +1,38 @@
 <f:layout name="Default" />
-
 This Template is responsible for creating a table of domain objects.
-
 If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
+in /Configuration/ExtensionBuilder/settings.yaml:  
+Resources:    Private:      Templates:        List.html: keep
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+
 <f:section name="main">
-<h1>Listing for Schueler</h1>
 
-<f:flashMessages />
-
-<table  class="tx_blsvsa2013" >
+<h1>Klassse {schuelers.0.klasse} <f:translate key="tx_blsvsa2013_domain_model_schueler.geschlecht{schuelers.0.geschlecht}" /></h1>
+<table>
 	<tr>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.vorname" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.name" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.geschlecht" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.geburtstag" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.anzteilnahmen" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.punktegesamt" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.urkundenart" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.gedruckt" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.drucktstamp" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.klasse" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.grundschulwettbewerb" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.schwimmnachweis" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.gueltigbis" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.leistungstabelle1" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ablagedatum1" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.pruefer1" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ergebnis1" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.punkte1" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.leistungstabelle2" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ablagedatum2" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.pruefer2" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ergebnis2" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.punkte2" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.leistungstabelle3" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ablagedatum3" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.pruefer3" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ergebnis3" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.punkte3" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.leistungstabelle4" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ablagedatum4" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.pruefer4" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.ergebnis4" /></th>
-		<th><f:translate key="tx_blsvsa2013_domain_model_schueler.punkte4" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
-	<f:for each="{schuelers}" as="schueler">
+			<th  class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.vorname" /></th>
+			<th  class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.name" /></th>
+			<th  class="linksoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.geburtstag" /></th>
+			<th>Punkte/Abzeichen</th>
+			<th class="rechtsoben"></th>		
+		</tr>
+ 
+	 <f:for each="{schuelers}" as="schueler">
 		<tr>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.vorname}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.geschlecht}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.geburtstag}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.anzteilnahmen}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.punktegesamt}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.urkundenart}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.gedruckt}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.drucktstamp}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.klasse}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.grundschulwettbewerb}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.schwimmnachweis}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.gueltigbis}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.leistungstabelle1}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ablagedatum1}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.pruefer1}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ergebnis1}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.punkte1}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.leistungstabelle2}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ablagedatum2}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.pruefer2}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ergebnis2}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.punkte2}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.leistungstabelle3}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ablagedatum3}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.pruefer3}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ergebnis3}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.punkte3}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.leistungstabelle4}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ablagedatum4}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.pruefer4}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.ergebnis4}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{schueler : schueler}"> {schueler.punkte4}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{schueler : schueler}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{schueler : schueler}">Delete</f:link.action></td>
+			<td class="klasse"> {schueler.vorname}</td>
+			<td class="">{schueler.name}</td>
+			<td class="geschlecht">{schueler.geburtstag}</td>	
+						
+			<td class="excelholen"><f:form.select class="punktegesamt bgabzeichen{schueler.punktegesamt}" id="schuelerAnzpunkte{schueler.uid}" property="punktegesamt[]" options="{ 0:'0 Pkte / keins', 1:'1 Pkt  / keins', 2:'2 Pkte / keins',3:'3 Pkte / keins',
+																					 4:'4 Pkte / Bronze', 5:' 5 Pkte / Bronze ', 6:'  6 Pkte / Bronze',7:'  7 Pkte / Bronze/ ',
+																					 8:'8 Pkte / Silber', 9:' 9 Pkte / Silber', 10:' 10 Pkte / Silber',
+																					 11:' 11 Pkte / Gold', 12:'12 Pkte / Gold' }" /></td>
+			<td class="klassebearbeiten"><button class="holeklasse" id="{klasse.uid}"  value='<f:uri.action pageUid="35" action="list" controller="Schueler" arguments="{klasse : klasse}" />' ><f:translate key="tx_blsvsa2013_domain_model_klassen.zeigeklasse" /></button></td>
 		</tr>
 	</f:for>
-</table>
+</table>   
+ </f:section>
 
-<f:link.action action="new">New Schueler</f:link.action>
-</f:section>
+
+

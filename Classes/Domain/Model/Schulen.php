@@ -1,4 +1,4 @@
-<?php
+<?php  
 
 /***************************************************************
  *  Copyright notice
@@ -39,7 +39,7 @@ class Tx_Blsvsa2013_Domain_Model_Schulen extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var string
 	 */
-	protected $schulnummer;
+	protected $schulnummer=0;
 
 	/**
 	 * Schulname
@@ -54,7 +54,7 @@ class Tx_Blsvsa2013_Domain_Model_Schulen extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var integer
 	 */
-	protected $schulart;
+	protected $schulart=0;
 
 	/**
 	 * Strasse
@@ -96,21 +96,21 @@ class Tx_Blsvsa2013_Domain_Model_Schulen extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var integer
 	 */
-	protected $bezirk;
+	protected $bezirk=0;
 
 	/**
 	 * Kreis
 	 *
 	 * @var integer
 	 */
-	protected $kreis;
+	protected $kreis=0;
 
 	/**
 	 * BLSV-Kreis
 	 *
 	 * @var integer
 	 */
-	protected $blsvkreis;
+	protected $blsvkreis=0;
 
 	/**
 	 * Bankempfänger
@@ -152,36 +152,52 @@ class Tx_Blsvsa2013_Domain_Model_Schulen extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var boolean
 	 */
-	protected $schulwettbewerb=False;
+	protected $schulwettbewerb=FALSE;
 
 	/**
 	 * Anzahl Schüler
 	 *
 	 * @var integer
 	 */
-	protected $anzschueler;
+	protected $anzschueler=0;
 
 	/**
 	 * Anzahl teilnahmeberechtigter Schüler
 	 *
 	 * @var integer
 	 */
-	protected $anzteilnahmeberechtigt;
+	protected $anzteilnahmeberechtigt=0;
 
 	/**
 	 * Anzahl bestandene Schüler
 	 *
 	 * @var integer
 	 */
-	protected $anzbestanden;
+	protected $anzbestanden=0;
 
 	/**
 	 * fe_user
 	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Feuser
+	 * @var Tx_Blsvsa2013_Domain_Model_Feusers
 	 * @lazy
 	 */
-	protected $feuser;
+	protected $feuser=null;
+	
+	/**
+	 * Art der Schule bzw. institution z.B. Polizei
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Model_Institutionsartart
+	 * @lazy
+	 */
+	protected $institutionsartart;
+
+	/**
+	 * tstamp
+	 *
+	 * @var integer
+	 */
+	protected $tstamp;
+	
 
 	/**
 	 * Returns the schulnummer
@@ -583,7 +599,7 @@ class Tx_Blsvsa2013_Domain_Model_Schulen extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Returns the feuser
 	 *
-	 * @return Tx_Blsvsa2013_Domain_Model_Feuser $feuser
+	 * @return Tx_Blsvsa2013_Domain_Model_Feusers $feuser
 	 */
 	public function getFeuser() {
 		return $this->feuser;
@@ -592,12 +608,64 @@ class Tx_Blsvsa2013_Domain_Model_Schulen extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Sets the feuser
 	 *
-	 * @param Tx_Blsvsa2013_Domain_Model_Feuser $feuser
+	 * @param Tx_Blsvsa2013_Domain_Model_Feusers $feuser
 	 * @return void
 	 */
-	public function setFeuser(Tx_Blsvsa2013_Domain_Model_Feuser $feuser) {
+	public function setFeuser(Tx_Blsvsa2013_Domain_Model_Feusers $feuser) {
 		$this->feuser = $feuser;
 	}
+	
+	/**
+	 * Returns the institutionsartart
+	 *
+	 * @return Tx_Blsvsa2013_Domain_Model_Institutionsartart $institutionsartart
+	 */
+	public function getInstitutionsartart() {
+		return $this->institutionsartart;
+	}
 
+	/**
+	 * Sets the institutionsartart
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Model_Institutionsartart $institutionsartart
+	 * @return void
+	 */
+	public function setInstitutionsartart(Tx_Blsvsa2013_Domain_Model_Institutionsartart $institutionsartart) {
+		$this->institutionsartart = $institutionsartart;
+	}
+
+	
+	/**
+	 * Setzt die felder anzschueler, anzteilnahmeberechtigt, anzbestanden
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Repository_SchuelerRepository $repSchueler
+	 * @param Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository $repTeilnahmen
+	 */
+	public function setStatistik(Tx_Blsvsa2013_Domain_Repository_SchuelerRepository $repSchueler, Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository $repTeilnahmen){
+		$this->setAnzschueler($repSchueler->getAnzahl($this->getSchulnummer()));
+		$this->setAnzteilnahmeberechtigt($repTeilnahmen->getAnzahl($this->getSchulnummer()));
+		$this->setAnzbestanden($repTeilnahmen->getAnzahlBestanden($this->getSchulnummer()));
+	}
+	
+	/**
+	 * Returns the UrkundenStatus
+	 *
+	 * @return integer $urkundenStatus
+	 */
+	public function getUrkundenStatus() {
+		if ($this->anzbestanden > 0){
+			$urkundenStatus = 1;
+		}
+		// nicht bestanden 
+		else {
+			if ($this->tstamp > 0){
+				$urkundenStatus = 2;
+			} else {
+				$urkundenStatus = 3;
+			}
+		}
+		return $urkundenStatus;		
+	}
+	
 }
 ?>

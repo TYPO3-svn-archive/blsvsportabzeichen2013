@@ -1,27 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<T3locallang>
-    <meta type="array">
-        <type>module</type>
-        <description>Language labels for class 'tx_blsvschulwettbewerb_import'</description>
-    </meta>
-    <data type="array">
-        <languageKey index="default" type="array">
-            <label index="err_too_many_fields">Zeile kann nicht gelesen werden: zu viele Felder</label>
-            <label index="err_too_less_fields">Zeile kann nicht gelesen werden: zu wenige Felder</label>
-            <label index="err_empty_field">###FELD### darf nicht leer sein</label>
-            <label index="field_lastname">Name</label>
-            <label index="field_firstname">Vorname</label>
-            <label index="field_class">Klasse</label>
-            <label index="err_read_field_date">Datum kann nicht gelesen werden (###DATUM###)</label>
-            <label index="err_read_field_gender">Geschlecht kann nicht gelesen werden (###GESCHLECHT###)</label>
-            <label index="err_nok">Fehler beim Import!\n\n###IMP_BLK###</label>
-            <label index="err_nok_line_inf">Zeile: ###IMP_ZEILE###</label>
-            <label index="err_nok_line_msg">- ###IMP_FEHLER###\n</label>
-            <label index="err_nok_line_blk">###INF###\n###MSG###\n</label>
-            <label index="imp_ok">Von den eingestellten ###ANZ_SCHUELER_GESAMT### Schülern wurden ###ANZ_SCHUELER_NEU### Schüler erfolgreich importiert\n\Die Zuordnung der importierten Klasse(n) hinsichtlich der 3./4. Klassenstufe bei einer Teilnahme am Wettbewerb &quot;Mein Sportabzeichen&quot; für Grundschulen erfolgt automatisch.</label>
-            <label index="imp_no_new_data">Es wurden keine neuen Schüler importiert, da bereits alle vorhanden sind</label>
-            <label index="tst_ok">Es werden ###ANZ_SCHUELER_NEU### von ###ANZ_SCHUELER_GESAMT### Schueler importiert</label>
-            <label index="tst_no_new_data">Keine neuen Daten (###ANZ_SCHUELER_NEU###/###ANZ_SCHUELER_GESAMT###)</label>
-        </languageKey>
-    </data>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for class 'tx_blsvschulwettbewerb_import'</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="err_too_many_fields">Zeile kann nicht gelesen werden: zu viele Felder</label>
+            <label index="err_too_less_fields">Zeile kann nicht gelesen werden: zu wenige Felder</label>
+            <label index="err_empty_field">###FELD### darf nicht leer sein</label>
+            <label index="field_lastname">Name</label>
+            <label index="field_firstname">Vorname</label>
+            <label index="field_class">Klasse</label>
+            <label index="err_read_field_date">Datum kann nicht gelesen werden (###DATUM###)</label>
+            <label index="err_read_field_gender">Geschlecht kann nicht gelesen werden (###GESCHLECHT###)</label>
+            <label index="err_nok">Fehler beim Import!\n\n###IMP_BLK###</label>
+            <label index="err_nok_line_inf">Zeile: ###IMP_ZEILE###</label>
+            <label index="err_nok_line_msg">- ###IMP_FEHLER###\n</label>
+            <label index="err_nok_line_blk">###INF###\n###MSG###\n</label>
+            <label index="imp_ok">Von den eingestellten ###ANZ_SCHUELER_GESAMT### Schülern wurden ###ANZ_SCHUELER_NEU### Schüler erfolgreich importiert\n\Die Zuordnung der importierten Klasse(n) hinsichtlich der 3./4. Klassenstufe bei einer Teilnahme am Wettbewerb &quot;Mein Sportabzeichen&quot; für Grundschulen erfolgt automatisch.</label>
+            <label index="imp_no_new_data">Es wurden keine neuen Schüler importiert, da bereits alle vorhanden sind</label>
+            <label index="tst_ok">Es werden ###ANZ_SCHUELER_NEU### von ###ANZ_SCHUELER_GESAMT### Schueler importiert</label>
+            <label index="tst_no_new_data">Keine neuen Daten (###ANZ_SCHUELER_NEU###/###ANZ_SCHUELER_GESAMT###)</label>
+        </languageKey>
+    </data>
 </T3locallang>

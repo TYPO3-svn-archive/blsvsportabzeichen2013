@@ -1,0 +1,5 @@
+seite.headerData.30 = TEXT
+seite.headerData.30.value (
+  <link rel="stylesheet" type="text/css" href="fileadmin/templates/style_sportabzeichen.css" />
+  <link rel="stylesheet" type="text/css" href="typo3conf/ext/blsvsa2013/Resources/Public/css/style_sportabzeichen.css" />  
+)

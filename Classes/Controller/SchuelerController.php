@@ -50,33 +50,50 @@ class Tx_Blsvsa2013_Controller_SchuelerController extends Tx_Extbase_MVC_Control
 	protected $extPath;
 	
 	/**
-	 * import class
-	 *
-	 * @var string
-	 */
-	protected $importClass;
-
-	/**
-	 * import class file
-	 *
-	 * @var string
-	 */
-	protected $importClassFile;
-	
-	/**
-	 * schulnummer
+	 * Schule
 	 *
 	 * @var int
 	 */
 	protected $schule;
 	
 	/**
-	 * feuser
+	 * feusers
 	 *
-	 * @var Tx_Blsvsa2013_Domain_Model_Feuser
+	 * @var Tx_Blsvsa2013_Domain_Model_Feusers
 	 */
-	protected $feuser;
+	protected $feusers;
+	
+	
+	/**
+	 * Anzahl der zeilen bei Einzeleingbe für Schüler
+	 *
+	 * @var int
+	 */
+	protected $anzSchuelerEinzeleingabe=35;
+	
+	
+	
+	/**
+	 * Pid der Ergebniseingabe
+	 *
+	 * @var int
+	 */
+	protected $pidErgebnisEingabe=23;
 
+	/**
+	 * Pid für Import
+	 *
+	 * @var int
+	 */
+	protected $pidSchuelerImport=0;
+
+	/**
+	 * bezirke
+	 *
+	 * @var array
+	 */
+	protected $bezirke;
+	
 	/**
 	 * schulenRepository
 	 *
@@ -90,21 +107,46 @@ class Tx_Blsvsa2013_Controller_SchuelerController extends Tx_Extbase_MVC_Control
 	 * @var Tx_Blsvsa2013_Domain_Repository_SchuelerRepository
 	 */
 	protected $schuelerRepository;
+
+	/**
+	 * altersgruppenRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_AltersgruppenRepository
+	 */
+	protected $altersgruppenRepository;
+
+	/**
+	 * leistungstabelleRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_LeistungstabelleRepository
+	 */
+	protected $leistungtabelleRepository;
+
+	/**
+	 * teilnahmenRepository
+	 *
+	 * @var Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository
+	 */
+	protected $teilnahmenRepository;
+	
 	
 	/**
 	 * Initializes the current action
 	 * @return void
 	 */
 	protected function initializeAction() {
-		$this->feuser = $this->feuserRepository->findByUid( $GLOBALS['TSFE']->fe_user->user['uid'] ) ;
-		$this->schule = $this->feuser->getSchule();
+		$this->feusers = $this->feusersRepository->findByUid( $GLOBALS['TSFE']->fe_user->user['uid'] ) ;
+		$this->schule = $this->feusers->getSchule();
 		
 		$this->extKey = $this->request->getControllerExtensionKey();
 		$this->extPath = t3lib_extMgm::extPath($this->extKey);
 
-		$this->importClassFile = $this->extPath.'Classes/libs/class.importtext.php';
-		$this->importClass = 'ImportText';
+		$userTSConfig_all = $GLOBALS["TSFE"]->fe_user->getUserTSconf();
+		$this->bezirke =  $userTSConfig_all['tx_blsvsa2013.']['bezirk.'];
 		
+		if ( $this->settings[anzSchuelerEinzeleingabe] > 0) $this->anzSchuelerEinzeleingabe = (int) $this->settings[anzSchuelerEinzeleingabe];
+		if ( $this->settings[pidErgebnisEingabe] > 0) $this->pidErgebnisEingabe = (int) $this->settings[pidErgebnisEingabe];
+		if ( $this->settings[pidSchuelerImport] > 0) $this->pidSchuelerImport = (int) $this->settings[pidSchuelerImport];
 	}
 	
 	/**
@@ -128,22 +170,61 @@ class Tx_Blsvsa2013_Controller_SchuelerController extends Tx_Extbase_MVC_Control
 	}
 	
 	/**
-	 * injectFeuserRepository
+	 * injectAltersgruppenRepository
 	 *
-	 * @param Tx_Blsvsa2013_Domain_Repository_SchulenRepository $schulenRepository
+	 * @param Tx_Blsvsa2013_Domain_Repository_AltersgruppenRepository $altersgruppenRepository
 	 * @return void
 	 */
-	public function injectFeuserRepository(Tx_Blsvsa2013_Domain_Repository_FeuserRepository $feuserRepository) {
-		$this->feuserRepository = $feuserRepository;
+	public function injectAltersgruppenRepository(Tx_Blsvsa2013_Domain_Repository_AltersgruppenRepository $altersgruppenRepository) {
+		$this->altersgruppenRepository = $altersgruppenRepository;
+	}
+	
+	/**
+	 * injectFeusersRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_FeusersRepository $feusersRepository
+	 * @return void
+	 */
+	public function injectFeusersRepository(Tx_Blsvsa2013_Domain_Repository_FeusersRepository $feusersRepository) {
+		$this->feusersRepository = $feusersRepository;
+	}
+
+	/**
+	 * injectLeistungstabelleRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_LeistungstabelleRepository $leistungstabelleRepository
+	 * @return void
+	 */
+	public function injectLeistungstabelleRepository(Tx_Blsvsa2013_Domain_Repository_LeistungstabelleRepository $leistungstabelleRepository) {
+		$this->leistungstabelleRepository = $leistungstabelleRepository;
+	}
+
+	/**
+	 * injectTeilnahmenRepository
+	 *
+	 * @param Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository $teilnahmenRepository
+	 * @return void
+	 */
+	public function injectTeilnahmenRepository(Tx_Blsvsa2013_Domain_Repository_TeilnahmenRepository $teilnahmenRepository) {
+		$this->teilnahmenRepository = $teilnahmenRepository;
 	}
 	
 	/**
 	 * action list
-	 *
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Klassen $klasse
+	 * @param Tx_Blsvsa2013_Domain_Model_Schulen $schule
 	 * @return void
 	 */
-	public function listAction() {
-		$schuelers = $this->schuelerRepository->findAll();
+	public function listAction(Tx_Blsvsa2013_Domain_Model_Klassen $klasse=null, Tx_Blsvsa2013_Domain_Model_Schulen $schule=null) {
+		if ((null!=$schule) && ($this->bezirke)){
+			$schulnummer = $schule->getSchulnummer();
+		} else {
+			$schulnummer = $this->schule->getSchulnummer();
+		}
+		
+		// $schuelers = $this->schuelerRepository->findAll();
+		$schuelers = $this->schuelerRepository->findBySchulnummerOrKlasseSorted($schulnummer, $klasse);
 		$this->view->assign('schuelers', $schuelers);
 	}
 
@@ -169,8 +250,8 @@ class Tx_Blsvsa2013_Controller_SchuelerController extends Tx_Extbase_MVC_Control
 	 */
 	public function createAction(Tx_Blsvsa2013_Domain_Model_Schueler $newSchueler) {
 		$this->schuelerRepository->add($newSchueler);
-		$this->flashMessageContainer->add('Your new Schueler was created.');
-		$this->redirect('list');
+//		$this->flashMessageContainer->add('Your new Schueler was created.');
+//		$this->redirect('list');
 	}
 
 	/**
@@ -210,200 +291,136 @@ class Tx_Blsvsa2013_Controller_SchuelerController extends Tx_Extbase_MVC_Control
 	/**
 	 * action import
 	 * @param array $reqdata
-	 * 
+	 * @param array $einzeleingabe
 	 * @return void
 	 */
-	public function importAction($reqdata=null) {
-		if(!empty($reqdata['schuelerstring'])){
+	public function importAction($reqdata=null, $einzeleingabe=null) {
+		if ( $einzeleingabe ){
+			$reqdata['schuelerstring'] = Tx_Blsvsa2013_Service_SchuelerImport::erstelleStrAusEinzeleingabe( $einzeleingabe );			
+		}
 
-			require_once($this->importClassFile);
-			$import = t3lib_div::makeInstance($this->importClass, $this->extPath);
-			$erg = $import->getSchuelerFromString($reqdata['schuelerstring'], $this->schule, $this->feuser, $schuelers, $errors);
+		if ( $reqdata ){
+			$objImport = t3lib_div::makeInstance('Tx_Blsvsa2013_Service_SchuelerImport');
+			$importInfo = $objImport->doImport($reqdata['schuelerstring'], $this->teilnahmenRepository, $this->feusers, $this->schule, $this->pidSchuelerImport);
+//			t3lib_utility_Debug::debug($importInfo, 'importInfo'); return;
 
-			$importiert=0;
-			$vorhanden=0;
-			foreach($schuelers as $newSchueler){
-				$erg2 = $this->schuelerRepository->addNew($newSchueler);
-				if ($erg2==1) {
-					$importiert++;
-				} else {
-					$vorhanden++;
+			$messages = array();
+			$messages[] = $importInfo['message'];
+			if ($importInfo['errors']){
+				foreach($importInfo['errors'] as $fehlerinfo){
+					$messages[] = $fehlerinfo['zeile'] . ': ' . implode(' / ', $fehlerinfo['fehler']);;
 				}
 			}
+			foreach ($messages as $message){
+				$this->flashMessageContainer->add($message);
+			}
+
+			$this->cacheService->clearPageCache();
+			$this->redirect('updateSchule', 'Schueler', Null, Null, $this->pidErgebnisEingabe);
 		}
 		
-		$importInfo = array(
-				'erg' => $erg,
-				'importiert' => $importiert,
-				'vorhanden' => $vorhanden,
-				'errors' => $errors
-		);
+		$geburtsjahre = Tx_Blsvsa2013_Service_Tools::erstelleLoopArray( 106, (date(Y)-110) );
+		$schuelerAnzahl = Tx_Blsvsa2013_Service_Tools::erstelleLoopArray($this->settings[anzSchuelerEinzeleingabe],1);
+		$this->view->assign( schueleranzahlArray, $schuelerAnzahl );
+		$this->view->assign( geburtsjahreArray, $geburtsjahre );
+
 		
-		$this->view->assign('importInfo', $importInfo);
-	
 //		t3lib_utility_Debug::debug($reqdata, 'request');
-//		t3lib_utility_Debug::debug($importInfo, 'importInfo');
 	}
 	
 	/**
 	 * action export
-	 *
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Klassen $klasse
+	 * @param Tx_Blsvsa2013_Domain_Model_Schulen $schule
+	 */
+	public function exportAction(Tx_Blsvsa2013_Domain_Model_Klassen $klasse=null, Tx_Blsvsa2013_Domain_Model_Schulen $schule=null) {
+
+		// Schulnummer holen
+		if ((null!=$schule) && ($this->bezirke)){
+			$schulnummer = $schule->getSchulnummer();
+		} else {
+			$schulnummer = $this->schule->getSchulnummer();
+		}
+		
+		// Konfiguration fuer Export
+		$tplFile = $this->extPath.'Resources/Private/Templates/Schueler/template.xls';
+		$tmpFile = PATH_site.'typo3temp/'.'blsvsa2013_export_'.$schulnummer.'_'.date('His').'.xls';
+		$xlsFile = 'BLSV_SPORTABZEICHEN_'.date('Y').'_'.$GLOBALS['TSFE']->fe_user->user['username'].'.xls';
+		
+		// Teilnahmen holen
+		$teilnahmen = $this->teilnahmenRepository->findBySchulnummerOrKlasseSorted($schulnummer, $klasse);			
+		// Ergebnisse holen und fuer Export vorbereiten
+		$objErg = t3lib_div::makeInstance('Tx_Blsvsa2013_Service_Ergebnisse');
+		$ergebnisArray = $objErg->getErgebnisArray($teilnahmen, $this->altersgruppenRepository, $this->leistungstabelleRepository);
+//		t3lib_utility_debug::debug($ergebnisArray); exit;
+		
+		// Excel exportieren
+		$objXlsTpl = t3lib_div::makeInstance('Tx_Blsvsa2013_Service_XlsTplSa');
+		$objXlsTpl->fillTemplateAndSend($ergebnisArray, $tplFile, $tmpFile, $xlsFile);
+	}
+
+	/**
+	 * function importErgebnisListenAction
+	 * 
+	 * @param string $ergebnisListe
+	 */
+	public function importErgebnisListenAction($ergebnisListe=null) {
+		$arrErgebnisListen[0] = $ergebnisListe;
+
+		$objErgebnisImport = t3lib_div::makeInstance('Tx_Blsvsa2013_Service_ErgebnisImport');
+		$arrImportInfo = $objErgebnisImport->importFromErgebnisListen($arrErgebnisListen, $this->teilnahmenRepository, $this->leistungstabelleRepository);
+//		t3lib_utility_debug::debug($message); t3lib_utility_debug::debug($arrImportInfo); return;
+		
+		$this->flashMessageContainer->add($arrImportInfo['message']);
+
+		$this->cacheService->clearPageCache();
+		$this->redirect('updateSchule');
+	}
+
+	/**
+	 * ErgebnisExcel importieren
+	 * 
+	 * @param array $importErgebnisExcel
+	 */
+	public function importErgebnisExcelAction($ergebnisExcel=null) {
+		$objXlsTpl = t3lib_div::makeInstance('Tx_Blsvsa2013_Service_XlsTplSa');
+		$arrErgebnisListen = $objXlsTpl->getCsvDataFromFile($ergebnisExcel['tmp_name']);
+
+		$objErgebnisImport = t3lib_div::makeInstance('Tx_Blsvsa2013_Service_ErgebnisImport');
+		$arrImportInfo = $objErgebnisImport->importFromErgebnisListen($arrErgebnisListen, $this->teilnahmenRepository, $this->leistungstabelleRepository);
+//		t3lib_utility_debug::debug($message); t3lib_utility_debug::debug($arrImportInfo); return;
+
+		$this->flashMessageContainer->add($arrImportInfo['message']);
+
+		$this->cacheService->clearPageCache();
+		$this->redirect('updateSchule');
+	}
+
+	/**
+	 * action updateSchuleAction
+	 * 
+	 * @param Tx_Blsvsa2013_Domain_Model_Schulen $schule
 	 * @return void
 	 */
-	public function exportAction() {
-		$tplFile = $this->extPath.'Resources/Private/Templates/Schueler/sportabzeichen_neu.xls';
-		$savFile = $this->extPath.'Classes/libs/export_'.date('His').'.xls';
-		
-		
-		
-		$ergebnisArray = $this->getErgebnisArray();
-		require_once $this->extPath.'Classes/libs/class.lib_xls.php';
-		$xls = t3lib_div::makeInstance('lib_xls');
-		$xls->load($tplFile);
-		$xls->fillTemplate($ergebnisArray);
-		$xls->save($savFile);
-exit;		
-		
-		
-
-		
-		
-		
-		
-		
-//		t3lib_utility_Debug::debug('export', 'export');
-		
-
-/*
-$schuelers = $this->schuelerRepository->findAll();
-foreach ($schuelers as $schueler){
-	echo $schueler->getName();
-}
-exit;
-*/		
-		
-		
-		
-		$files = array(
-			'class.tx_lib_export_xls.php',
-			'class.tx_blsvschulwettbewerb_export_xls_ergebnisse.php',
-			'class.tx_lib_download.php',
-		);
-		
-		$libPath = $this->extPath.'Classes/libs/';
-		foreach ($files as $file) {
-			require_once $libPath.$file;
+	public function updateSchuleAction(Tx_Blsvsa2013_Domain_Model_Schulen $schule=null) {
+		if ((null!=$schule) && ($this->bezirke)){
+			$schule->setStatistik($this->schuelerRepository, $this->teilnahmenRepository);
+			$this->redirect('editAdm','Schulen', Null, array('schulen' => $schule, 'active' => 3));
+		} else {
+			$this->schule->setStatistik($this->schuelerRepository, $this->teilnahmenRepository);
+			$this->redirect('list','Klassen');
 		}
-
-		$export_class = 'tx_blsvschulwettbewerb_export_xls_ergebnisse';
-		$export = t3lib_div::makeInstance($export_class);
-		
-		
-		$tmp_file = PATH_site . 'fileadmin/_temp_/export_'.$GLOBALS['schule'].'.xls';
-//		$bitmap = 'fileadmin/images/head_ergebnisse.bmp';
-		$bitmap = 'fileadmin/images/sa2013titel.bmp';
-		$ergebnisArray = $this->getErgebnisArray();
-		
-		
-		
-		
-//		echo 'ERg:<pre>';print_r($ergebnisArray);echo '</pre>';exit;
-			
-		$export->createNew($tmp_file, $bitmap, $ergebnisArray);
-
-//		$export->create($daten, $opt);
-		 
-		$opt['ausgabe'] = $export->get_content();
-		
-		$opt['name'] = 'BLSV_SPORTABZEICHEN_'.date('Y').'_'.$GLOBALS['TSFE']->fe_user->user['username'];
-		$opt['ext'] = 'xls';
-//		mysql_close();
-		// Export verschicken
-//		require_once(t3lib_extMgm::extPath('blsv_schulwettbewerb')."lib/class.tx_lib_download.php");
-		$download = t3lib_div::makeInstance('tx_lib_download');
-		$download->send_data($opt['ausgabe'],$opt['name'],$opt['ext']);
-		
 	}
+
+	/**
+	 * action listFilterNameAction
+	 * @param string $suchtext
+	 * @return void
+	 */
+	public function listFilterNameAction( $suchtext ) {
 	
-	
-	function getErgebnisArray(){
-		
-/*		$schueler = array(
-				'0' => array(
-						'anz_teilnahmen' => '0',
-						'uid' => '179',
-						'name' => 'Mustermädchen',
-						'vorname' => 'Martina',
-						'geschlecht' => '2',
-						'klasse' => '10a',
-						'geburtstag' => '03.04.95',
-				),
-				'1' => array(
-						'anz_teilnahmen' => '0',
-						'uid' => '180',
-						'name' => 'Mustermann',
-						'vorname' => 'Martin',
-						'geschlecht' => '1',
-						'klasse' => '10b',
-						'geburtstag' => '01.01.95',
-				),
-		);
-*/
-		
-		$sql="select * from tx_blsvsa2013_domain_model_schueler";
-		$result=mysql_query($sql);
-		if (!$result)die ("DB Fehler beim Lesen ".mysql_error()."<br>".$sql);
-		while( $h = mysql_fetch_array($result) ) {
-			$schueler[] = $h;
-		}
-		
-		$gruppen = array(
-				'1' => array(
-						'0' => array('saname' => 'Weit- sprung',		'mindLeistung' => '350', 'ml1' => '350', 'ml2' => '350', 'ml3' => '350',	'leistung' => '85',		'ergebnisart' => '3',),
-						'1' => array('saname' => 'Hoch- sprung',		'mindLeistung' => '110', 'ml1' => '110', 'ml2' => '110', 'ml3' => '110',	'leistung' => '50',		'ergebnisart' => '3',),
-						'2' => array('saname' => 'Bel. Sprunggerät seit. Grätsche/Hocke Geräte-höhe:',		'mindLeistung' => '120', 'ml1' => '120', 'ml2' => '120', 'ml3' => '120',	'leistung' => '130',	'ergebnisart' => '5',),
-				),
-				'2' => array(
-						'0' => array('saname' => '75m Lauf',			'mindLeistung' => '125', 'ml1' => '125', 'ml2' => '125', 'ml3' => '125',	'leistung' => '562',	'ergebnisart' => '2',),
-						'1' => array('saname' => '100m Lauf',			'mindLeistung' => '162', 'ml1' => '162', 'ml2' => '162', 'ml3' => '162',	'leistung' => '570',	'ergebnisart' => '2',),
-						'2' => array('saname' => '300m Inline Skating',	'mindLeistung' => '47', 'ml1' => '47', 'ml2' => '47', 'ml3' => '47',	'leistung' => '346',	'ergebnisart' => '1',),
-				),
-				'3' => array(
-						'0' => array('saname' => 'Kugel 4Kg',			'mindLeistung' => '550', 'ml1' => '550', 'ml2' => '550', 'ml3' => '550',	'leistung' => '146',	'ergebnisart' => '3',),
-						'1' => array('saname' => 'Schlag- ball (80g)',	'mindLeistung' => '3200', 'ml1' => '3200', 'ml2' => '3200', 'ml3' => '3200',	'leistung' => '375',	'ergebnisart' => '3',),
-						'2' => array('saname' => 'Wurf- ball 200 g',	'mindLeistung' => '2500', 'ml1' => '2500', 'ml2' => '2500', 'ml3' => '2500',	'leistung' => '393',	'ergebnisart' => '3',),
-						'3' => array('saname' => 'Schleuder- ball (1kg)',	'mindLeistung' => '2500', 'ml1' => '2500', 'ml2' => '2500', 'ml3' => '2500',	'leistung' => '416',	'ergebnisart' => '3',),
-						'4' => array('saname' => '100m Schwim- men',	'mindLeistung' => '135', 'ml1' => '135', 'ml2' => '135', 'ml3' => '135',	'leistung' => '450',	'ergebnisart' => '1',),
-						'5' => array('saname' => 'Kombi. Reck: Aufschw. Unterschw. Boden Rad- wende',	'mindLeistung' => '1', 'ml1' => '1', 'ml2' => '1', 'ml3' => '1',	'leistung' => '658','ergebnisart' => '4'),
-				),
-				'4' => array(
-						'0' => array('saname' => '800m Lauf',			'mindLeistung' => '270', 'ml1' => '270', 'ml2' => '270', 'ml3' => '270',	'leistung' => '185',	'ergebnisart' => '1',),
-						'1' => array('saname' => '2.000m Lauf',		'mindLeistung' => '740', 'ml1' => '740', 'ml2' => '740', 'ml3' => '740',	'leistung' => '199',	'ergebnisart' => '1',),
-						'2' => array('saname' => '3.000m Lauf',		'mindLeistung' => '1130', 'ml1' => '1130', 'ml2' => '1130', 'ml3' => '1130',	'leistung' => '216',	'ergebnisart' => '1',),
-						'3' => array('saname' => '5.000m Inline Skating',	'mindLeistung' => '990', 'ml1' => '990', 'ml2' => '990', 'ml3' => '990',	'leistung' => '249',	'ergebnisart' => '1',),
-						'4' => array('saname' => '20km Rad- fahren',	'mindLeistung' => '3600', 'ml1' => '3600', 'ml2' => '3600', 'ml3' => '3600',	'leistung' => '712',	'ergebnisart' => '1',),
-						'5' => array('saname' => '600m Schwim- men',	'mindLeistung' => '1140', 'ml1' => '1140', 'ml2' => '1140', 'ml3' => '1140',	'leistung' => '481',	'ergebnisart' => '1',),
-						'6' => array('saname' => '5km Skilang- lauf',	'mindLeistung' => '1800', 'ml1' => '1800', 'ml2' => '1800', 'ml3' => '1800',	'leistung' => '711',	'ergebnisart' => '1',),
-				),
-		);
-		
-		
-		
-		
-		$erg = array(
-			28 => array(
-				'info' => array(
-					'schulname' => 'Testschule',
-					'schulnummer' => '9013',
-					'altersgruppe' => 'weiblich 16/17 (Jahrgänge: 1995-1996)',
-					'altersgruppe_kurz' => 'AG_17w',
-				),
-					
-				'gruppen' => $gruppen,
-				'schueler' => $schueler,
-			), 
-		);
-		return $erg;
+		$schuelers = $this->schuelerRepository->findByName( $suchtext );
+		$this->view->assign( schuelers, $schuelers );
 	}
 }
-?>

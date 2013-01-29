@@ -89,21 +89,16 @@ class Tx_Blsvsa2013_Domain_Model_SchuelerTest extends Tx_Extbase_Tests_Unit_Base
 	/**
 	 * @test
 	 */
-	public function getGeschlechtReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getGeschlecht()
-		);
-	}
+	public function getGeschlechtReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setGeschlechtForIntegerSetsGeschlecht() { 
-		$this->fixture->setGeschlecht(12);
+	public function setGeschlechtForStringSetsGeschlecht() { 
+		$this->fixture->setGeschlecht(1);
 
 		$this->assertSame(
-			12,
+			1,
 			$this->fixture->getGeschlecht()
 		);
 	}
@@ -133,9 +128,155 @@ class Tx_Blsvsa2013_Domain_Model_SchuelerTest extends Tx_Extbase_Tests_Unit_Base
 	/**
 	 * @test
 	 */
+	public function getKlasseReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setKlasseForStringSetsKlasse() { 
+		$this->fixture->setKlasse('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getKlasse()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getGrundschulwettbewerbReturnsInitialValueForBoolean() { 
+		$this->assertSame(
+			FALSE,
+			$this->fixture->getGrundschulwettbewerb()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setGrundschulwettbewerbForBooleanSetsGrundschulwettbewerb() { 
+		$this->fixture->setGrundschulwettbewerb(TRUE);
+
+		$this->assertSame(
+			TRUE,
+			$this->fixture->getGrundschulwettbewerb()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getStrasseReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setStrasseForStringSetsStrasse() { 
+		$this->fixture->setStrasse('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getStrasse()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getPlzReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setPlzForStringSetsPlz() { 
+		$this->fixture->setPlz('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getPlz()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getOrtReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOrtForStringSetsOrt() { 
+		$this->fixture->setOrt('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOrt()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getEmailReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setEmailForStringSetsEmail() { 
+		$this->fixture->setEmail('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getEmail()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getTelefonReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setTelefonForStringSetsTelefon() { 
+		$this->fixture->setTelefon('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getTelefon()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getJahrderletztenpruefungReturnsInitialValueForInteger() { 
+		$this->assertSame(
+			2000,
+			$this->fixture->getJahrderletztenpruefung()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setJahrderletztenpruefungForIntegerSetsJahrderletztenpruefung() { 
+		$this->fixture->setJahrderletztenpruefung(12);
+
+		$this->assertSame(
+			12,
+			$this->fixture->getJahrderletztenpruefung()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
 	public function getAnzteilnahmenReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			1,
 			$this->fixture->getAnzteilnahmen()
 		);
 	}
@@ -155,611 +296,22 @@ class Tx_Blsvsa2013_Domain_Model_SchuelerTest extends Tx_Extbase_Tests_Unit_Base
 	/**
 	 * @test
 	 */
-	public function getPunktegesamtReturnsInitialValueForInteger() { 
+	public function getSchwimmnachweisgueltigbisReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
-			$this->fixture->getPunktegesamt()
+			$this->fixture->getSchwimmnachweisgueltigbis()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setPunktegesamtForIntegerSetsPunktegesamt() { 
-		$this->fixture->setPunktegesamt(12);
+	public function setSchwimmnachweisgueltigbisForIntegerSetsSchwimmnachweisgueltigbis() { 
+		$this->fixture->setSchwimmnachweisgueltigbis(12);
 
 		$this->assertSame(
 			12,
-			$this->fixture->getPunktegesamt()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getUrkundenartReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getUrkundenart()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setUrkundenartForIntegerSetsUrkundenart() { 
-		$this->fixture->setUrkundenart(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getUrkundenart()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getGedrucktReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getGedruckt()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setGedrucktForIntegerSetsGedruckt() { 
-		$this->fixture->setGedruckt(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getGedruckt()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getDrucktstampReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getDrucktstamp()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setDrucktstampForIntegerSetsDrucktstamp() { 
-		$this->fixture->setDrucktstamp(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getDrucktstamp()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getKlasseReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setKlasseForStringSetsKlasse() { 
-		$this->fixture->setKlasse('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getKlasse()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getGrundschulwettbewerbReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getGrundschulwettbewerb()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setGrundschulwettbewerbForIntegerSetsGrundschulwettbewerb() { 
-		$this->fixture->setGrundschulwettbewerb(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getGrundschulwettbewerb()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getSchwimmnachweisReturnsInitialValueForBoolean() { 
-		$this->assertSame(
-			TRUE,
-			$this->fixture->getSchwimmnachweis()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setSchwimmnachweisForBooleanSetsSchwimmnachweis() { 
-		$this->fixture->setSchwimmnachweis(TRUE);
-
-		$this->assertSame(
-			TRUE,
-			$this->fixture->getSchwimmnachweis()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getGueltigbisReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getGueltigbis()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setGueltigbisForIntegerSetsGueltigbis() { 
-		$this->fixture->setGueltigbis(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getGueltigbis()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getLeistungstabelle1ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getLeistungstabelle1()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistungstabelle1ForIntegerSetsLeistungstabelle1() { 
-		$this->fixture->setLeistungstabelle1(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getLeistungstabelle1()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getAblagedatum1ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getAblagedatum1()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setAblagedatum1ForIntegerSetsAblagedatum1() { 
-		$this->fixture->setAblagedatum1(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getAblagedatum1()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPruefer1ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPruefer1()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPruefer1ForIntegerSetsPruefer1() { 
-		$this->fixture->setPruefer1(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPruefer1()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getErgebnis1ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getErgebnis1()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setErgebnis1ForIntegerSetsErgebnis1() { 
-		$this->fixture->setErgebnis1(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getErgebnis1()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPunkte1ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPunkte1()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPunkte1ForIntegerSetsPunkte1() { 
-		$this->fixture->setPunkte1(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPunkte1()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getLeistungstabelle2ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getLeistungstabelle2()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistungstabelle2ForIntegerSetsLeistungstabelle2() { 
-		$this->fixture->setLeistungstabelle2(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getLeistungstabelle2()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getAblagedatum2ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getAblagedatum2()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setAblagedatum2ForIntegerSetsAblagedatum2() { 
-		$this->fixture->setAblagedatum2(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getAblagedatum2()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPruefer2ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPruefer2()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPruefer2ForIntegerSetsPruefer2() { 
-		$this->fixture->setPruefer2(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPruefer2()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getErgebnis2ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getErgebnis2()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setErgebnis2ForIntegerSetsErgebnis2() { 
-		$this->fixture->setErgebnis2(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getErgebnis2()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPunkte2ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPunkte2()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPunkte2ForIntegerSetsPunkte2() { 
-		$this->fixture->setPunkte2(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPunkte2()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getLeistungstabelle3ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getLeistungstabelle3()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistungstabelle3ForIntegerSetsLeistungstabelle3() { 
-		$this->fixture->setLeistungstabelle3(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getLeistungstabelle3()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getAblagedatum3ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getAblagedatum3()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setAblagedatum3ForIntegerSetsAblagedatum3() { 
-		$this->fixture->setAblagedatum3(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getAblagedatum3()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPruefer3ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPruefer3()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPruefer3ForIntegerSetsPruefer3() { 
-		$this->fixture->setPruefer3(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPruefer3()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getErgebnis3ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getErgebnis3()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setErgebnis3ForIntegerSetsErgebnis3() { 
-		$this->fixture->setErgebnis3(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getErgebnis3()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPunkte3ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPunkte3()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPunkte3ForIntegerSetsPunkte3() { 
-		$this->fixture->setPunkte3(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPunkte3()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getLeistungstabelle4ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getLeistungstabelle4()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistungstabelle4ForIntegerSetsLeistungstabelle4() { 
-		$this->fixture->setLeistungstabelle4(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getLeistungstabelle4()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getAblagedatum4ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getAblagedatum4()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setAblagedatum4ForIntegerSetsAblagedatum4() { 
-		$this->fixture->setAblagedatum4(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getAblagedatum4()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPruefer4ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPruefer4()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPruefer4ForIntegerSetsPruefer4() { 
-		$this->fixture->setPruefer4(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPruefer4()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getErgebnis4ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getErgebnis4()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setErgebnis4ForIntegerSetsErgebnis4() { 
-		$this->fixture->setErgebnis4(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getErgebnis4()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPunkte4ReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPunkte4()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPunkte4ForIntegerSetsPunkte4() { 
-		$this->fixture->setPunkte4(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPunkte4()
+			$this->fixture->getSchwimmnachweisgueltigbis()
 		);
 	}
 	
@@ -789,117 +341,53 @@ class Tx_Blsvsa2013_Domain_Model_SchuelerTest extends Tx_Extbase_Tests_Unit_Base
 	/**
 	 * @test
 	 */
-	public function getLeistung1ReturnsInitialValueForTx_Blsvsa2013_Domain_Model_Leistungstabelle() { 
-		$this->assertEquals(
-			NULL,
-			$this->fixture->getLeistung1()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistung1ForTx_Blsvsa2013_Domain_Model_LeistungstabelleSetsLeistung1() { 
-		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Leistungstabelle();
-		$this->fixture->setLeistung1($dummyObject);
-
+	public function getSchulnummerReturnsInitialValueForInteger() {
 		$this->assertSame(
-			$dummyObject,
-			$this->fixture->getLeistung1()
+				'0',
+				$this->fixture->getSchulnummer()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function getLeistung2ReturnsInitialValueForTx_Blsvsa2013_Domain_Model_Leistungstabelle() { 
-		$this->assertEquals(
-			NULL,
-			$this->fixture->getLeistung2()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistung2ForTx_Blsvsa2013_Domain_Model_LeistungstabelleSetsLeistung2() { 
-		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Leistungstabelle();
-		$this->fixture->setLeistung2($dummyObject);
-
+	public function setSchulnummerForIntegerSetsSchulnummer() {
+		$this->fixture->setSchulnummer('9013');
+	
 		$this->assertSame(
-			$dummyObject,
-			$this->fixture->getLeistung2()
+				'9013',
+				$this->fixture->getSchulnummer()
 		);
 	}
 	
 	/**
 	 * @test
+	 * @expectedException \InvalidArgumentException
 	 */
-	public function getLeistung3ReturnsInitialValueForTx_Blsvsa2013_Domain_Model_Leistungstabelle() { 
-		$this->assertEquals(
-			NULL,
-			$this->fixture->getLeistung3()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistung3ForTx_Blsvsa2013_Domain_Model_LeistungstabelleSetsLeistung3() { 
-		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Leistungstabelle();
-		$this->fixture->setLeistung3($dummyObject);
-
-		$this->assertSame(
-			$dummyObject,
-			$this->fixture->getLeistung3()
-		);
+	public function setSchulnummerEquals0throwsInvalidArgumentException() {
+		$this->fixture->setSchulnummer('0');
+	
 	}
 	
 	/**
 	 * @test
+	 * @expectedException \InvalidArgumentException
 	 */
-	public function getLeistung4ReturnsInitialValueForTx_Blsvsa2013_Domain_Model_Leistungstabelle() { 
-		$this->assertEquals(
-			NULL,
-			$this->fixture->getLeistung4()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLeistung4ForTx_Blsvsa2013_Domain_Model_LeistungstabelleSetsLeistung4() { 
-		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Leistungstabelle();
-		$this->fixture->setLeistung4($dummyObject);
-
-		$this->assertSame(
-			$dummyObject,
-			$this->fixture->getLeistung4()
-		);
+	public function setSchulnummerEqualsNullthrowsInvalidArgumentException() {
+		$this->fixture->setSchulnummer(Null);
+	
 	}
 	
 	/**
 	 * @test
+	 * @expectedException \InvalidArgumentException
 	 */
-	public function getFeuserReturnsInitialValueForTx_Blsvsa2013_Domain_Model_Feuser() { 
-		$this->assertEquals(
-			NULL,
-			$this->fixture->getFeuser()
-		);
+	public function setSchulnummerEqualsEmptyStringthrowsInvalidArgumentException() {
+		$this->fixture->setSchulnummer('');
+	
 	}
-
-	/**
-	 * @test
-	 */
-	public function setFeuserForTx_Blsvsa2013_Domain_Model_FeuserSetsFeuser() { 
-		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Feuser();
-		$this->fixture->setFeuser($dummyObject);
-
-		$this->assertSame(
-			$dummyObject,
-			$this->fixture->getFeuser()
-		);
-	}
+	
+	
 	
 }
 ?>

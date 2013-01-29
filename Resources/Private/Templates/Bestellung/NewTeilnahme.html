@@ -1,0 +1,51 @@
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>New Teilnahme</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+<f:form action="createTeilnahme"  name="newTeilnahmen" object="{newTeilnahmen}">
+<!--  	<f:render partial="Teilnahmen/FormFields" />  -->
+
+<label for="vorname">
+	<f:translate key="tx_blsvsa2013_domain_model_teilnahmen.vorname" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="vorname" /><br />
+<label for="name">
+	<f:translate key="tx_blsvsa2013_domain_model_teilnahmen.name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="name" /><br />
+<label for="geschlecht">
+	<f:translate key="tx_blsvsa2013_domain_model_teilnahmen.geschlecht" />
+</label><br />
+	<f:form.textfield property="geschlecht" /><br />
+<label for="geburtstag">
+	<f:translate key="tx_blsvsa2013_domain_model_teilnahmen.geburtstag" />
+</label><br />
+	<f:form.textfield property="geburtstag" /><br />
+<label for="anzteilnahmen">
+	<f:translate key="tx_blsvsa2013_domain_model_teilnahmen.anzteilnahmen" />
+</label><br />
+	<f:form.textfield property="anzteilnahmen" /><br />
+<label for="punktegesamt">
+	<f:translate key="tx_blsvsa2013_domain_model_teilnahmen.punktegesamt" />
+</label><br />
+
+
+	<f:form.submit value="Create new" />
+</f:form>
+</f:section>

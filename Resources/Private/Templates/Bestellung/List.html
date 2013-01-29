@@ -1,0 +1,128 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1><f:translate key="tx_blsvsa2013_domain_model_bestellung.listheader" /></h1>
+
+<f:flashMessages />
+<f:form action="debitorwahl" name="debitorwahl" controller="Bestellung">
+ 	<fieldset>
+    	<legend>Neue Bestellung</legend>
+	
+			<f:translate key="tx_blsvsa2013_domain_model_bestellung.neu" /> <f:form.textfield property="debitorsuche" type="text" placeholder="Debitor" /> 
+			<f:form.select property="institutionen" options="{ 0: 'wähle Institution', 1: 'Verein', 2: 'Schule' , 3: 'Bundeswehr', 4:'Polizei', 6:'Privat', 7:'BGS', 8:'Zoll', 9:'Ausland' }" />
+			<f:form.select property="bezirk" value="{bezirk}" options="{ 0: 'alle Bezirke', 1: 'Oberbayern', 2: 'Niederbayern' , 3: 'Oberpfalz', 4:'Oberfranken', 5:'Mittelfranken', 6:'Unterfranken', 7:'Schwaben' }"  />
+	
+			<input type="submit" value="anlegen" />
+	</fieldset>
+</f:form>
+<br />
+
+<fieldset>
+    	<legend>Bestellungen</legend>
+<f:render partial="Bestellung/Selectbox" arguments="{bezirk:bezirk}" />
+<br />
+
+<table  class="tx_blsvsa2013" >
+	<tr>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.status" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.institution" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.name" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.datum" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.art" /></th>
+		<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.aktionen" /></th>
+	</tr>
+
+	<f:for each="{bestellungen}" as="bestellung">
+	
+		<tr>
+		    <td><f:translate key="tx_blsvsa2013_domain_model_bestellung.status{bestellung.status}" /></td>
+			<td> {bestellung.institution}</td>
+			<td>{bestellung.vorname} {bestellung.name}</td>
+			<td><f:format.date format="d.m.Y">@{bestellung.erfassungsdatum}</f:format.date></td>
+			<td>{bestellung.schule.Institutionsartart.institutionsart}</td>
+
+
+			<td>
+				<f:if condition="{bestellung.isEditable}">
+					<f:then>
+						<div class="sa_icon blueicons_2_16" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.bestellungBearbeiten" />" ><div class="smallicon_edit icon_rechts_unten"></div>
+							<f:link.action action="edit" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="sa_icon blueicons_2_16" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.bestellungAnzeigen" />" ><div class="smallicon_lupe icon_rechts_unten"></div>
+							<f:link.action action="show" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+					</f:else>
+				</f:if>
+
+				<f:if condition="{bestellung.hasRechnung}">
+					<f:then>
+						<div class="sa_icon blueicons_6_20" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.rechnungDrucken" />"><div class="smallicon_drucker icon_rechts_unten"></div>
+						<f:link.action action="printRechnung" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="sa_icon blueicons_6_20 sa_disabled" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.rechnungDrucken" />"><div class="smallicon_drucker icon_rechts_unten"></div>
+						</div>
+					</f:else>
+				</f:if>
+			
+				<f:if condition="{bestellung.hasUrkunden}">
+					<f:then>
+						<div class="sa_icon blueicons_4_4" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.urkundenDrucken" />"><div class="smallicon_drucker icon_rechts_unten"></div>
+							<f:link.action action="printUrkunden" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+			
+						<div class="sa_icon blueicons_3_15" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.packlisteDrucken" />" ><div class="smallicon_drucker icon_rechts_unten"></div>
+							<f:link.action action="printPackliste" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+			
+						<div class="sa_icon blueicons_4_4" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.urkundenAnzeigen" />"><div class="smallicon_lupe icon_rechts_unten"></div>
+							<f:link.action action="showUrkunden" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="sa_icon blueicons_4_4 sa_disabled" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.urkundenDrucken" />"><div class="smallicon_drucker icon_rechts_unten"></div>
+						</div>
+			
+						<div class="sa_icon blueicons_3_15 sa_disabled" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.packlisteDrucken" />" ><div class="smallicon_drucker icon_rechts_unten"></div>
+						</div>
+			
+						<div class="sa_icon blueicons_4_4 sa_disabled" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.urkundenAnzeigen" />"><div class="smallicon_lupe icon_rechts_unten"></div>
+						</div>
+					</f:else>
+				</f:if>
+				
+				<f:if condition="{bestellung.hasRechnung}">
+					<f:then>
+						<div class="sa_icon blueicons_4_4" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.urkundenBestaetigen" />">
+							<div class="smallicon_ok icon_rechts_unten"></div>
+							<f:link.action action="confirmUrkunden" arguments="{bestellung : bestellung}"></f:link.action>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="sa_icon blueicons_4_4 sa_disabled" title="<f:translate key="tx_blsvsa2013_domain_model_bestellung.urkundenBestaetigen" />"><div class="smallicon_ok icon_rechts_unten sa_disabled"></div>
+						</div>
+					</f:else>
+				</f:if>
+				
+			</td>
+		</tr>
+	</f:for>
+</table>
+</fieldset>
+
+
+</f:section>

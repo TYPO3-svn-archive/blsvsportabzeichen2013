@@ -1,0 +1,206 @@
+<div style="position: relative;">
+<div id="suchergebnis"></div>	
+
+	<table>
+		<tr>
+			<th colspan="5" class="oben">Suche:</th>
+		</tr>
+		<tr>
+			
+			<td>  Name eingeben: <f:form.textfield id="suchname" class="" name="suchname" type="text" placeholder="Name" /></td>
+			
+		</tr>
+	</table>
+	
+	<br />
+		<button class="teilnehmerneu" onclick="return false;"><f:translate key='tx_blsvsa2013_domain_model_bestellung.neuAnlegen' /></button>
+	<br /><br />
+	
+	<table id="urkunden">
+		<tr>
+			<th></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.teilnehmer" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.anz" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.art" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.datum" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.jahr" /></th>
+			<th><f:translate key="tx_blsvsa2013_domain_model_bestellung.urkunde" /></th>
+		</tr>
+
+		<f:for each="{teilnahmen}" as="teilnahme">
+
+		<tr id="row{teilnahme.schueler.uid}">
+			<input class="schueleruid" type="hidden" value="{teilnahme.schueler.uid}" />
+			<input type="hidden" name="teilnahmen[{teilnahme.schueler.uid}][uid]" type="text" value="{teilnahme.uid}" />
+			<td><button class="deleterow">x</button></td>
+			<td>{teilnahme.schueler.uid} {teilnahme.name} {teilnahme.vorname} <f:format.date format="d.m.Y">@{teilnahme.geburtstag}</f:format.date></td>
+			<td><input type="text" class="spinner" name="teilnahmen[{teilnahme.schueler.uid}][anzahlteilnahmen]" value="{teilnahme.anzteilnahmen}" /></td>
+			<td>
+				<select class="punktegesamt bgabzeichen{teilnahme.punktegesamt}" id="schuelerAnzpunkte{teilnahme.schueler.uid}" name="teilnahmen[{teilnahme.schueler.uid}][punktegesamt]">
+				<f:for each="{punktegesamtOptions}" as="val" key="key">
+					<option value="{key}" <f:if condition="{key} == {teilnahme.punktegesamt}">selected="selected"</f:if>>{val}</option>
+				</f:for>			
+				</select>
+			</td>
+			<td><input type="text" class="datepicker" name="teilnahmen[{teilnahme.schueler.uid}][datum]" value="<f:format.date format="d.m.Y">@{teilnahme.ablagedatum1}</f:format.date>" /></td>
+			<td><input type="text" class="spinner" name="teilnahmen[{teilnahme.schueler.uid}][jahrderletztenpruefung]" value="{teilnahme.pruefungsjahr}" /></td>
+			<td><button class="urkundenwunsch" value="{teilnahme.schueler.uid}">Urkunde </button></td>
+		</tr>
+
+		</f:for>
+	</table>
+		
+</div>
+
+
+
+<script>
+$(".teilnehmerneu").click(function(){
+	fenster = window.open("<f:uri.action action='newTeilnehmer' pageUid='{pidTeilnehmerNeu}' />", "Teilnehmerneu", "width=600,height=400,resizable=no");
+	fenster.focus();
+});
+
+$('#suchname').keyup(function(){
+	$('#suchergebnis').show();
+	url='index.php?id={pidNamenssuche}&tx_blsvsa2013_blsvsa2013%5Baction%5D=listFilterName&tx_blsvsa2013_blsvsa2013%5Bcontroller%5D=Schueler&&tx_blsvsa2013_blsvsa2013%5Bsuchtext%5D=' +  $(this).val();
+	var jqxhr = $.ajax(  url  )
+		var jqxhr = $.ajax(  url  )
+		.done( function( data ) {
+			$('#suchergebnis').html( data );
+		});	
+});
+
+waehleSchueler = function(uid, name, vorname, geschlecht, geburtstag , jahrderletztenpruefung,anzteilnahmen,schwimmnachweisgueltigbis ){
+	$('#suchergebnis').hide();
+	
+	var vorhanden = false;	
+	$('.schueleruid').each(function() {
+		if (uid == $(this).val()) {
+			vorhanden = true;
+		}
+	});
+	if (vorhanden){
+		alert("<f:translate key='tx_blsvsa2013_domain_model_bestellung.teilnehmerSchonInListe' />");
+		return false;
+	}
+	
+	
+	var html='<tr id="raw' + uid + '" ><input type="hidden" name="teilnahmen[' + uid + '][uid]" type="text" value="0" />';
+	html = html + '<input class="schueleruid" type="hidden" value="' + uid + '" />';
+
+	html = html + '<td><button class="deleteraw" value="' + uid + '">x</button></td>';
+	html = html + '<td>'+ uid + ' ' + name + ' ' + vorname + ' ' + geburtstag + ' ' + '</td>';
+	
+	html = html + '<td><input type="text" class="spinner" name="teilnahmen[' + uid + '][anzahlteilnahmen]" value="' + anzteilnahmen + '" /></td>';
+	html = html + '<td><select class="punktegesamt bgabzeichen0" id="schuelerAnzpunkte' + uid + '" name="teilnahmen[' + uid + '][punktegesamt]"><option value="0">0 </option><option value="1">1 </option><option value="2">2 </option><option value="3">3 </option><option value="4">4 </option><option value="5"> 5  </option><option value="6">  6 </option><option value="7">  7  </option><option value="8">8 </option><option value="9"> 9 </option><option value="10"> 10 </option><option value="11"> 11</option><option value="12">12 </option></select></td>';
+	html = html + '<td><input type="text"  class="datepicker" property="datum" name="teilnahmen[' + uid + '][datum]"  /></td>';
+	html = html + '	<td><input type="text" class="spinner" name="teilnahmen[' + uid + '][jahrderletztenpruefung]" type="text" value="' + jahrderletztenpruefung + '" /></td>';
+	html = html + '	<td><button class="urkundenwunsch" id="urkundenwunsch' + uid + '" value="' + uid + '" >Urkunde </button></td>';
+	html = html + '</tr>';
+	$('#urkunden').append(html);
+	$('.spinner').spinner();
+	$('.datepicker').datepicker();
+	$('#suchname').val('');
+	
+	$('#urkundenwunsch' + uid  ).click( function(){
+		switch ( $('#schuelerAnzpunkte' + $(this).val() ).val() ) {
+	    case "4": 
+	    case "5":
+	    case "6":
+	    case "7":	$( '#bestellposten_1' ).val( parseInt( $( '#bestellposten_1' ).val() ) + 1 );
+	                return false;
+					break;
+	 
+	    case "8":
+	    case "9":
+	    case "10":	$( '#bestellposten_2' ).val( parseInt( $( '#bestellposten_2' ).val() ) + 1 );
+	    			return false;
+					break;
+	                    
+	    case "11":
+	    case "12":	$( '#bestellposten_3' ).val( parseInt( $( '#bestellposten_3' ).val() ) + 1 );
+	    			return false;
+	                break;  
+	 
+	    default: 	alert("<f:translate key='tx_blsvsa2013_domain_model_bestellung.keineUrkundeGewaehlt' />"); 
+	    return false;
+	  }
+	});
+	
+
+	$('.deleteraw').click( function(){
+		$( '#raw'+ $(this).val() ).remove();
+	});
+	
+	$('.punktegesamt').change(function(){
+		$( this ).removeClass('bgabzeichen0' );
+		$( this ).removeClass('bgabzeichen1' );
+		$( this ).removeClass('bgabzeichen2' );
+		$( this ).removeClass('bgabzeichen3' );
+		$( this ).removeClass('bgabzeichen4' );
+		$( this ).removeClass('bgabzeichen5' );
+		$( this ).removeClass('bgabzeichen6' );
+		$( this ).removeClass('bgabzeichen7' );
+		$( this ).removeClass('bgabzeichen8' );
+		$( this ).removeClass('bgabzeichen9' );
+		$( this ).removeClass('bgabzeichen10' );
+		$( this ).removeClass('bgabzeichen11' );
+		$( this ).removeClass('bgabzeichen12' );		
+        $( this ).addClass('bgabzeichen' + $( this ).val() );
+                   
+	});
+};
+
+
+
+$('.deleterow').click( function(){
+	var id = $(this).parent().parent().attr('id');
+	$('#'+id).remove();
+	return false;
+});
+
+$('.urkundenwunsch').click( function(){
+	switch ( $('#schuelerAnzpunkte' + $(this).val() ).val() ) {
+	    case "4": 
+	    case "5":
+	    case "6":
+	    case "7":	$( '#bestellposten_1' ).val( parseInt( $( '#bestellposten_1' ).val() ) + 1 );
+	                return false;
+					break;
+ 
+	    case "8":
+	    case "9":
+	    case "10":	$( '#bestellposten_2' ).val( parseInt( $( '#bestellposten_2' ).val() ) + 1 );
+	    			return false;
+					break;
+	                    
+	    case "11":
+	    case "12":	$( '#bestellposten_3' ).val( parseInt( $( '#bestellposten_3' ).val() ) + 1 );
+	    			return false;
+	                break;  
+	 
+	    default: 	alert("<f:translate key='tx_blsvsa2013_domain_model_bestellung.keineUrkundeGewaehlt' />"); 
+	    return false;
+	}
+});
+
+$('.punktegesamt').change(function(){
+	$( this ).removeClass('bgabzeichen0' );
+	$( this ).removeClass('bgabzeichen1' );
+	$( this ).removeClass('bgabzeichen2' );
+	$( this ).removeClass('bgabzeichen3' );
+	$( this ).removeClass('bgabzeichen4' );
+	$( this ).removeClass('bgabzeichen5' );
+	$( this ).removeClass('bgabzeichen6' );
+	$( this ).removeClass('bgabzeichen7' );
+	$( this ).removeClass('bgabzeichen8' );
+	$( this ).removeClass('bgabzeichen9' );
+	$( this ).removeClass('bgabzeichen10' );
+	$( this ).removeClass('bgabzeichen11' );
+	$( this ).removeClass('bgabzeichen12' );		
+    $( this ).addClass('bgabzeichen' + $( this ).val() );
+});
+
+<![CDATA[ 	]]>
+
+</script>

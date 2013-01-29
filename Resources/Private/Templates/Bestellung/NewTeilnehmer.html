@@ -1,0 +1,67 @@
+<f:layout name="Default" />
+
+tdis template displays a NEW form for tde current domain object.
+
+If you modify tdis template, do not forget to change tde overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otderwise your changes will be overwritten tde next time you save tde extension in tde extension builder
+
+<f:section name="main">
+
+<h1><f:translate key="tx_blsvsa2013_domain_model_bestellung.teilnehmerAnlegen" /></h1>
+<f:form action="createTeilnehmer"  name="newTeilnehmer" object="{newTeilnehmer}">
+<fieldset class="teilnehmerneu">
+	<legend><f:translate key="tx_blsvsa2013_domain_model_bestellung.teilnehmer" /></legend>
+
+	<f:flashMessages />
+	<f:render partial="FormErrors" />
+	
+
+<table>
+	<tr>
+		<td><label for="vorname"><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.vorname" /> <span class="required">(*)</span></label></td>		
+		<td><f:form.textfield placeholder="<f:translate key='tx_blsvsa2013_domain_model_teilnahmen.vorname' />" property="vorname" /></td>
+	</tr>
+	<tr>
+		<td><label for="name"><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.name" /></label></td>		
+		<td><f:form.textfield placeholder="<f:translate key='tx_blsvsa2013_domain_model_teilnahmen.name' />" property="name" /></td>
+	</tr>
+	<tr>
+		<td><label for="geschlecht"><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.geschlecht" /></span></label></td>		
+		<td><f:form.select property="geschlecht" options="{1:'männlich', 2:'weiblich'}"  /></td>		
+	</tr>
+	<tr>
+		<td><label for="geburtstag"><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.geburtstag" /></span></label></td>		
+		<td><f:form.textfield class="datepicker" placeholder="<f:translate key='tx_blsvsa2013_domain_model_teilnahmen.geburtstag' />" property="geburtstag" /></td>
+	</tr>
+	<tr>
+		<td><label for="anzteilnahmen"><f:translate key="tx_blsvsa2013_domain_model_teilnahmen.anzteilnahmen" /></label></td>		
+		<td><f:form.textfield class="spinner" placeholder="<f:translate key='tx_blsvsa2013_domain_model_teilnahmen.anzteilnahmen' />" property="anzteilnahmen" /></td>
+	</tr>
+	
+</table>
+
+<f:form.submit value="<f:translate key='tx_blsvsa2013_domain_model_bestellung.neuAnlegen' />" />
+</fieldset>
+</f:form>
+
+
+	<script>
+		$( ".spinner" ).spinner();
+		$( ".spinner" ).val(0);	
+		$( ".datepicker" ).datepicker({ 
+		    yearRange: "-100:+0",
+		    changeMonth: true,
+		    changeYear: true,
+		    showOn: "both", 
+		});
+	</script>
+
+
+
+</f:section>

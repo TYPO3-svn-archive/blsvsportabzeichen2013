@@ -332,7 +332,7 @@ class Tx_Blsvsa2013_Domain_Model_SchulenTest extends Tx_Extbase_Tests_Unit_BaseT
 	 */
 	public function getGrundschulenReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			false,
 			$this->fixture->getGrundschulen()
 		);
 	}
@@ -341,10 +341,10 @@ class Tx_Blsvsa2013_Domain_Model_SchulenTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 */
 	public function setGrundschulenForIntegerSetsGrundschulen() { 
-		$this->fixture->setGrundschulen(12);
+		$this->fixture->setGrundschulen(true);
 
 		$this->assertSame(
-			12,
+			true,
 			$this->fixture->getGrundschulen()
 		);
 	}
@@ -354,7 +354,7 @@ class Tx_Blsvsa2013_Domain_Model_SchulenTest extends Tx_Extbase_Tests_Unit_BaseT
 	 */
 	public function getSchulwettbewerbReturnsInitialValueForInteger() { 
 		$this->assertSame(
-			0,
+			false,
 			$this->fixture->getSchulwettbewerb()
 		);
 	}
@@ -451,12 +451,35 @@ class Tx_Blsvsa2013_Domain_Model_SchulenTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 */
 	public function setFeuserForTx_Blsvsa2013_Domain_Model_FeuserSetsFeuser() { 
-		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Feuser();
+		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Feusers();
 		$this->fixture->setFeuser($dummyObject);
 
 		$this->assertSame(
 			$dummyObject,
 			$this->fixture->getFeuser()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getInstitutionsartartReturnsInitialValueForTTx_Blsvsa2013_Domain_Model_Institutionsartart() {
+		$this->assertEquals(
+				NULL,
+				$this->fixture->getInstitutionsartart()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function setInstitutionsartartForTx_Blsvsa2013_Domain_Model_Institutionsartart() {
+		$dummyObject = new Tx_Blsvsa2013_Domain_Model_Institutionsartart();
+		$this->fixture->setInstitutionsartart($dummyObject);
+	
+		$this->assertSame(
+				$dummyObject,
+				$this->fixture->getInstitutionsartart()
 		);
 	}
 	

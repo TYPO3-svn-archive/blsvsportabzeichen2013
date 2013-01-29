@@ -1,0 +1,68 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:flashMessages class="flashmessages" />
+<f:render partial="FormErrors" />
+
+
+<h1>Urkundendruck für den Bezirk {info.bezirk}</h1>
+Bitte wählen Sie links im Menü ob alle Urkunden oder nur bisher ungedruckte Urkunden angeboten werden sollen.<br>
+Zur Suche verwenden Sie bitte die Suchfunktion des Browsers (Strg+F).<br>
+
+
+
+<br />
+<fieldset>
+	<legend>Statistik für den Bezirk {info.bezirk}</legend>
+		{info.anzSchulen} Schulen (davon {info.anzSchulenUngedruckt} mit ungedruckten und {info.anzSchulenGedruckt} mit gedruckten Schülern)<br>
+		{info.anzKlassen} Klassen (davon {info.anzKlassenUngedruckt} mit ungedruckten und {info.anzKlassenGedruckt} mit gedruckten Schülern)<br>
+		{info.anzTeilnahmen} Teilnehmer (davon {info.anzTeilnahmenUngedruckt} ungedruckt und {info.anzTeilnahmenGedruckt} gedruckt)<br>
+</fieldset>
+
+<br />
+<fieldset>
+	<legend>Urkunden für den Bezirk {info.bezirk}</legend>
+
+	<table  class="tx_blsvsa2013" >
+		<tr>
+			<th><f:translate key="tx_blsvsa2013_urkunden_schulnummer" /></th>
+			<th><f:translate key="tx_blsvsa2013_urkunden_schulname" /></th>
+			<th><f:translate key="tx_blsvsa2013_urkunden_anzurkunden" /></th>
+			<th><f:translate key="tx_blsvsa2013_urkunden_status" /></th>
+			<th><f:translate key="tx_blsvsa2013_urkunden_aktionen" /></th>
+		</tr>
+
+		<f:for each="{schulenUrkunden}" as="schule">
+		<tr class="urkunden_status_{schule.status}">
+			<td>{schule.schule_schulnummer}</td>
+			<td>{schule.schule_name}</td> 
+			<td>{schule.anzurkunden} Urkunden</td> 
+			<td><f:translate key="tx_blsvsa2013_urkunden_status.{schule.status}" /></td>
+			
+<!--  			<td><f:link.external uri="" target="_blank" class="dummyicons"></f:link.external></td>-->
+			
+			
+			<td>
+				<div class="sa_icon blueicons_4_4" title="Urkunden drucken"><div class="smallicon_drucker icon_rechts_unten"></div>
+					<f:link.action action="printUrkunden" arguments="{schule : schule}"></f:link.action>
+				</div>
+	
+				<div class="sa_icon blueicons_3_15" title="Packliste drucken" ><div class="smallicon_drucker icon_rechts_unten"></div>
+					<f:link.action action="printPackliste" arguments="{schule : schule}"></f:link.action>
+				</div>
+	
+				<div class="sa_icon blueicons_4_4" title="Urkunden Ansicht"><div class="smallicon_lupe icon_rechts_unten"></div>
+					<f:link.action action="showUrkunden" arguments="{schule : schule}"></f:link.action></div>
+	
+				<div class="sa_icon blueicons_4_4" title="Schule bestätigen -> Urkunden werden auf gedruckt gesetzt">
+					<div class="smallicon_ok icon_rechts_unten"></div>
+					<f:link.action action="confirmUrkunden" arguments="{schule : schule}"></f:link.action></div>
+			</td>
+			
+		</tr>
+		</f:for>
+	</table>
+</fieldset>
+
+</f:section>

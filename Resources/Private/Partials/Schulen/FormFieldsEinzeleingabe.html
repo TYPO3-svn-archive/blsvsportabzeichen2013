@@ -1,0 +1,22 @@
+<table>
+	<tr>
+		<th class="linksoben"></th>
+		<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.vorname" /></th>
+		<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.name" /></th>
+		<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.geburtsjahr" /></th>
+		<th class=""><f:translate key="tx_blsvsa2013_domain_model_schueler.geschlecht" /></th>
+		<th class="rechtsoben"><f:translate key="tx_blsvsa2013_domain_model_schueler.klasse" /></th>
+	</tr>
+	<f:for each="{schueleranzahlArray}" as="number" >
+		<tr>
+			<td>{number}</td>
+			<td><f:form.textfield name="einzeleingabe[{number}][vorname]" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schueler.vorname' />" /></td>
+			<td><f:form.textfield name="einzeleingabe[{number}][name]" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schueler.name' />" /></td>
+			<td><f:form.select name="einzeleingabe[{number}][geburtsjahr]" options="{geburtsjahreArray}" value="2000" /></td>
+			<td><f:form.select name="einzeleingabe[{number}][geschlecht]" options="{1:'männlich', 2:'weiblich'}"  /></td>
+			<td><f:form.textfield name="einzeleingabe[{number}][klasse]" placeholder="<f:translate key='tx_blsvsa2013_domain_model_schueler.klasse' />" /></td>
+		</tr>
+	</f:for>
+</table>
+	
+<f:form.submit value="<f:translate key='tx_blsvsa2013_domain_model_schueler.importieren' />" />

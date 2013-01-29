@@ -1,0 +1,53 @@
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:debug title="Debug of Artikel">{bestellpostens}</f:debug>
+<f:section name="main">
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+<f:form action="create" name="newBestellung" object="{newBestellung}" >
+
+	<h1><f:translate key="tx_blsvsa2013_domain_model_bestellung.h1new" /></h1>
+	<fieldset class="debitoroben">
+		<legend>Debitor </legend>
+		<f:render partial="Bestellung/FormFields" arguments="{schule:schule}" />
+	</fieldset>
+
+	<br /><br />
+
+	<fieldset class="artikelrechts">
+		<legend><f:translate key="tx_blsvsa2013_domain_model_bestellung.artikel" /></legend>
+		<div>
+			<f:render partial="Bestellposten/AuswahlList" arguments="{bestellpostens:bestellpostens}" />
+		<br />
+		</div>
+		
+	</fieldset>
+	
+	<fieldset class="teilnehmerlinks" >
+		<legend><f:translate key="tx_blsvsa2013_domain_model_bestellung.urkunden" /></legend>
+		<f:render partial="Bestellung/TeilnahmenEdit" arguments="{schule:schule, pidNamenssuche:pidNamenssuche, pidTeilnehmerNeu:pidTeilnehmerNeu}" />
+	</fieldset>
+		
+<f:form.submit value="<f:translate key='tx_blsvsa2013_domain_model_bestellung.speichern' />" />
+</f:form>	
+	
+<script>
+	$( ".spinner" ).spinner();
+	$( ".spinner" ).val(0);	
+	$( ".datepicker" ).datepicker();
+</script>
+	
+</f:section>
